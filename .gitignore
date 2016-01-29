@@ -1,0 +1,25 @@
+# OSX
+.DS_Store
+
+
+# git
+.gitignore
+
+
+# vim
+*.swp
+*.un~
+
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.tdo
+*.nlo
