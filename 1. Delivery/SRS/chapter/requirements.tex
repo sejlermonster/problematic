@@ -4,17 +4,148 @@ This chapter on system requirements is organised into a number of sections. Both
 
 Every requirement has a project-unique identifier to support testing and traceability.
 
-\section{Required states and modes}
-If the system is required to operate in multiple states or modes, these states and modes shall be defined.
+%\section{Required states and modes}
+%If the system is required to operate in multiple states or modes, these states and modes shall be defined.
 
 \section{System capability requirement}
 This paragraph specifies requirements on the behavior of the system and shall include applicable relevant parameters. It shall be divided further into subparagraphs depending on the system capability in question
 
+%\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+%	\hline
+%	Task & Deployed actor registers event \\
+%	Purpose & Let deployed actors register events \\
+%	Trigger/ &  \\ Precondition & An actor is deployed in the area with access to the platform \\
+%	\hline
+%	Sub-Tasks: & \\
+%	1. & Deployed actor observes event \\
+%	2. & Deployed actor registers event on platform \\
+%	3. & Platform sends registered event to the Track Server \\
+%	\hline
+%	Variants: & \\
+%	2b. & Platform is offline \\
+%	\hline
+%\end{longtable}
+
+
+%\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+%	\hline
+%	Task & Deployed actor location changed \\
+%	Purpose & Send information about deployed actors location \\
+%	Trigger/ &  \\ Precondition & Actor deployed in the area \\
+%	Frequency & Last location changed with approximately 10 meters \\
+%	\hline
+%	Sub-Tasks: & \\
+%	1. & Deployed actor changes location \\
+%	2. & Platform registers location changed \\
+%	3. & Platform sends registered location to the Track Server \\
+%	\hline
+%	Variants: & \\
+%	2b. & Platform is offline \\
+%	\hline
+%\end{longtable}
+
+
+\subsection{Task - TA-01}
+
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Distribute text message \\
+	Purpose & Send text information to the platforms employed by the  deployed actors \\
+	Trigger/ &  \\ Precondition &  \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Actor writes a text message on the COP \\
+	2. & Actor choses criteria \\
+	3. & Actor distributes message through COP to various actors \\
+	\hline
+	Variants: & \\
+	2a. & Geography criteria chosen \\
+	2b. & Role criteria chosen\\
+	2c. & Group criteria chosen\\
+	2d. & Identity criteria chosen\\
+	\hline
+\end{longtable}
+
+\FloatBarrier
+\newpage
+
+\subsection{Task - TA-02}
+
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & COP must recieve registered events from currently employed platforms by the deployed actors  \\
+	Purpose & Present registered event on the COP \\
+	Trigger/ &  \\ Precondition & An actor registeres event current employed platform \\
+	\hline
+	Sub-Tasks: & \\
+	1. & COP receives registered observation event \\
+	2. & COP presents registered event for Commander \\
+	\hline
+	Variants: & \\
+	1a. & COP receives registered location event \\
+	\hline
+\end{longtable}
+
+\subsection{Task - TA-03}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & The Commander must be able to focus on various sources and types of information  \\
+	Purpose & Let the Commander focus on different types of information to better command the situation \\
+	Trigger/ &  \\ Precondition & Events or information must registered \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Commander chooses the demographic focus option \\
+	2. & The Commander is presented for the information relevant to the focus option \\
+	\hline
+	Variants: & \\
+	1a. & Commander chooses the fresh water supplies focus option  \\
+	1b. & Commander chooses the demographic focus option  \\
+	1c. & Commander chooses the hazardous focus option  \\
+	1d. & Commander chooses the construction work focus option  \\
+	1e. & Commander chooses the location of actors focus option  \\
+	1f. & Commander chooses the observations made of actors focus option \\
+	1g. & Commander chooses the weather information focus option  \\
+	\hline
+\end{longtable}
+
+\FloatBarrier
+\newpage
+
+
+\subsection{Task - TA-04}
+
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Review the history of events \\
+	Purpose & Present the event history for the Commander \\
+	Trigger/ &  \\ Precondition & A deployed actor has already registered an event \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Commander opens the event history \\
+	2. & COP present the commander for list of all registered events  \\
+	3. & Commander can read the names of all registered events \\
+	4. & Commander can read the registration time of all registered events \\
+	\hline
+	Variants: & \\
+	1a. & COP receives registered location event \\
+	\hline
+\end{longtable}
+
 \section{System external interface requirements}
 This paragraphs shall be divided into subparagraphs to specify the requirements, if any, for the system’s external interfaces. Interfaces shall be assigned a project-unique identifier. One or more interface diagrams shall be provided.
 
+\subsection{Police system}
+
+\subsection{Hospital system}
+
+\subsection{Emergency mangement system}
+
+\subsection{Armed forces system}
+
 \section{System internal interface requirements}
 This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
+
+\subsection{Subcontracter to optional thingy...}
 
 \section{System internal data requirements}
 Requirements on data internal to the system such as databases, data files etc. shall be stated. If there are internal interfaces left to the design or to system requirement specifications for components these shall be identified.
@@ -22,35 +153,80 @@ Requirements on data internal to the system such as databases, data files etc. s
 \section{Adaption requirements}
 Requirements on installation-dependent data and operational parameters that the system requires.
 
-\section{Safety requirements}
-System requirements concerning minimizing unintended hazards to personnel, property and the physical environment
+%\section{Safety requirements}
+%System requirements concerning minimizing unintended hazards to personnel, property and the physical environment
 
 \section{Secuirity and privacy requirements}
 This paragraph shall specify the system requirements, if any, concerned with the maintaining security and privacy.
 
+\begin{itemize}
+	\item All communication between devices must be encrypted.
+\end{itemize}
+
 \section{System enviroment requirements}
 This paragraph shall specify the system requirements, if any, regarding the environment in which the system must operate.
+
 
 \section{Computer resource requirements}
 This paragraph specifies resource utilization requirements. It can be further divided into hardware, software, communications etc.
 
+
+
 \section{System quality factors}
-This paragraph specifies quantitative requirements con cerning system functionality, reliability, maintainability, availability, flexibility, porta bility (software), reusability, testability, usability an other attributes.
+This paragraph specifies quantitative requirements concerning system functionality, reliability, maintainability, availability, flexibility, portability (software), reusability, testability, usability an other attributes.
+
+
 
 \section{Design and construction constraints}
 This paragraph specifies the requirements, if any, that constrain the design and construction of the system
 
+
+
 \section{Personnel-related requirements}
 This paragraphs specifies the requirements, if any, included to accommodate the number, skill levels, duty cycles, training needs, or other information about the personnel who will use or support the system.
+
+\begin{itemize}
+	\item The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}
+\end{itemize}
+
+
+\subsection{Software Warranty Service consists of:}
+Defect Reporting. For Critical Defects, the Customer will have 24x7 access to the Service Centre by e-mail or phone to request defect repair, as described below. “Critical Defect means that the
+application is down or is at high risk, business functions cannot be conducted, or the Customer is experiencing continual failures or data corruption as a result of the defect. To report non-critical
+defects, the Customer will have e-mail or phone access to the Service Centre during the Principal Period of Maintenance (”PPM”), which is 8:00 a.m. to 5:00 p.m., local time, Monday through Friday,
+excluding local holidays. Defect Repair. Defect repair includes verification of the existence of a defect, determination of the
+severity or impact of the defect, and determination of the conditions under which the defect may recur. 
+The Company will, at its option: 
+\begin{itemize}
+\item For a Critical Defect, commence action within a 2-shift hour response window using commercially reasonable efforts to provide an immediate fix or temporary solution of, or workaround
+to, the defect.
+\item For a non-critical defect, commence action within an 8-shift hour response window to provide either the action described for a Critical Defect or a statement that the defect will be corrected
+in a software product revision or a future software release.
+\item Provide a statement that the Software operates as described in then-current user documentation or that the defect arises when such Software is used other than in a manner for which it
+was designed. For Software added to an installed System, warranty service must be upgraded to the same software support plan, if any, as that of the Software already installed on that
+System. Customer will pay the difference between standard warranty and upgraded warranty
+service.
+\end{itemize}
+
 
 \section{Training-related requirements}
 System requirements pertaining to training.
 
-\section{Logistics-related requirements}
-This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
+\begin{itemize}
+	\item A user manual will be available for the Commander who uses the COP. 	
+\end{itemize}
+
+
+%\section{Logistics-related requirements}
+%This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
+
 
 \section{Packaging requirements}
 This paragraphs specifies the requirements, if any, for packaging, labling and handling the systems and its components for delivery.
+
+\begin{itemize}
+	\item The COT system will be available as a .exe file which can be installed on a Windows machine version 10 or above
+\end{itemize}
 
 \section{Other requirements}
 Examples include requirements for system documentation
