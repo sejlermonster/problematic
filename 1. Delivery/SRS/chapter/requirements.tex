@@ -4,46 +4,21 @@ This chapter on system requirements is organised into a number of sections. Both
 
 Every requirement has a project-unique identifier to support testing and traceability.
 
+\section{Scope}
+
+\subsection{Identification}
+
+\myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.7} 
+
+\subsection{System overview}
+
+\subsection{Document overview}
+
 %\section{Required states and modes}
 %If the system is required to operate in multiple states or modes, these states and modes shall be defined.
 
 \section{System capability requirement}
 This paragraph specifies requirements on the behavior of the system and shall include applicable relevant parameters. It shall be divided further into subparagraphs depending on the system capability in question
-
-%\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
-%	\hline
-%	Task & Deployed actor registers event \\
-%	Purpose & Let deployed actors register events \\
-%	Trigger/ &  \\ Precondition & An actor is deployed in the area with access to the platform \\
-%	\hline
-%	Sub-Tasks: & \\
-%	1. & Deployed actor observes event \\
-%	2. & Deployed actor registers event on platform \\
-%	3. & Platform sends registered event to the Track Server \\
-%	\hline
-%	Variants: & \\
-%	2b. & Platform is offline \\
-%	\hline
-%\end{longtable}
-
-
-%\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
-%	\hline
-%	Task & Deployed actor location changed \\
-%	Purpose & Send information about deployed actors location \\
-%	Trigger/ &  \\ Precondition & Actor deployed in the area \\
-%	Frequency & Last location changed with approximately 10 meters \\
-%	\hline
-%	Sub-Tasks: & \\
-%	1. & Deployed actor changes location \\
-%	2. & Platform registers location changed \\
-%	3. & Platform sends registered location to the Track Server \\
-%	\hline
-%	Variants: & \\
-%	2b. & Platform is offline \\
-%	\hline
-%\end{longtable}
-
 
 \subsection{Task - TA-01}
 
@@ -134,13 +109,16 @@ This paragraph specifies requirements on the behavior of the system and shall in
 \section{System external interface requirements}
 This paragraphs shall be divided into subparagraphs to specify the requirements, if any, for the system’s external interfaces. Interfaces shall be assigned a project-unique identifier. One or more interface diagrams shall be provided.
 
-\subsection{Police system}
+The system will communicate with the system used by the Police, Hospitals, Emergency Management and Armed forces. An interface will be defined for communication with these systems. The relation with the system is described in \ref{fig:externalInterface}.
 
-\subsection{Hospital system}
+\myFigure{InterfaceDiagram.png}{External interfaces}{fig:externalInterface}{1} 
 
-\subsection{Emergency mangement system}
-
-\subsection{Armed forces system}
+\subsection{Interfaces for platforms currently employed}
+Interfaces for the system used my Police, Hopistals, Emergency Management, Armed Forces.
+\begin{itemize}
+	\item The employed systems must publish events to the COP system through a well-defined interface
+	\item The employed system must  subscribe to message published from the COP
+\end{itemize}
 
 \section{System internal interface requirements}
 This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
