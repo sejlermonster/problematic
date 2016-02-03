@@ -12,6 +12,13 @@
 % English language package
 \usepackage[english]{babel}
 
+% Adding appendix caption to danish language package
+\addto\captionsdanish{%
+    \renewcommand{\appendixname}%
+    {Appendiks }%
+}
+\renewcommand*\cftappendixname{\appendixname}
+
 % UTF-8 characters
 \usepackage[utf8]{inputenc}
 
@@ -46,6 +53,17 @@
 \usepackage{amsmath}
     \usepackage{xfrac} % for \sfrac command
 
+% Package for nomenclature
+% To add things to the nomenclature see:
+% http://tex.stackexchange.com/questions/161304/makeindex-no-nls-file
+% option "intoc" insert nomenclature to table of contents
+% option "danish" makes reference texts and the nomenclature title danish
+\usepackage[intoc, danish]{nomencl}
+\makenomenclature
+% If you  dont like the name of the nomenclature
+%\renewcommand{\nomname}{myNomeclatureTitle}
+
+
 % Styles
 \input{style/chapter}
 \input{style/headerFooter}
@@ -68,9 +86,10 @@
     \endgroup
 
     % BibTeX: Not affected by \appendix command
-    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
+   % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
     
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
     
+
 \end{document}
