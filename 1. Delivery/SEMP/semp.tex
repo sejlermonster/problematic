@@ -29,6 +29,8 @@
 \usepackage[table,xcdraw]{xcolor}
 \definecolor{ThemeColor}{RGB}{0, 154, 242} % Blue
 \definecolor{BlackColor}{RGB}{0, 0, 0} % Black
+\definecolor{deadlinecolor}{HTML}{FD6864}
+\definecolor{reviewcolor}{HTML}{9698ED}
 
 % Table packages
 % Merge cells i tables
@@ -79,6 +81,8 @@
         %\include{chapter/title_page}
     \end{titlingpage}
     
+    \include{chapter/versionHistory}
+
     % Table of contents
     \begingroup
         \hypersetup{linkcolor=black}
@@ -87,9 +91,11 @@
 
     % BibTeX: Not affected by \appendix command
    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-    
+    \include{chapter/intro}
+    \include{chapter/program_plan_and_control}
+    \include{chapter/system_engineering_process}
+
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
-    
 
 \end{document}
