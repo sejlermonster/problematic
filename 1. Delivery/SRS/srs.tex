@@ -42,9 +42,8 @@
 % BibTeX = bibliography
 % ALWAYS USE \citep{} or something like:
 % \citep[see this baws article]{fooArticle}
-\usepackage[]{natbib}
+\usepackage[semicolon,authoryear,round]{natbib}
 \bibliographystyle{plainnat}
-
 
 % Package for editing captions. Fx for figures and code listings
 \usepackage[textfont={footnotesize,sl}]{caption}
@@ -89,11 +88,12 @@
 
     % BibTeX: Not affected by \appendix command
    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-    
+    \input{chapter/revisionHistory}
+    \input{chapter/glosaryAndTerms}
     \input{chapter/requirements}
     \input{chapter/qualityProvision}
     \input{chapter/requirementsTraceabiility}
-    
+   	\bibliography{bibliografi}
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
     

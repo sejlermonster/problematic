@@ -5,35 +5,43 @@ This chapter on system requirements is organised into a number of sections. Both
 Every requirement has a project-unique identifier to support testing and traceability.
 
 \section{Scope}
-The goal of the system is to handle civilian crisis in a more effective way. 
+The goal of the system is to handle civilian crisis's in a more effective way. 
 
 \subsection{Identification}
-To support the goal defined in the scope a system will be developed. The system gives a common operation picture(COP) for a commander. This makes it easier to plan and evaluate a civilian crisis and send commands to actors working in the field.
+To support the goal defined in the scope a system-of-interest will be developed. Based on the goal a system that gives the commander a common operational picture (COP) will be described throughout this document. The COP should make it easier to plan and evaluate a civilian crisis. It should also allow for better communication will multiple actors during a crisis.
 
 This section includes a full identification of the system-of-interest to which this document applies.
 \myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.7} 
 
+The system-of-interest will only include a development of the Common operation picture which will communicate with devices already used in civil crisis scenarios. The system-of-interest will communicate over the defined standard network used in these scenarios. This network is called SINE(Sikkerhednetværket) and it follow and international standard for communication called TETRA which is used during crisis situations world wide. 
+
 \subsection{System overview}
-The system of interest will communicate with already employed system from relevant actors. This could be Police, Hospitals, Armed forces, Emergency Mangement.
+The system of interest will communicate with the already employed system used by emergency management actors. TEmergency Mangement actors use the SINE network during crisis situations.
 
 The system will facilitate the commander in:
 \begin{itemize}
 	\item Give a demographic overview of the crisis area
-	\item Let him locate events, things of interest and actors in the area
+	\item Let the commander locate events, things of interest and actors in the area
 	\item Let the commander send commands to actors in the area.
 \end{itemize}
 
 \subsection{Document overview}
-Summarize the purpose and the content of the document. Security and privacy considerations associated with the use of this document might be added.
+\label{sec_documentOverview}
+This document will describe the functional and non-functional requirement of the system of interest. 
+
+The functional requirement is described using Task descriptions. These requirements describes what the system should be able to do. Task descriptions includes a Task name, the purpose of the Task and might include a precondition for the Task. The purpose should reflect the goals stated. The Tasks are furthermore described with sub-tasks that elaborates on the behavior of the system and user.  Variants are described to explain alternatives to the main sub-tasks. \citep{taskDescription}
+
+The non-functional requirements are divided up in sub-sections and categorized. The sub-sections used follows the template given from the SECaseBook part 2. \citep{casebook}
+
 
 %\section{Required states and modes}
 %If the system is required to operate in multiple states or modes, these states and modes shall be defined.
 
+\newpage
 \section{System capability requirement}
-This paragraph specifies requirements on the behavior of the system and shall include applicable relevant parameters. It shall be divided further into subparagraphs depending on the system capability in question
+This section specifies requirements on the behavior of the system. The behavior is decriped with using Task descriptions explained in document overview \ref{sec_documentOverview}
 
-\subsection{Task - TA-01}
-
+\subsection{TA-01}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
 	Task & Distribute text message \\
@@ -53,11 +61,9 @@ This paragraph specifies requirements on the behavior of the system and shall in
 	\hline
 \end{longtable}
 
-\FloatBarrier
-\newpage
 
-\subsection{Task - TA-02}
 
+\subsection{TA-02}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
 	Task & COP must recieve registered events from currently employed platforms by the deployed actors  \\
@@ -73,7 +79,10 @@ This paragraph specifies requirements on the behavior of the system and shall in
 	\hline
 \end{longtable}
 
-\subsection{Task - TA-03}
+\FloatBarrier
+\newpage
+
+\subsection{TA-03}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
 	Task & The Commander must be able to focus on various sources and types of information  \\
@@ -95,11 +104,7 @@ This paragraph specifies requirements on the behavior of the system and shall in
 	\hline
 \end{longtable}
 
-\FloatBarrier
-\newpage
-
-
-\subsection{Task - TA-04}
+\subsection{TA-04}
 
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
@@ -113,66 +118,130 @@ This paragraph specifies requirements on the behavior of the system and shall in
 	\hline
 \end{longtable}
 
-\section{System external interface requirements}
-This paragraphs shall be divided into subparagraphs to specify the requirements, if any, for the system’s external interfaces. Interfaces shall be assigned a project-unique identifier. One or more interface diagrams shall be provided.
+\FloatBarrier
+\newpage
 
-The system will communicate with the system used by the Police, Hospitals, Emergency Management and Armed forces. An interface will be defined for communication with these systems. The relation with the system is described in \ref{fig:externalInterface}.
+\section{System external interface requirements}
+This section will describe the system’s external interfaces. Interfaces will be assigned a project-unique identifier. 
+
+The system will communicate with the system used by the Emergency Mangement Actors during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware Hq will follow the given interface to allow for SINE certification. The diagram shown on figure \ref{fig:externalInterface} explains the external interfaces of AreaAware Hq.
 
 \myFigure{InterfaceDiagram.png}{External interfaces}{fig:externalInterface}{1} 
 
-\subsection{Interfaces for platforms currently employed}
-Interfaces for the system used my Police, Hopistals, Emergency Management, Armed Forces.
-\begin{itemize}
-	\item The employed systems must publish events to the COP system through a well-defined interface
-	\item The employed system must  subscribe to message published from the COP
-\end{itemize}
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-01 & The system will follow the the interface defined by the SINE network  \\
+	\hline
+\end{longtable}
 
-\section{System internal interface requirements}
-This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
+%\section{System internal interface requirements}
+%This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
 
-\subsection{Subcontracter to optional thingy...}
+%\subsection{Subcontracter to optional thingy...}
 
-\section{System internal data requirements}
-Requirements on data internal to the system such as databases, data files etc. shall be stated. If there are internal interfaces left to the design or to system requirement specifications for components these shall be identified.
+%\section{System internal data requirements}
+%Requirements on data internal to the system such as databases, data files etc. shall be stated. If there are internal interfaces left to the design or to system requirement specifications for components these shall be identified.
 
-\section{Adaption requirements}
-Requirements on installation-dependent data and operational parameters that the system requires.
+%\section{Adaption requirements}
+%Requirements on installation-dependent data and operational parameters that the system requires.
 
 %\section{Safety requirements}
 %System requirements concerning minimizing unintended hazards to personnel, property and the physical environment
 
 \section{Secuirity and privacy requirements}
-This paragraph shall specify the system requirements, if any, concerned with the maintaining security and privacy.
+This section specifies the system requirement concerned with the maintaining security and privacy.
 
-\begin{itemize}
-	\item All communication between devices must be encrypted.
-\end{itemize}
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-02 &All external communication from AreaAware Hq is communicated encrypted.  \\
+	\hline
+\end{longtable}
 
-\section{System enviroment requirements}
+\section{System environment requirements}
 This paragraph shall specify the system requirements, if any, regarding the environment in which the system must operate.
 
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-03 & The COP system will be operational in temperatures from -10 degree celcius to 50 degree celsius.  \\
+	\hline
+\end{longtable}
 
 \section{Computer resource requirements}
-This paragraph specifies resource utilization requirements. It can be further divided into hardware, software, communications etc.
+This section specifies resource utilization requirements. It will be further divided into hardware and communications etc.
+
+The following hardware is used for the AreaAware Hq:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-04 & i7 ivy Bridge, 2.3 Ghz, 4 cores  \\
+	\hline
+	NF-06 & Intel HD 4000 Graphics  \\
+	\hline
+	NF-07 & 16 GB DDR ram  \\
+	\hline
+	NF-08 &512 Gb SSD \\
+	\hline
+	NF-09 & LAN with 16-p switch  \\
+	\hline
+	Powered by 230 volt \\
+	\hline
+\end{longtable}
+
+Communication used by AreaAware Hq:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-10 & AreaAware Hq is SINE certified  \\
+	\hline
+	NF-11 & AreaAware Hq Communicates through the SINE network \\
+	\hline
+\end{longtable}
 
 
-
-\section{System quality factors}
-This paragraph specifies quantitative requirements concerning system functionality, reliability, maintainability, availability, flexibility, portability (software), reusability, testability, usability an other attributes.
+%\section{System quality factors}
+%This paragraph specifies quantitative requirements concerning system functionality, reliability, maintainability, availability, flexibility, portability (software), reusability, testability, usability an other attributes.
 
 
 
 \section{Design and construction constraints}
-This paragraph specifies the requirements, if any, that constrain the design and construction of the system
+This section specifies the requirements, that constrain the construction of the system
 
+AreaAware Weight and dimension requirements:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-12 & AreaAware Hq will weight 22 kilograms inclusive box and cables  \\
+	\hline
+	NF-13 & AreaAware Hq will have the following dimensions: 40cmx40cmx60cm \\
+	\hline
+\end{longtable}
 
 
 \section{Personnel-related requirements}
-This paragraphs specifies the requirements, if any, included to accommodate the number, skill levels, duty cycles, training needs, or other information about the personnel who will use or support the system.
+This paragraphs specifies the requirements, included to accommodate the number, skill levels, duty cycles, training needs, or other information about the personnel who will use or support the system.
 
-\begin{itemize}
-	\item The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}
-\end{itemize}
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-14 &The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}  \\
+	\hline
+	NF-15 & A user manual will be available for the Commander who uses the AreaAware Hq. \\
+	\hline
+	NF-16 & 2-day training will be available for every commander who uses the AreaAware Hq. \\
+	\hline
+\end{longtable}
+
 
 
 \subsection{Software Warranty Service consists of:}
@@ -194,25 +263,25 @@ service.
 \end{itemize}
 
 
-\section{Training-related requirements}
-System requirements pertaining to training.
+%\section{Training-related requirements}
+%System requirements pertaining to training.
 
-\begin{itemize}
-	\item A user manual will be available for the Commander who uses the COP. 	
-\end{itemize}
+%\begin{itemize}
+%	\item
+%\end{itemize}
 
 
 %\section{Logistics-related requirements}
 %This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
 
-
+\newpage
 \section{Packaging requirements}
 This paragraphs specifies the requirements, if any, for packaging, labling and handling the systems and its components for delivery.
 
-\begin{itemize}
-	\item The COT system will be available as a .exe file which can be installed on a Windows machine version 10 or above
-\end{itemize}
-
-\section{Other requirements}
-Examples include requirements for system documentation
-not covered in other contractural documents
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-17 & The COP is available as a web application in a browser supporting ECMAScript 5 and HTML5 \\
+	\hline
+\end{longtable}
