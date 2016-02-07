@@ -8,6 +8,7 @@
 \let\footruleskip\undefined
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
+\usepackage{geometry}
 
 % Danish language package
 \usepackage[danish]{babel}
@@ -75,10 +76,7 @@
 \usepackage{rotating}
 
 \begin{document}
-    \begin{titlingpage}
-        % Frontpage goes here
-        %\include{chapter/title_page}
-    \end{titlingpage}
+ \input{chapter/frontPage}
     
     % Table of contents
     \begingroup

@@ -8,6 +8,7 @@
 \let\footruleskip\undefined
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
+\usepackage{geometry}
 
 % Danish language package
 \usepackage[danish]{babel}
@@ -34,6 +35,8 @@
 % Merge cells i tables
 \usepackage{multirow}
 \usepackage{makecell}
+
+
 
 % PDF propeties (fx. hyperlinks, pdftitle)
 \usepackage[hyphens]{url}
@@ -75,10 +78,8 @@
 \usepackage{rotating}
 
 \begin{document}
-    \begin{titlingpage}
-        % Frontpage goes here
-        %\include{chapter/title_page}
-    \end{titlingpage}
+  
+  \input{chapter/frontPage}
     
     % Table of contents
     \begingroup
@@ -88,7 +89,7 @@
 
     % BibTeX: Not affected by \appendix command
    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-    \input{chapter/revisionHistory}
+      \input{chapter/revisionHistory}
     \input{chapter/glosaryAndTerms}
     \input{chapter/requirements}
     \input{chapter/qualityProvision}

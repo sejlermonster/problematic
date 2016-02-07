@@ -8,15 +8,15 @@ Every requirement has a project-unique identifier to support testing and traceab
 The goal of the system is to handle civilian crisis's in a more effective way. 
 
 \subsection{Identification}
-To support the goal defined in the scope a system-of-interest will be developed. Based on the goal a system that gives the commander a common operational picture (COP) will be described throughout this document. The COP should make it easier to plan and evaluate a civilian crisis. It should also allow for better communication will multiple actors during a crisis.
+To support the goal defined in the scope AreaAware Hq will be developed. Based on the goal a system that gives the commander a common operational picture (COP) will be described throughout this document. The COP should make it easier to plan and evaluate a civilian crisis. It should also allow for better communication will multiple actors during a crisis.
 
 This section includes a full identification of the system-of-interest to which this document applies.
 \myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.7} 
 
-The system-of-interest will only include a development of the Common operation picture which will communicate with devices already used in civil crisis scenarios. The system-of-interest will communicate over the defined standard network used in these scenarios. This network is called SINE(Sikkerhednetværket) and it follow and international standard for communication called TETRA which is used during crisis situations world wide. 
+AreaAware Hq will only include a development of the Common operation picture which will communicate with devices already used in civil crisis scenarios. AreaAware Hq will communicate over the defined standard network used in these scenarios. This network is called SINE(Sikkerhednetværket) and it follows an international standard for communication called TETRA which is used during crisis situations world wide. 
 
 \subsection{System overview}
-The system of interest will communicate with the already employed system used by emergency management actors. TEmergency Mangement actors use the SINE network during crisis situations.
+The system of interest will communicate with the already employed system used by emergency management actors. The Emergency Mangement actors use the SINE network during crisis situations.
 
 The system will facilitate the commander in:
 \begin{itemize}
@@ -24,6 +24,8 @@ The system will facilitate the commander in:
 	\item Let the commander locate events, things of interest and actors in the area
 	\item Let the commander send commands to actors in the area.
 \end{itemize}
+
+The system will let commanders plug their own laptop(not provided) to the AreaAware Hq. By plugging their laptop to the AreaAware Hq they will be allowed access to the common operation picture through a web application. The web application will be accessed through a browser installed the customers own latops.
 
 \subsection{Document overview}
 \label{sec_documentOverview}
@@ -39,13 +41,13 @@ The non-functional requirements are divided up in sub-sections and categorized. 
 
 \newpage
 \section{System capability requirement}
-This section specifies requirements on the behavior of the system. The behavior is decriped with using Task descriptions explained in document overview \ref{sec_documentOverview}
+This section specifies requirements on the behavior of the system. The behavior is described with using Task descriptions explained in document overview \ref{sec_documentOverview}
 
 \subsection{TA-01}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
 	Task & Distribute text message \\
-	Purpose & Send text information to the platforms employed by the  deployed actors \\
+	Purpose & Send text information to the platforms employed by the emergency management actors \\
 	Trigger/ &  \\ Precondition &  \\
 	\hline
 	Sub-Tasks: & \\
@@ -66,9 +68,9 @@ This section specifies requirements on the behavior of the system. The behavior 
 \subsection{TA-02}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
-	Task & COP must recieve registered events from currently employed platforms by the deployed actors  \\
+	Task & AreaAware Hq must receive registered events from currently employed platforms used by the emergency management actors  \\
 	Purpose & Present registered event on the COP \\
-	Trigger/ &  \\Precondition & An actor registeres event current employed platform \\
+	Trigger/ &  \\Precondition & An emergency management actor registers event using currently employed platform \\
 	\hline
 	Sub-Tasks: & \\
 	1. & Receive registered observation event \\
@@ -110,7 +112,7 @@ This section specifies requirements on the behavior of the system. The behavior 
 	\hline
 	Task & Review the history of events \\
 	Purpose & Present the event history for the Commander \\
-	Trigger/ &  \\ Precondition & A deployed actor has already registered an event \\
+	Trigger/ &  \\ Precondition & A emergency management actor has already registered an event \\
 	\hline
 	Sub-Tasks: & \\
 	1. & Open the event history \\
@@ -219,7 +221,7 @@ AreaAware Weight and dimension requirements:
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement } \\
 	\hline
-	NF-12 & AreaAware Hq will weight 22 kilograms inclusive box and cables  \\
+	NF-12 & AreaAware Hq will weight up to 22 kilograms inclusive box and cables  \\
 	\hline
 	NF-13 & AreaAware Hq will have the following dimensions: 40cmx40cmx60cm \\
 	\hline
