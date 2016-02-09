@@ -69,6 +69,8 @@
         \hypersetup{linkcolor=black}
         \tableofcontents*	% The star keeps TOC from indexing itself
     \endgroup
+
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
     
     \input{chapter/Introduction}
     \input{chapter/Needs}
