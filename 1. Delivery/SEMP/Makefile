@@ -10,4 +10,4 @@ pdf:
 	"/Library/TeX/texbin/pdflatex" -synctex=1 -interaction=nonstopmode "${filename}".tex && "/Library/TeX/texbin/pdflatex" -synctex=1 -interaction=nonstopmode "${filename}".tex
 
 clean:
-	rm -f ${filename}.{ps,pdf,log,aux,out,dvi,bbl,blg}
+	rm -f ${filename}.{ps,pdf,log,aux,out,dvi,bbl,blg} && rm chapter/*.aux

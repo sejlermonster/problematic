@@ -2,15 +2,23 @@
 \RequirePackage{fix-cm} % For custom font shaping
 
 % Document class
-\documentclass[pdftex, 11pt, a4paper, oneside, english]{memoir}
+\documentclass[pdftex, 11pt, a4paper, oneside, danish]{memoir}
 
 % Page styling
 \let\footruleskip\undefined
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
+\usepackage{geometry}
 
-% English language package
-\usepackage[english]{babel}
+% Danish language package
+\usepackage[danish]{babel}
+
+% Adding appendix caption to danish language package
+\addto\captionsdanish{%
+    \renewcommand{\appendixname}%
+    {Appendiks }%
+}
+\renewcommand*\cftappendixname{\appendixname}
 
 % UTF-8 characters
 \usepackage[utf8]{inputenc}
@@ -28,6 +36,8 @@
 \usepackage{multirow}
 \usepackage{makecell}
 
+
+
 % PDF propeties (fx. hyperlinks, pdftitle)
 \usepackage[hyphens]{url}
 \usepackage[bookmarks=true,bookmarksnumbered=true,citecolor=blue,colorlinks=true,hyperfigures=true,hyperfootnotes=true,hyperindex=true,linkcolor=red]{hyperref}
@@ -35,9 +45,8 @@
 % BibTeX = bibliography
 % ALWAYS USE \citep{} or something like:
 % \citep[see this baws article]{fooArticle}
-\usepackage[]{natbib}
+\usepackage[semicolon,authoryear,round]{natbib}
 \bibliographystyle{plainnat}
-
 
 % Package for editing captions. Fx for figures and code listings
 \usepackage[textfont={footnotesize,sl}]{caption}
@@ -45,6 +54,17 @@
 % Package for more elegant math
 \usepackage{amsmath}
     \usepackage{xfrac} % for \sfrac command
+
+% Package for nomenclature
+% To add things to the nomenclature see:
+% http://tex.stackexchange.com/questions/161304/makeindex-no-nls-file
+% option "intoc" insert nomenclature to table of contents
+% option "danish" makes reference texts and the nomenclature title danish
+\usepackage[intoc, danish]{nomencl}
+\makenomenclature
+% If you  dont like the name of the nomenclature
+%\renewcommand{\nomname}{myNomeclatureTitle}
+
 
 % Styles
 \input{style/chapter}
@@ -54,12 +74,12 @@
 \input{style/code}
 \input{style/customCmds}
 \input{style/tables}
+\usepackage{longtable}
+\usepackage{rotating}
 
 \begin{document}
-    \begin{titlingpage}
-        % Frontpage goes here
-        %\include{chapter/title_page}
-    \end{titlingpage}
+  
+  \input{chapter/frontPage}
     
     % Table of contents
     \begingroup
@@ -68,9 +88,15 @@
     \endgroup
 
     % BibTeX: Not affected by \appendix command
-    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-    
+   % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
+      \input{chapter/revisionHistory}
+    \input{chapter/glosaryAndTerms}
+    \input{chapter/requirements}
+    \input{chapter/qualityProvision}
+    \input{chapter/requirementsTraceabiility}
+   	\bibliography{bibliografi}
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
     
+
 \end{document}
