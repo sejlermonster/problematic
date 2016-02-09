@@ -36,9 +36,11 @@
 % BibTeX = bibliography
 % ALWAYS USE \citep{} or something like:
 % \citep[see this baws article]{fooArticle}
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
-
+\usepackage{csquotes}
+\usepackage[backend=biber]{biblatex}
+%\bibliographystyle{plain}
+% BibTeX: Not affected by \appendix command
+\bibliography{bibliografi}% Selects .bib file AND prints bibliography
 
 % Package for editing captions. Fx for figures and code listings
 \usepackage[textfont={footnotesize,sl}]{caption}
@@ -67,18 +69,11 @@
         \hypersetup{linkcolor=black}
         \tableofcontents*	% The star keeps TOC from indexing itself
     \endgroup
-
-    % BibTeX: Not affected by \appendix command
-    \bibliography{bibliografi}% Selects .bib file AND prints bibliography
     
     \input{chapter/Introduction}
     \input{chapter/Needs}
     \input{chapter/Operations_desc}
     \input{chapter/Capabilities}
     \input{chapter/Appendix}
-    
-    % Appendix
-    %\include{style/appendix} % Changes chapter and section style and toc adding
-
-    
+    \printbibliography
 \end{document}
