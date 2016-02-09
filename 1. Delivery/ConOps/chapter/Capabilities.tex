@@ -1,2 +1,72 @@
-\label{chp_capabilities}
 \chapter{Functional Capabilities}
+\label{chp_capabilities}
+This chapter describes the functional capabilities, found in section \ref{sec:scenarios}
+
+\section{Operations}
+The operations functional capabilities listed in the operations scenarios are described in this section.
+\begin{itemize}
+	\item Mobile HQ\\
+	A mobile HQ unit has to be developed and should be immediately deployable. This will work as a base, where ECs can plug in devices. Contains a wireless connection to the SINE network and several connections for ECs to plug in equipment. 
+	\item Provide a COP.\\
+	The mobile HQ is able to provide ECs with a COP, when plugged into the unit.
+	\item Data collection.\\
+	Static and dynamic data in the relevant area of emergency is collected, which can be viewed as part of the COP.
+	\item Information focusing.\\
+	The ECs can focus on certain types of information in order to get a picture of the relevant data for a given situation.
+	\item SINE network capability.\\
+	The SINE network should be capable of transmitting information, events and commands between commanders and Emergency Responders.
+	\item Message distribution control. \\
+	The ECs should be able to control the distribution of messages based on geography, role, group and identity. This enables context- and group- specific messages based on relevant parameters.
+	\item Dismounted COP. \\
+	Is developed to provide the FCs with a condensed version of the COP. Has to be able to communicate with other commanders and ERs. Contains both software (condensed COP) and hardware (a handheld device). The dismounted COP is connected wirelessly to the SINE network.
+\end{itemize}
+
+\section{Support}
+The support functional capabilities listed in the operations scenarios are described in this section
+\begin{itemize}
+	\item 24x7 support.\\
+	The development team must provide 24x7 support for defect reporting.
+	\item Extended 24x7 support.\\
+	The development team must provide an extended 24x7 support in form of a call-center for live support and user guidance.
+\end{itemize}
+
+
+\section{Functional Capabilities Matrix}
+This section describes the functional capabilities in accordance with each mission, to determine if each functional capability is essential or not to the mission. \\
+
+\noindent \textbf{Operations}\\\\
+\def\arraystretch{1.5}
+\noindent\begin{tabular}{|>{}p{4.8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
+	\hline \textbf{Functional capability} &  \multicolumn{4}{c}{\textbf{Missions}} \vline \\ 
+	\hline  							& \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ 
+	\hline Mobile HQ 					&  & P & P &  \\ 
+	\hline Provide a COP 				& P & P & S &  \\ 
+	\hline Data collection 				& P & P &  & P \\ 
+	\hline Information focusing 		& P & P &  & S \\ 
+	\hline SINE network capability 		& P &  & P &  \\ 
+	\hline Message distribution control &  & P & P & S \\ 
+	\hline Dismounted COP 				& P &  & P & P \\ 
+	\hline 
+\end{tabular}
+
+\vspace{30pt}
+\noindent \textbf{Support}\\\\
+\def\arraystretch{1.5}
+\noindent\begin{tabular}{|>{}p{4.8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
+	\hline \textbf{Functional capability} &  \multicolumn{4}{c}{\textbf{Missions}} \vline \\ 
+	\hline  							& \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ 
+	\hline Mobile HQ 					& P & P & P & S \\ 
+	\hline Provide a COP 				&  & P &  & S \\
+	\hline 
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+
