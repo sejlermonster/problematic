@@ -1,2 +1,124 @@
 \label{chp_interfaceDesign}
 \chapter{Interface design}
+Each interface will be described throughout this chapoter. Each interface will be given a unique id. If the interface is internal the id will be on the form \emph{II-XX} if the interface is external the id will be given on the form \emph{EI-XX}. Diagrams will support the understanding of interfaces and each interface description will be given a name, version number and reference relevant documents.
+
+The interface description will be divided up into subsystems: AreaAware Hq, AreaAware Dismounted, AreaAware Server.
+
+AreaAware Hq provides the Emergency Commander with a Common Operational Picture (COP). The COP also allows the Emergency Commander to communicate with Emergency Responders.
+
+AreaAware Dismounted provides the Field Commander with a Common Operational Picture. This also allows the the Field Commander to communicate with Emergency Responders. 
+
+AreaAware Server provides a high speed server solution for communication between AreaAware Hq, AreaAware Dismounted and already used solution. This server communicates with AreaAwareHq, AreaAware Dismounted and other already implemented solutions through the SINE network. The AreaAware Server also makes it possible to extend the network capabilities of SINE through the use of a high speed internet connection.
+
+
+\section{AreaAware Hq}
+
+\subsection{IE-01 - AreaAware Server}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{IE-01} &  \textbf{AreaAware Server interface } \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	 Description & The AreaAware Hq Will communicate with the AreaAware Server. All communication to and from the AreaAware Hq will go through the AreaAware Server. 
+	  \\
+	\hline
+	 Interfaces & AreaAware Hq sends message To AreaAware Server.  \\
+					   & AreaAware Hq receives different events from AreaAware Server  \\
+	\hline
+\end{longtable}
+
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-01} &  \textbf{Power Supply} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Hq will be powered through a 230 volt charger.	\\
+	\hline
+	Interface &  Electrical outlet plug standard type C, type E,  type F,  type H, type K \\
+	\hline
+\end{longtable}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{E2-01} &  \textbf{External Laptop} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Hq will allow external laptops to be connected. After connected the laptop is allowed access to the COP through a web application.	\\
+	\hline
+	Interface & Category 5 cable \\
+	\hline
+\end{longtable}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{E2-01} &  \textbf{External network connection} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Hq will access the internet and SINE network through a standard internet connection	\\
+	\hline
+	Interface & Category 5 cable \\
+	\hline
+\end{longtable}
+
+
+
+Eksterne:
+Internet
+SINE Network
+
+
+
+
+
+
+Interne: 
+AreaAware Server
+
+\section{AreaAware Dismounted}
+This subsystem will be developed by a third-party subcontractor.
+
+
+Eksterne:
+Battery charger
+Wifi
+LTE
+GPS sattelitter
+
+
+\section{AreaAware Server}
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{IE-02} &  \textbf{AreaAware Hq interface } \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Server Will communicate with the AreaAware Hq. AreaAware Server should be abler to receive messages from AreaAware Hq and distributes these to relevant parties.  AreaAware Hq should be able to send events and messages to AreaAware Hq.
+	\\
+	\hline
+	Needed interfaces & AreaAware Server receives message from AreaAware \\
+	& AreaAware Server sends different types of events to AreaAware Hq \\
+	\hline
+\end{longtable}
+
+
+Eksterne:
+
+Internet: 
+AreaAware Dismounted
+AreaAware Hq
