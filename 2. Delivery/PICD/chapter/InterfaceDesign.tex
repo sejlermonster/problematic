@@ -1,6 +1,6 @@
 \label{chp_interfaceDesign}
 \chapter{Interface design}
-Each interface will be described throughout this chapoter. Each interface will be given a unique id. If the interface is internal the id will be on the form \emph{II-XX} if the interface is external the id will be given on the form \emph{EI-XX}. Diagrams will support the understanding of interfaces and each interface description will be given a name, version number and reference relevant documents.
+Each interface will be described throughout this chapter. Each interface will be given a unique id. If the interface is internal the id will be on the form \emph{II-XX}. If the interface is external the id will be given on the form \emph{EI-XX}. Diagrams will support the understanding of interfaces and each interface description will be given a name, version number and reference relevant documents.
 
 The interface description will be divided up into subsystems: AreaAware Hq, AreaAware Dismounted, AreaAware Server.
 
@@ -62,7 +62,7 @@ AreaAware Server provides a high speed server solution for communication between
 
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
-	\textbf{E2-01} &  \textbf{External network connection} \\
+	\textbf{EI-02} &  \textbf{External network connection} \\
 	\hline
 	Version & v0.1 \\
 	\hline
@@ -108,11 +108,49 @@ GPS sattelitter
 	\hline
 	Status & Under development \\
 	\hline
-	Description & The AreaAware Server Will communicate with the AreaAware Hq. AreaAware Server should be abler to receive messages from AreaAware Hq and distributes these to relevant parties.  AreaAware Hq should be able to send events and messages to AreaAware Hq.
+	Description & The AreaAware Server Will communicate with the AreaAware Hq. AreaAware Server should be able to receive messages from AreaAware Hq and distributes these to relevant parties.  AreaAware Hq should be able to send events and messages to AreaAware Hq.
 	\\
 	\hline
 	Needed interfaces & AreaAware Server receives message from AreaAware \\
 	& AreaAware Server sends different types of events to AreaAware Hq \\
+	\hline
+\end{longtable}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-03} &  \textbf{SINE interface} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Server Will communicate over the SINE network via \emph{ICCS} \footnote{\url{http://www.sikkerhedsnet.dk/om-sine/nettets-opbygning/iccs-og-radiodispatch/}}. AreaAware Server should be able to receive messages from \emph{ICCS} and distributes these to relevant parties through the \emph{ICCS}.  AreaAware Server should be able to send events to \emph{ICCS}.
+	\\
+	\hline
+	Needed interfaces 
+	& AreaAware Server receives messages from \emph{ICCS} \\
+	& AreaAware Server distributes messages to \emph{ICCS} \\
+	& AreaAware Server sends different types of events to \emph{ICCS} \\
+	& AreaAware Server receives different types of events from \emph{ICCS} \\
+	\hline
+\end{longtable}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-04} &  \textbf{LTE interface} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Server Will communicate over the \emph{LTE} network\footnote{\url{http://www.extremetech.com/mobile/110711-what-is-lte}}.
+	\\
+	\hline
+	Needed interfaces 
+	& AreaAware Server receives messages from AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware Server distributes messages to AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\ 
+	& AreaAware Server sends different types of events to AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware Server receives different types of events from AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
 	\hline
 \end{longtable}
 
