@@ -7,6 +7,7 @@
 This chapter will describe the system architecture design.
 The system architecture design is described by its components, concept of execution and interfaces.
 
+
 \section{System Components}
 AreaAware consists the main components:
 \begin{itemize}
@@ -14,4 +15,22 @@ AreaAware consists the main components:
 \item AreaAware HQ
 \item AreaAware Server
 \end{itemize}
-These the three main components constists 
+To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists within (least one AreaAware HQ though), but only a single AreaAware Server.
+
+
+\myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. To 1 AreaAware, can various AreaAware Dismounted and AreaAware HQ exists, but only a single AreaAware Server.}{fig:bbd_overview}{1}
+
+\noindent Each of these main components consists of subcomponents, which the functionality for solving the requirements. \todojens{}{Ref til SRS}
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & AreaAware \\
+    \textbf{Block ID}       & SA-AA-SE  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Provide AreaAware HQ, AreaAware Dismounted\\and Emergency Responder with data.\\Keeper of all system logistics.}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & Modem forhelvede & PDD \\
+\end{tabular}
+
+
+
