@@ -20,17 +20,171 @@ To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists withi
 
 \myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. To 1 AreaAware, can various AreaAware Dismounted and AreaAware HQ exists, but only a single AreaAware Server.}{fig:bbd_overview}{1}
 
-\noindent Each of these main components consists of subcomponents, which the functionality for solving the requirements. \todojens{}{Ref til SRS}
+\noindent Each of these main components consists of subcomponents, which gives functionality for solving the requirements. \todojens{}{Ref til SRS}\\
+
+
+\subsection{AreaAware Dismounted}
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & AreaAware Dismounted \\
+    \textbf{Block ID}       & SA-AA-DI & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Device for the Field Commander to interact\\with AreaAware\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & Dismounted FOOBAR & PDD \\
+\end{tabular}\\\\
+
+\noindent In a crisis situation, the Field Commander will interact with AreaAware through mobile device called AreaAware Dismounted.
+This devices will provide a COP (condensed) and possibilities for the user to communicate with the Emergency Commanders, Emergency Responders and other Field Commanders via audio, video and text messages.
+AreaAware work with or without AreaAware Dismounted present in the system.
+There can various AreaAware Dismounted connected to AreaAware at the same time.
+
+The main design of AreaAware Dismounted is subcontracted to a subcontractor of Problematic.
+This design is based on the requirements specified by Problematic in document\todo{SRS ref}.
+The design architecture of AreaAware Dismounted will therefore not be specified here any further.
+
+\subsection{AreaAware HQ}
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & AreaAware HQ \\
+    \textbf{Block ID}       & SA-AA-HQ  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Main interaction for the Emergency Commander\\with AreaAware\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & HQFOOBAR & PDD \\
+\end{tabular}\\\\
+
+\noindent In a crisis situation, the Emergency Commander will manage the situation right at a (mobile or not mobile) headquarter.
+AreaAware HQ is the service for Emergency Commander to interact with AreaAware at the headquarter.
+
+
+\myFigure{arch/aa_bdd_hq}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
+
+
+AreaAware HQ consists of two subcomponents: a Web Presenter and a Communication Modem.
+There can up to 8 Web Presenters within AreaAware HQ.
+Only a single Communication Modem is sufficient.
+
 
 \begin{tabular}{l|*{3}{l}}
-    \textbf{Block name}     & AreaAware \\
+    \textbf{Block name}     & Web Presenter\\
+    \textbf{Block ID}       & SA-AA-HQ-WP & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Essentially a web browser showing the AreaAware Web UI.\\\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & HQ-WEBFOOBAR & PDD \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Communication Modem\\
+    \textbf{Block ID}       & SA-AA-HQ-CM  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & HQ-COMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & SINE Communicator\\
+    \textbf{Block ID}       & SA-AA-HQ-CM-SC  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & HQ-SINECOMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Commercial Internet Communicator\\
+    \textbf{Block ID}       & SA-AA-HQ-CM-CI  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with the commercial internet\\such as LTE/4G or such.\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & HQ-INTCOMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+
+\subsection{AreaAware Server}
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & AreaAware Server \\
     \textbf{Block ID}       & SA-AA-SE  & \\
     \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Provide AreaAware HQ, AreaAware Dismounted\\and Emergency Responder with data.\\Keeper of all system logistics.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & Modem forhelvede & PDD \\
-\end{tabular}
+    Systemwide Design Decisions & Server FOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+To manage all data
 
 
 
+\myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, web UI and a communication modem.}{fig:bbd_hq}{1}
+
+
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Database\\
+    \textbf{Block ID}       & SA-AA-SE-DB  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Contain and manage all relevant of AreaAware.\\\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & SE-DBFOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Web UI\\
+    \textbf{Block ID}       & SA-AA-SE-UI  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Hosting the Website used by AreaAware HQ\\\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & SE-WEBUIFOOBAR & PDD \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Communication Modem\\
+    \textbf{Block ID}       & SA-AA-SE-CM  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & SE-COMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & SINE Communicator\\
+    \textbf{Block ID}       & SA-AA-SE-CM-SC  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & SE-SINECOMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{3}{l}}
+    \textbf{Block name}     & Commercial Internet Communicator\\
+    \textbf{Block ID}       & SA-AA-SE-CM-CI  & \\
+    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with the commercial internet\\such as LTE/4G or such.\\}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    System Requirements & 1337 & SRS-ID \\
+    Systemwide Design Decisions & SE-INTCOMFOOBAR & PDD \\
+\end{tabular}\\\\
+
+
+
+
+
+
+\section{Concept of execution}
+\section{Interface design}
