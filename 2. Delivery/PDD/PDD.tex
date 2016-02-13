@@ -69,7 +69,14 @@
 
 \begin{document}
 
-        \include{chapter/frontpage}
+	\begin{titlingpage}
+		% Frontpage goes here
+		\include{chapter/frontpage}
+	\end{titlingpage}
+	
+	\include{chapter/versionHistory}
+
+
     % Table of contents
     \begingroup
         \hypersetup{linkcolor=black}
@@ -78,10 +85,10 @@
 
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 
-    \input{chapter/Scope}
-    \input{chapter/system-wide_design}
-    \input{chapter/architectural_design}
-    \input{chapter/Appendix}
+    \include{chapter/Scope}
+    \include{chapter/system-wide_design}
+    \include{chapter/architectural_design}
+   \include{chapter/Appendix}
 
    \printbibliography
 
