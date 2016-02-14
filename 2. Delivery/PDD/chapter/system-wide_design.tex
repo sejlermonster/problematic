@@ -1,7 +1,4 @@
-%!TEX root = ../../thesis.tex
-
-\thispagestyle{fancy}
-\chapter{System-wide Design Document}
+\chapter{System-wide Design Decisions}
 \label{chp:system-wide}
 
 This chapter will describe the system-wide design decisions for the AreaAware system. The system will be regarded as a connection of black boxes, where non of the internal components are described.
@@ -15,9 +12,9 @@ Figure \ref{fig:in_out} describes the inputs and outputs of the AreaAware system
 The inputs of the system are as follows:
 
 \begin{itemize}
-	\item \textbf{Events:} An Event is information into the system, consisting of time, position, occurrence and/or messages. Each Event can be simple, such as positional updates of FCs, or complex such as the state and position of a local fire and the surrounding area. All Events provide Emergency and Field commanders with some kind of situational awareness, through an update on the COP, description of an area, etc. \\
+	\item \textbf{Events:} An Event is information into the system, consisting of time, position, occurrence and/or messages. Each Event can be simple, such as positional updates from FCs, or complex such as the state and position of a local fire and the surrounding area. All Events provide Emergency and Field Commanders with some kind of situational awareness, through an update on the COP, description of an area, etc. \\
 	An Event Log keeps track of all events above a certain Level of Importance, which assigned to each event.
-	\item \textbf{Command Decisions:} A Command Decision is a decision done by an EC or a FC, which results in a command.
+	\item \textbf{Command Decisions:} A Command Decision is a decision done by an EC or a FC, which results in a command, such as a unit ordered to go to a new position.
 \end{itemize}
 
 \subsection{Outputs}
@@ -38,7 +35,7 @@ Appearance of data for the user will happen on a User Interface on a screen. For
 \newline Three buttons can be used by the commanders to create an Event, send a Command or send a message. These functionalities can also be accessed intuitively by clicking on the COP.}{fig:UI}{1}
 
 \section{Safety, security and privacy}
-The security of the data connection is very important for the system to work. Therefore, the system is using the SINE network in case there the commercial network is not available \citep{SINE_artikel}.
+The security of the data connection is very important for the system to work. Therefore, the system 
 
 
 
@@ -46,3 +43,17 @@ The security of the data connection is very important for the system to work. Th
 
 
 \section{Design and construction choices}
+AreaAware HQ consist of a Web App and a communication modem. The Web App is running on the EC's own computer solutions handled by the server, and will therefore not have any physical design criteria, apart from the hardware requirements stated in the SRS. The Communication modem will direct the connection from the Web App either over the internet or the SINE network. This will be a physical box with two connections for the internet and SINE, and 8 Ethernet connections for EC's to connect their computers. This modem will have to be as small as possible because the Emergency Headquarters Station is packed with equipment and personal.
+
+The AreaAware Dismounted unit is bounded by the physical decisions listed below.
+
+\begin{itemize}
+  \item A screen of 10" to 12" for having enough display size to show the COP for the FC.
+  \item The screen needs back light for the FC to be able to use it during the night.
+  \item Speaker, microphone and camera for the FC to do different forms of communication to the EC's or ER's.
+  \item The AreaAware Dismounted needs to be ergonomic and weight no more than 0.5 kg, for FC to use it for many hours.
+  \item It have be a bright and easy to see color, both for the FC to be able to finding the AreaAware Dismounted, and for easy identification of the FC when he holds it.
+  \item The screen have to be usable in wet conditions and with glows.
+  \item The AreaAware Dismounted unit will be used in many physicality changeling situations, so et needs to be shock resistant, drop resistant, water prof and dust prof.
+  \item A battery life for at least 10 hours for use during long operations, and a small easy to change battery for situations where the CF will carry a spare battery.
+\end{itemize}
