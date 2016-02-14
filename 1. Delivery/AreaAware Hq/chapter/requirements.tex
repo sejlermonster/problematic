@@ -166,8 +166,7 @@ This section specifies requirements on the behaviour of the system. The behaviou
 	Trigger/ &  \\ Precondition & Events or information must registered \\
 	\hline
 	Sub-Tasks: & \\
-	1. & Choose a custom event type as focus option \\
-		\hline
+	1. & Choose a custom event type* as focus option \\
 	2. & The focus option is highlighted on the demographic overview \\
 	\hline
 \end{longtable}
@@ -183,8 +182,8 @@ This section specifies requirements on the behaviour of the system. The behaviou
 	Trigger/ &  \\ Precondition & An Emergency Responders has already registered an event \\
 	\hline
 	Sub-Tasks: & \\
-	1. & Open the event history \\
-	2. & Present list of all registered events including timestamp  \\
+	1. & Click on a registered event \\
+	2. & Present list of events including Names, gps coordinate and even type  \\
 	\hline
 \end{longtable}
 
@@ -195,7 +194,7 @@ This section specifies requirements on the behaviour of the system. The behaviou
 \section{System external interface requirements}
 This section will describe the system’s external interfaces. Interfaces will be assigned a project-unique identifier. 
 
-The system will communicate with the system used by the Emergency Responders during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware HQ will follow the given interface to allow for SINE certification. AreaAware HQ will also make it possible to extend the capabilities of the SINE network by using the internet to extend the network. The AreaAware Hq Communication Model will be used to extend the possibilities of SINE and also use the internet to communicate with Emergency Responders.
+The system will communicate over the network used by the Emergency Responders during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware HQ will follow the given interface to allow for SINE certification. AreaAware HQ will also make it possible to extend the capabilities of the SINE network by using the internet to extend the network. The AreaAware Hq Communication Model will be used to extend the possibilities of SINE and also use the internet to communicate with Emergency Responders.
 
 The diagram shown on figure \ref{fig:externalInterface} explains the external interfaces of AreaAware Hq.
 
@@ -233,7 +232,7 @@ This section specifies the system requirement concerned with the maintaining sec
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement } \\
 	\hline
-	NF-03 &All external communication from AreaAware Hq is encrypted.  \\
+	NF-03 & All external communication from AreaAware Hq is encrypted.  \\
 	\hline
 \end{longtable}
 
@@ -295,7 +294,7 @@ Communication requirements for AreaAware HQ :
 	\hline
 	NF-15 & AreaAware HQ Communicates through the SINE network. \\
 	\hline
-	NF-16 & AreaAware HQ Communicates through the Internet to extend the capabilities of the SINE network \\
+	NF-16 & AreaAware HQ Communicates uses LTE to extend the capabilities of the SINE network \\
 	\hline
 	NF-17 & AreaAware HQ must have a connection available from either the SINE network or the internet with a download and upload bandwith of at least 100 kbit/s \\
 	\hline
@@ -317,7 +316,7 @@ AreaAware HQ Communication Modem Weight and dimension requirements:
 	\hline
 	NF-18 & AreaAware HQ Communication Modem will weigh up to 3 kilograms inclusive box and cables.  \\
 	\hline
-	NF-19 & AreaAware HQ Communication Modem will have the following dimensions: 10cmx30cmx20cm. \\
+	NF-19 & AreaAware HQ Communication Modem will have the following dimensions: 10cmx40cmx20cm. \\
 	\hline
 \end{longtable}
 
