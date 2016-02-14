@@ -5,46 +5,74 @@ This chapter on system requirements is organised into a number of sections. Both
 Every requirement has a project-unique identifier to support testing and traceability.
 
 \section{Scope}
-The goal of the system is to handle civilian crisis's in a more effective way. 
+The goal of the system is to handle civilian crisis's in a more effective way. This should be done by giving the Field Commander a Common Operational Picture to give situational awareness and support the Field Commander in the better communication with Emergency Responders in the field. 
 
 \subsection{Identification}
-To support the goal defined in the scope a system-of-interest will be developed. Based on the goal a system that gives the dismounted emergency mangement actor a common operational picture (COP) will be described throughout this document. The dismounted COP should make it easier to plan and evaluate a civilian crisis. It should also allow for better communication will multiple actors during a crisis.
+To support the goal defined in the scope AreaAware Dismounted will be developed. Based on the goal a system that gives the Field Commander a common operational picture (COP) will be described throughout this document. The COP should give the Field Commander situational awareness and the ability to command Emergency Responders during a civilian crisis. 
 
 This section includes a full identification of the system-of-interest to which this document applies.
-\myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.7} 
+\myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.6} 
+\FloatBarrier
 
-AreaAware Dismounted will include the development of a portable COP for the dismounted emergency management actor. AreaAware Dismounted will communicate with AreaAware Hq through the deinfed standard network used in these scenarios This network is called SINE(Sikkerhednetværket) and it follows an international standard for communication called TETRA which is used during crisis situations world wide. 
+AreaAware Dismounted will only include a development of the Common operation picture which will communicate with devices already used in civil crisis scenarios. AreaAware Dismounted will communicate over the defined standard network used in these scenarios. This network is called SINE(Sikkerhednetværket) and it follows an international standard for communication called TETRA which is used during crisis situations world wide. 
+
+AreaAware Dismounted will be communicate will already used devices but also the AreaAware HQ that can be used by the Emergency Commander. 
 
 \subsection{System overview}
-AreaAware dismounted will communicate with the already employed system used by emergency management actors and it will also communicate with AreaAware Hq. Emergency Mangement actors use the SINE network during crisis situations.
-
-The system will facilitate the commander in:
+AreaAware Dismounted will facilitate the Field Commander in:
 \begin{itemize}
 	\item Give a demographic overview of the crisis area
-	\item Let the dismounted emergency management actor locate events, things of interest and actors in the area
+	\item Let the Emergency Commander locate events, things of interest and actors in the area.
 \end{itemize}
+
+The system developed will contain of:
+\begin{itemize}
+	\item A native application
+	\item A portable device with the application installed and GPS, microphone, camera and LTE capabilities.
+\end{itemize}
+
+The device will be small and portable so that the Field Commander easily can bring it in the field during a civil crisis. It will have a native application installed that gives the Field Commander a Common Operational Picture. 
+
 
 \subsection{Document overview}
 \label{sec_documentOverview}
 This document will describe the functional and non-functional requirement of the system of interest. 
 
-The functional requirement is described using Task descriptions. These requirements describes what the system should be able to do. Task descriptions includes a Task name, the purpose of the Task and might include a precondition for the Task. The purpose should reflect the goals stated. The Tasks are furthermore described with sub-tasks that elaborates on the behavior of the system and user.  Variants are described to explain alternatives to the main sub-tasks. \citep{taskDescription}
+The functional requirements are described using Task descriptions in section \ref{sec_functional}. These requirements describes what the system should be able to do. Task descriptions includes a Task name, the purpose of the Task and might include a precondition for the Task. The purpose should reflect the goals stated. The Tasks are furthermore described with sub-tasks that elaborates on the behaviour of the system and user.  Variants are described to explain alternatives to the main sub-tasks. \citep{taskDescription}
 
-The non-functional requirements are divided up in sub-sections and categorized. The sub-sections used follows the template given from the SECaseBook part 2. \citep{casebook}
+The non-functional requirements are divided up in sub-sections and categorized. The following sections describes the non-functional requirements of the system: \ref{sec_nonFunc1}, \ref{sec_nonFunc2}, \ref{sec_nonFunc3}, \ref{sec_nonFunc4}, \ref{sec_nonFunc5}, \ref{sec_nonFunc6} and \ref{sec_nonFunc7} 
 
 
 %\section{Required states and modes}
 %If the system is required to operate in multiple states or modes, these states and modes shall be defined.
 
 \newpage
+\label{sec_functional}
 \section{System capability requirement}
-This section specifies requirements on the behaviour of the system. The behaviour is described with using Task descriptions explained in document overview \ref{sec_documentOverview}
+This section specifies requirements on the behaviour of the system. The behaviour is described with Task descriptions explained in document overview \ref{sec_documentOverview}.
 
 \subsection{TA-01}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
-	Task & Distribute text message \\
-	Purpose & Send text information to the platforms employed by the emergency management actors \\
+	Task & Demographic overview of crisis situation  \\
+	Purpose &  Give Emergency Commander situational awareness through a demographic overview of the crisis situation \\
+	Trigger/ &  \\ Precondition &  \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Access demografic overview of crisis situation \\
+	\hline
+	2. & Use the demografic overview to gain situational awareness of the crisis situation \\
+	\hline
+	3. & Use the demografic overview to better command the crisis situation \\
+	\hline
+\end{longtable}
+
+
+\subsection{TA-02}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Distribute information over text \\
+	Purpose & Send information over text to the platforms employed by the Emergency Responders \\
 	Trigger/ &  \\ Precondition &  \\
 	\hline
 	Sub-Tasks: & \\
@@ -53,64 +81,109 @@ This section specifies requirements on the behaviour of the system. The behaviou
 	3. & Distributes message to various actors \\
 	\hline
 	Variants: & \\
-	2a. & Geography criteria chosen \\
-	2b. & Role criteria chosen\\
-	2c. & Group criteria chosen\\
-	2d. & Identity criteria chosen\\
+	2a. & Geography criteria chosen. This selects Emergency Responders in a specific area \\
+	2b. & Role criteria chosen. This selects Emergency Responders with a specific role\\
+	2c. & Identity criteria chosen. This select an Emergency Responder with a specific identity \\
 	\hline
 \end{longtable}
 
-
-
-\subsection{TA-02}
-\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
-	\hline
-	Task & AreaAware Dismounted must receive registered events from currently employed platforms used by the emergency management actors \\
-	Purpose & Present registered event on the COP \\
-	Trigger/ &  \\Precondition & An emergency management actor registers event current employed platform \\
-	\hline
-	Sub-Tasks: & \\
-	1. & Receive registered observation event \\
-	2. & Present registered event for the dismounted emergency management actor \\
-	\hline
-	Variants: & \\
-	1a. & Receive registered location event \\
-	\hline
-\end{longtable}
-
-\FloatBarrier
 \newpage
-
 \subsection{TA-03}
 \begin{longtable}{| p{2.5cm}  | p{10cm} |  }
 	\hline
-	Task & The dismounted emergency management actor must be able to focus on various sources and types of information  \\
-	Purpose & Let the dismounted emergency management actor focus on different types of information to facilitate better situational awareness \\
-	Trigger/ &  \\ Precondition & Events or information must registered \\
+	Task & Distribute information over voice \\
+	Purpose & Send information over voice to the platforms employed by the Emergency Responders \\
+	Trigger/ &  \\ Precondition &  \\
 	\hline
 	Sub-Tasks: & \\
-	1. & Choose the demographic focus option \\
-	2. & Present the information relevant to the focus option \\
+	1. & Choose filtering criteria for filtering Emergency Responders \\
+	3. & Distributes information over voice to the Emergency Responders \\
 	\hline
 	Variants: & \\
-	1a. & Fresh water supplies focus option chosen \\
-	1b. & Demographic focus option chosen \\
-	1c. & Hazardous focus option chosen \\
-	1d. & Construction work focus option chosen \\
-	1e. & Location of actors focus option chosen \\
-	1f. & Observations made of actors focus option chosen \\
-	1g. & Weather information focus option chosen \\
+	2a. & Geography criteria chosen. This selects Emergency Responders in a specific area \\
+	2b. & Role criteria chosen. This selects Emergency Responders with a specific role\\
+	2c. & Identity criteria chosen. This select an Emergency Responder with a specific identity \\
 	\hline
 \end{longtable}
 
+\subsection{TA-04}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Distribute information over voice and video \\
+	Purpose & Send information over voice and video to the platforms employed by the Emergency Responders \\
+	Trigger/ &  \\ Precondition &  \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Choose filtering criteria for filtering Emergency Responders \\
+	3. & Distributes information over voice and video to the Emergency Responders \\
+	\hline
+	Variants: & \\
+	2a. & Geography criteria chosen. This selects Emergency Responders in a specific area \\
+	2b. & Role criteria chosen. This selects Emergency Responders with a specific role\\
+	2c. & Identity criteria chosen. This select an Emergency Responder with a specific identity \\
+	\hline
+\end{longtable}
+
+\newpage
+\subsection{TA-05}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task &  Present coordinate of each Emergency Responder on COP \\
+	Purpose & Give the Emergency Commander situational awareness over the resources of the Emergency Responders in the crisis area. \\
+	Trigger/ &  \\Precondition & An Emergency Responder is active in the crisis area\\
+	\hline
+	Sub-Tasks: & \\
+	1. & The coordinate of the Emergency Responder is show on the demografic overview \\
+	\hline
+	2. & Choose to focus on the Emergency Responders \\
+	\hline
+	3. & Name, Role and ID of the Emergency Responder becomes available \\
+	\hline
+\end{longtable}
+
+*Custom event is an event type created by the Emergency Commander. This lets the Emergency Commander create custom event types that fits each civilian crisis. The Emergency Responders can then choose to register a created event type. Each custom event is related to an event name and a GPS coordinate related to the event.
+
+
+\subsection{TA-06}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Create Custom event type and register an event as a Emergency Responder \\
+	Purpose & Let the Emergency Commander create custom event types to be registered by Emergency Responders. This lets the Emergency Commander choose relevant event types for each civilian crisis.  \\
+	Trigger/ &  \\Precondition & An  Emergency Responder registers event using currently employed platform \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Create Custom event type \\
+	2. & Register an observation of the created custom event type \\
+	3. & The observation of the custom event shows up on the demographic overview at the coordinate of registration. \\
+	\hline
+\end{longtable}
+
+\newpage
+\subsection{TA-07}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & The Emergency Commander must be able to focus on various sources and types of information  \\
+	Purpose & Let the Emergency Commander focus on different types of information to better command the situation \\
+	Trigger/ &  \\ Precondition & Events or information must registered \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Choose a custom event type* as focus option \\
+	2. & The focus option is highlighted on the demographic overview \\
+	\hline
+\end{longtable}
+
+*Custom event is an event type created by the Emergency Commander. This lets the Emergency Commander create custom event types that fits each civilian crisis. The Emergency Responders can then choose to register a created event type. Each custom event is related to an event name and a GPS coordinate related to the event.
 
 \FloatBarrier
 \newpage
 
+\label{sec_nonFunc1}
 \section{System external interface requirements}
 This section will describe the system’s external interfaces. Interfaces will be assigned a project-unique identifier. 
 
-The system will communicate with the system used by the Emergency Mangement Actors during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware Dismounted will follow the given interface to allow for SINE certification. AreaAware Dismounted will furthermore be able to communicate with AreaAware Hq. The diagram shown on figure \ref{fig:externalInterface} explains the external interfaces of AreaAware Hq.
+The system will communicate over the network used by the Emergency Responders during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware Dismounted will follow the given interface to allow for SINE certification. AreaAware Dismounted will also make it possible to extend the capabilities of the SINE network by using the LTE to extend the network. 
+
+The diagram shown on figure \ref{fig:externalInterface} explains the external interfaces of AreaAware Hq.
 
 \myFigure{InterfaceDiagram.png}{External interfaces}{fig:externalInterface}{1} 
 
@@ -120,8 +193,9 @@ The system will communicate with the system used by the Emergency Mangement Acto
 	\hline
 	NF-01 & The system will follow the interface defined by the SINE network.  \\
 	\hline
+	NF-02 & The system will extend the capabilities of the SINE network by also using LTE network communication  \\
+	\hline
 \end{longtable}
-
 %\section{System internal interface requirements}
 %This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
 
@@ -136,6 +210,7 @@ The system will communicate with the system used by the Emergency Mangement Acto
 %\section{Safety requirements}
 %System requirements concerning minimizing unintended hazards to personnel, property and the physical environment
 
+\label{sec_nonFunc2}
 \section{Secuirity and privacy requirements}
 This section specifies the system requirement concerned with the maintaining security and privacy.
 
@@ -143,10 +218,11 @@ This section specifies the system requirement concerned with the maintaining sec
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement } \\
 	\hline
-	NF-02 &All external communication from AreaAware Hq is encrypted.  \\
+	NF-03 & All external communication from AreaAware Dismounted is encrypted.  \\
 	\hline
 \end{longtable}
 
+\label{sec_nonFunc3}
 \section{System environment requirements}
 This paragraph shall specify the system requirements, if any, regarding the environment in which the system must operate.
 
@@ -154,19 +230,20 @@ This paragraph shall specify the system requirements, if any, regarding the envi
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement} \\
 	\hline
-	NF-03 & AreaAware Dismounted will be operational in temperatures from -10 degree celcius to 50 degree celsius.  \\
+	NF-04 & AreaAware Dismounted will be operational in temperatures from -30 degree celcius to 50 degree celsius.  \\
 	\hline
 \end{longtable}
 
+\label{sec_nonFunc4}
 \section{Computer resource requirements}
 This section specifies resource utilization requirements. It will be further divided into hardware and communications etc.
 
-The following hardware is used for the AreaAware Hq:
+The following hardware or better will be used in the device running the AreaAware Dismounted native application
 \begin{longtable}{| p{3.2cm} |  p{10cm} | }
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement} \\
 	\hline
-	NF-04 & Intel® Atom™ N2600 Dual Core, 1.6 GHz processor. \\
+	NF-05 & Intel® Atom™ N2600 Dual Core, 1.6 GHz processor. \\
 	\hline
 	NF-06 & 2 GB RAM. \\
 	\hline
@@ -176,20 +253,28 @@ The following hardware is used for the AreaAware Hq:
 	\hline
 	NF-09 & 1920x1080 resolution. \\
 	\hline
-	NF-10 &LI-145 battery. \\
+	NF-10 & Minimum of 24 hours of battery life. \\
 	\hline
 	NF-11 & GPS capabilities. \\
 	\hline
+	NF-12 & Microphone and speakers. \\
+	\hline
+	NF-13 & LTE network technology  \\
+	\hline
 \end{longtable}
 
-Communication used by AreaAware Hq:
+Communication used by AreaAware Dismounted:
 \begin{longtable}{| p{3.2cm} |  p{10cm} | }
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement} \\
 	\hline
-	NF-12 & AreaAware Dismounted is SINE certified.  \\
+	NF-14 & AreaAware Dismounted is SINE certified.  \\
 	\hline
-	NF-13 & AreaAware Dismounted Communicates through the SINE network. \\
+	NF-15 & AreaAware Dismounted Communicates through the SINE network. \\
+	\hline
+	NF-16 & AreaAware Dismounted Communicates through LTE network to extend the capabilities of the SINE network \\
+	\hline
+	NF-17 & AreaAware Dismounted must have a connection available from either the SINE network or the internet with a download and upload bandwith of at least 100 kbit/s \\
 	\hline
 \end{longtable}
 
@@ -198,7 +283,7 @@ Communication used by AreaAware Hq:
 %This paragraph specifies quantitative requirements concerning system functionality, reliability, maintainability, availability, flexibility, portability (software), reusability, testability, usability an other attributes.
 
 
-
+\label{sec_nonFunc5}
 \section{Design and construction constraints}
 This section specifies the requirements, that constrain the construction of the system
 
@@ -207,11 +292,13 @@ AreaAware Weight and dimension requirements:
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement}. \\
 	\hline
-	NF-14 & AreaAware Hq will weigh up to 200 grams.  \\
+	NF-18 & AreaAware Dismounted will weigh up to 200 grams.  \\
+	\hline
+	NF-19 & AreaAware Dismounted will have the dimensions in the range from 10 x 5 x 0.5 cm to 20 x 10 x 2 cm.  \\
 	\hline
 \end{longtable}
 
-
+\label{sec_nonFunc6}
 \section{Personnel-related requirements}
 This paragraphs specifies the requirements, included to accommodate the number, skill levels, duty cycles, training needs, or other information about the personnel who will use or support the system.
 
@@ -220,11 +307,11 @@ This paragraphs specifies the requirements, included to accommodate the number, 
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement } \\
 	\hline
-	NF-15 & The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}.  \\
+	NF-20 & The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}.  \\
 	\hline
-	NF-16 & A user manual will be available for the dismounted emergency management actor who uses the AreaAware Dismounted. \\
+	NF-21 & A user manual will be available for the dismounted emergency management actor who uses the AreaAware Dismounted. \\
 	\hline
-	NF-17 & 2-day training will be available for every emergency management actor who uses the AreaAware Dismounted. \\
+	NF-22 & 2-day training will be available for every emergency management actor who uses the AreaAware Dismounted. \\
 	\hline
 \end{longtable}
 
@@ -261,6 +348,7 @@ The Company will, at its option:
 %This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
 
 \newpage
+\label{sec_nonFunc7}
 \section{Packaging requirements}
 This paragraphs specifies the requirements, if any, for packaging, labling and handling the systems and its components for delivery.
 
@@ -268,6 +356,6 @@ This paragraphs specifies the requirements, if any, for packaging, labling and h
 	\hline
 	\textbf{Requirement id} &  \textbf{Requirement } \\
 	\hline
-	NF-18 & AreaAware Dismounted will be distributed as a native application already installed and ready to use. \\
+	NF-23 & AreaAware Dismounted will be distributed as a native application already installed on the device and ready to use. \\
 	\hline
 \end{longtable}
