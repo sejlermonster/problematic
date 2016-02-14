@@ -2,18 +2,16 @@
 \chapter{Interface design}
 Each interface will be described throughout this chapter. Each interface will be given a unique id. If the interface is internal the id will be on the form \emph{II-XX}. If the interface is external the id will be given on the form \emph{EI-XX}. Diagrams will support the understanding of interfaces and each interface description will be given a name, version number and reference relevant documents.
 
-The interface description will be divided up into subsystems: AreaAware Hq, AreaAware Dismounted, AreaAware Server.
+The interface description will be divided up into subsystems: AreaAware HQ, AreaAware Dismounted, AreaAware Server.
 
-AreaAware Hq provides the Emergency Commander with a Common Operational Picture (COP). The COP also allows the Emergency Commander to communicate with Emergency Responders.
+AreaAware HQ provides the Emergency Commander with a Common Operational Picture (COP). The COP also allows the Emergency Commander to communicate with Emergency Responders.
 
 AreaAware Dismounted provides the Field Commander with a Common Operational Picture. This also allows the the Field Commander to communicate with Emergency Responders. 
 
-AreaAware Server provides a high speed server solution for communication between AreaAware Hq, AreaAware Dismounted and already used solution. This server communicates with AreaAwareHq, AreaAware Dismounted and other already implemented solutions through the SINE network. The AreaAware Server also makes it possible to extend the network capabilities of SINE through the use of a high speed internet connection.
+AreaAware Server provides a high speed server solution for communication between AreaAware HQ, AreaAware Dismounted and already used solution. This server communicates with AreaAwareHQ, AreaAware Dismounted and other already implemented solutions through the SINE network. The AreaAware Server also makes it possible to extend the network capabilities of SINE through the use of a high speed internet connection.
 
 
-\section{AreaAware Hq}
-
-\subsection{IE-01 - AreaAware Server}
+\section{AreaAware HQ}
 
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
@@ -23,11 +21,11 @@ AreaAware Server provides a high speed server solution for communication between
 	\hline
 	Status & Under development \\
 	\hline
-	 Description & The AreaAware Hq Will communicate with the AreaAware Server. All communication to and from the AreaAware Hq will go through the AreaAware Server. 
+	 Description & The AreaAware HQ Will communicate with the AreaAware Server. All communication to and from the AreaAware HQ will go through the AreaAware Server. 
 	  \\
 	\hline
-	 Interfaces & AreaAware Hq sends message To AreaAware Server.  \\
-					   & AreaAware Hq receives different events from AreaAware Server  \\
+	 Interfaces & AreaAware HQ sends message To AreaAware Server.  \\
+					   & AreaAware HQ receives different events from AreaAware Server  \\
 	\hline
 \end{longtable}
 
@@ -40,7 +38,7 @@ AreaAware Server provides a high speed server solution for communication between
 	\hline
 	Status & Under development \\
 	\hline
-	Description & The AreaAware Hq will be powered through a 230 volt charger.	\\
+	Description & The AreaAware HQ will be powered through a 230 volt charger.	\\
 	\hline
 	Interface &  Electrical outlet plug standard type C, type E,  type F,  type H, type K \\
 	\hline
@@ -54,7 +52,7 @@ AreaAware Server provides a high speed server solution for communication between
 	\hline
 	Status & Under development \\
 	\hline
-	Description & The AreaAware Hq will allow external laptops to be connected. After connected the laptop is allowed access to the COP through a web application.	\\
+	Description & The AreaAware HQ will allow external laptops to be connected. After connected the laptop is allowed access to the COP through a web application.	\\
 	\hline
 	Interface & Category 5 cable \\
 	\hline
@@ -62,31 +60,41 @@ AreaAware Server provides a high speed server solution for communication between
 
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
-	\textbf{EI-02} &  \textbf{External network connection} \\
+	\textbf{EI-02} &  \textbf{SINE interface} \\
 	\hline
 	Version & v0.1 \\
 	\hline
 	Status & Under development \\
 	\hline
-	Description & The AreaAware Hq will access the internet and SINE network through a standard internet connection	\\
+	Description & The AreaAware HQ Will communicate over the SINE network via \emph{ICCS} \footnote{\url{http://www.sikkerhedsnet.dk/om-sine/nettets-opbygning/iccs-og-radiodispatch/}}. AreaAware HQ should be able to receive messages from \emph{ICCS} and distributes these to relevant parties through the \emph{ICCS}. AreaAware HQ should be able to send events to \emph{ICCS}.
+	\\
 	\hline
-	Interface & Category 5 cable \\
+	Needed interfaces 
+	& AreaAware HQ receives messages from \emph{ICCS} \\
+	& AreaAware HQ distributes messages to \emph{ICCS} \\
+	& AreaAware HQ sends different types of events to \emph{ICCS} \\
+	& AreaAware HQ receives different types of events from \emph{ICCS} \\
 	\hline
 \end{longtable}
 
-
-
-Eksterne:
-Internet
-SINE Network
-
-
-
-
-
-
-Interne: 
-AreaAware Server
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-03} &  \textbf{LTE interface} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware HQ Will communicate over the \emph{LTE} network\footnote{\url{http://www.extremetech.com/mobile/110711-what-is-lte}}.
+	\\
+	\hline
+	Needed interfaces 
+	& AreaAware HQ receives messages from AreaAware Server and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware HQ distributes messages to AreaAware Server and AreaAware Dismounted via \emph{LTE} network \\ 
+	& AreaAware HQ sends different types of events to AreaAware Server and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware HQ receives different types of events from AreaAware Server and AreaAware Dismounted via \emph{LTE} network \\
+	\hline
+\end{longtable}
 
 \section{AreaAware Dismounted}
 This subsystem will be developed by a third-party subcontractor.
@@ -102,23 +110,23 @@ GPS sattelitter
 \section{AreaAware Server}
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
-	\textbf{IE-02} &  \textbf{AreaAware Hq interface } \\
+	\textbf{IE-02} &  \textbf{AreaAware HQ interface } \\
 	\hline
 	Version & v0.1 \\
 	\hline
 	Status & Under development \\
 	\hline
-	Description & The AreaAware Server Will communicate with the AreaAware Hq. AreaAware Server should be able to receive messages from AreaAware Hq and distributes these to relevant parties.  AreaAware Hq should be able to send events and messages to AreaAware Hq.
+	Description & The AreaAware Server Will communicate with the AreaAware HQ. AreaAware Server should be able to receive messages from AreaAware HQ and distributes these to relevant parties.  AreaAware HQ should be able to send events and messages to AreaAware HQ.
 	\\
 	\hline
 	Needed interfaces & AreaAware Server receives message from AreaAware \\
-	& AreaAware Server sends different types of events to AreaAware Hq \\
+	& AreaAware Server sends different types of events to AreaAware HQ \\
 	\hline
 \end{longtable}
 
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
-	\textbf{EI-03} &  \textbf{SINE interface} \\
+	\textbf{EI-04} &  \textbf{SINE interface} \\
 	\hline
 	Version & v0.1 \\
 	\hline
@@ -137,7 +145,7 @@ GPS sattelitter
 
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
-	\textbf{EI-04} &  \textbf{LTE interface} \\
+	\textbf{EI-05} &  \textbf{LTE interface} \\
 	\hline
 	Version & v0.1 \\
 	\hline
@@ -147,16 +155,9 @@ GPS sattelitter
 	\\
 	\hline
 	Needed interfaces 
-	& AreaAware Server receives messages from AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
-	& AreaAware Server distributes messages to AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\ 
-	& AreaAware Server sends different types of events to AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
-	& AreaAware Server receives different types of events from AreaAware Hq and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware Server receives messages from AreaAware HQ and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware Server distributes messages to AreaAware HQ and AreaAware Dismounted via \emph{LTE} network \\ 
+	& AreaAware Server sends different types of events to AreaAware HQ and AreaAware Dismounted via \emph{LTE} network \\
+	& AreaAware Server receives different types of events from AreaAware HQ and AreaAware Dismounted via \emph{LTE} network \\
 	\hline
 \end{longtable}
-
-
-Eksterne:
-
-Internet: 
-AreaAware Dismounted
-AreaAware Hq
