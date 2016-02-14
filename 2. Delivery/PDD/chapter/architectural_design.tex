@@ -1,4 +1,4 @@
-%!TEX root = ../../thesis.tex
+%!TEX root = ../PDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
@@ -20,18 +20,18 @@ To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists withi
 
 \myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. To 1 AreaAware, can various AreaAware Dismounted and AreaAware HQ exists, but only a single AreaAware Server.}{fig:bbd_overview}{1}
 
-\noindent Each of these main components consists of subcomponents, which gives functionality for solving the requirements. \todojens{}{Ref til SRS}\\
+\noindent Each of these main components consists of subcomponents, which gives functionality for solving the requirements described in  AreaAware-SRS-20160214-01-02 \&  AreaAware-DISSRS-20160214-01-02.
 
 
 \subsection{AreaAware Dismounted}
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware Dismounted \\
-    \textbf{Block ID}       & SA-AA-DI & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Device for the Field Commander to interact\\with AreaAware\\}}  \\
+    \textbf{Block ID}       & SA-AA-DI \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Device for the Field Commander to interact\\ with AreaAware}}  \\
     \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & Dismounted FOOBAR & PDD \\
+    \textbf{Related}    & \textbf{ID} & \textbf{Document ID} \\
+    Requirements & All & AreaAware-DISSRS-20160214-01-02 \\
+    Design decisions & Dismounted FOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Field Commander will interact with AreaAware through mobile device called AreaAware Dismounted.
@@ -40,18 +40,18 @@ AreaAware work with or without AreaAware Dismounted present in the system.
 There can various AreaAware Dismounted connected to AreaAware at the same time.
 
 The main design of AreaAware Dismounted is subcontracted to a subcontractor of Problematic.
-This design is based on the requirements specified by Problematic in document\todo{SRS ref}.
+This design is based on the requirements specified by Problematic in document  AreaAware-DISSRS-20160214-01-02.
 The design architecture of AreaAware Dismounted will therefore not be specified here any further.
 
 \subsection{AreaAware HQ}
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware HQ \\
-    \textbf{Block ID}       & SA-AA-HQ  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Main interaction for the Emergency Commander\\with AreaAware\\}}  \\
+    \textbf{Block ID}       & SA-AA-HQ  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Main interaction for the Emergency Commander\\ with AreaAware}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & HQFOOBAR & PDD \\
+    Requirements & All & AreaAware-SRS-20160214-01-02 \\
+    Design decisions & HQFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Emergency Commander will manage the situation right at a (mobile or not mobile) headquarter.
@@ -66,58 +66,58 @@ There can up to 8 Web Presenters within AreaAware HQ.
 Only a single Communication Modem is sufficient.
 
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web Presenter\\
-    \textbf{Block ID}       & SA-AA-HQ-WP & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Essentially a web browser showing the AreaAware Web UI.\\\\}}  \\
+    \textbf{Block ID}       & SA-AA-HQ-WP  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Essentially a web browser showing the \\ AreaAware Web UI.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & HQ-WEBFOOBAR & PDD \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-05, NF-06, NF-07, NF-08,\\ NF-09, NF-10, NF-11, NF-23} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & HQ-WEBFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Communication Modem\\
-    \textbf{Block ID}       & SA-AA-HQ-CM  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.\\}}  \\
+    \textbf{Block ID}       & SA-AA-HQ-CM  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & HQ-COMFOOBAR & PDD \\
+    Requirements & \makecell[l]{NF-01, NF-02, NF-03, NF-04,\\ NF-12, NF-13, NF-14, NF-15,\\ NF-16, NF-17, NF-18, NF-19} & AreaAware-SRS-20160214-01-02 \\
+    Design decisions & HQ-COMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & SINE Communicator\\
-    \textbf{Block ID}       & SA-AA-HQ-CM-SC  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
+    \textbf{Block ID}       & SA-AA-HQ-CM-SC  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & HQ-SINECOMFOOBAR & PDD \\
+    Requirements & \makecell[l]{NF-01, NF-02, NF-14, NF-15,\\ NF-17} & AreaAware-SRS-20160214-01-02 \\
+    Design decisions & HQ-SINECOMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{3}{l}}
-    \textbf{Block name}     & Commercial Internet Communicator\\
-    \textbf{Block ID}       & SA-AA-HQ-CM-CI  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with the commercial internet\\such as LTE/4G or such.\\}}  \\
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & \multicolumn{2}{l}{Commercial Internet Communicator} \\
+    \textbf{Block ID}       & SA-AA-HQ-CM-CI  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with the commercial internet\\such as LTE/4G or such.\\}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & HQ-INTCOMFOOBAR & PDD \\
+    Requirements & NF-16, NF-17 & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & HQ-INTCOMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
 
 \subsection{AreaAware Server}
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware Server \\
     \textbf{Block ID}       & SA-AA-SE  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Provide AreaAware HQ, AreaAware Dismounted\\and Emergency Responder with data.\\Keeper of all system logistics.}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Provide AreaAware HQ, AreaAware Dismounted\\and Emergency Responder with data.\\Keeper of all system logistics.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & Server FOOBAR & PDD \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-01, NF-02, NF-03, NF-12,\\ NF-13, NF-14, NF-15, NF-16,\\ NF-18, NF-19} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & Server FOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -129,56 +129,56 @@ To manage all data
 
 
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Database\\
     \textbf{Block ID}       & SA-AA-SE-DB  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Contain and manage all relevant of AreaAware.\\\\}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain and manage all relevant of AreaAware.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & SE-DBFOOBAR & PDD \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & SE-DBFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web UI\\
     \textbf{Block ID}       & SA-AA-SE-UI  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Hosting the Website used by AreaAware HQ\\\\}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Hosting the Website used by AreaAware HQ}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & SE-WEBUIFOOBAR & PDD \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & SE-WEBUIFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Communication Modem\\
     \textbf{Block ID}       & SA-AA-SE-CM  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.\\}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & SE-COMFOOBAR & PDD \\
+    Requirements & \makecell[l]{NF-01, NF-02, NF-03, NF-04,\\ NF-12, NF-13, NF-14, NF-15,\\ NF-16, NF-17, NF-18, NF-19} & AreaAware-SRS-20160214-01-02 \\
+    Design decisions & SE-COMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
-\begin{tabular}{l|*{3}{l}}
+\begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & SINE Communicator\\
-    \textbf{Block ID}       & SA-AA-SE-CM-SC  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
+    \textbf{Block ID}       & SA-AA-SE-CM-SC  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & SE-SINECOMFOOBAR & PDD \\
+    Requirements & \makecell[l]{NF-01, NF-02, NF-14, NF-15,\\ NF-17} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & SE-SINECOMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{3}{l}}
-    \textbf{Block name}     & Commercial Internet Communicator\\
-    \textbf{Block ID}       & SA-AA-SE-CM-CI  & \\
-    \textbf{Purpose}        &\multicolumn{3}{l}{\makecell[l]{Manages communication with the commercial internet\\such as LTE/4G or such.\\}}  \\
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & \multicolumn{2}{l}{Commercial Internet Communicator}\\
+    \textbf{Block ID}       & SA-AA-SE-CM-CI  \\
+    \textbf{Purpose}        & \multicolumn{2}{l}{\makecell[l]{Manages communication with the commercial internet\\ such as LTE/4G or such.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    System Requirements & 1337 & SRS-ID \\
-    Systemwide Design Decisions & SE-INTCOMFOOBAR & PDD \\
+    Requirements & NF-16, NF-17 & AreaAware-SRS-20160214-01-02 \\
+    Design decisions & SE-INTCOMFOOBAR & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -236,4 +236,4 @@ This functionality can be split in setups with multiple device, to ensure downti
 
 \section{Interface design}
 \label{sec:arch_interface}
-
+The interface design of the system is described in a separate document named \emph{Interface design} with document ID \todo{insert document ID}. 
