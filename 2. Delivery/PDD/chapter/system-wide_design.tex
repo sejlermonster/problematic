@@ -26,7 +26,6 @@ The outputs of the system are as follows:
 	\item \textbf{Commands:} The actual command, send by an EC or FC to a ER or FC. A Command could be specifying a specific unit where to move or how to handle a situation.
 \end{itemize}
 
-\newpage
 \section{Data appearance}
 Appearance of data for the user will happen on a User Interface on a screen. For the FC, the screen is on the AreaAware Dismounted, which provides a condensed COP in a native app. For the EC, the screen is a monitor, which is connected to a computer, running the AreaAware Web Interface. Figure \ref{fig:UI} shows an example of how the User Interface for the AreaAware Web Interface could be designed. 
 
@@ -35,25 +34,32 @@ Appearance of data for the user will happen on a User Interface on a screen. For
 \newline Three buttons can be used by the commanders to create an Event, send a Command or send a message. These functionalities can also be accessed intuitively by clicking on the COP.}{fig:UI}{1}
 
 \section{Safety, security and privacy}
-The security of the data connection is very important for the system to work. Therefore, the system 
+The security of the data connection is very important for the system to work. Therefore, a design decision has been made to utilize the SINE-network for data security, when no connection can be established to the commercial Internet \citep{SINE_artikel}. 
 
-
-
-
+To maximize the data transfer speed between the different actors of the system, AraAware connects to the commercial Internet by default. To have the same data safety as the SINE standard, the transferred data is encrypted the same way as with the SINE standard, or the Tetra standard in cases where this is used. This ensures that data sent through the AreaAware system meets the data security requirements set by the Government.
 
 
 \section{Design and construction choices}
-AreaAware HQ consist of a Web App and a communication modem. The Web App is running on the EC's own computer solutions handled by the server, and will therefore not have any physical design criteria, apart from the hardware requirements stated in the SRS. The Communication modem will direct the connection from the Web App either over the internet or the SINE network. This will be a physical box with two connections for the internet and SINE, and 8 Ethernet connections for EC's to connect their computers. This modem will have to be as small as possible because the Emergency Headquarters Station is packed with equipment and personal.
+AreaAware HQ consist of a Web App and a Communication Modem. The Web App is running on the EC's own computer solutions handled by the server. 
 
-The AreaAware Dismounted unit is bounded by the physical decisions listed below.
+The Communication modem will direct the connection from the Web App either over the commercial Internet or the SINE network. This will be a physical box with two connections for the commercial Internet and SINE, and 8 Ethernet connections for EC's to connect their computers. This modem will have to be as small as possible because the Emergency Headquarters Station is packed with equipment and personnel.\\
 
+\noindent \textbf{The AreaAware HQ} is bounded by the following physical design decisions.
 \begin{itemize}
-  \item A screen of 10" to 12" for having enough display size to show the COP for the FC.
-  \item The screen needs back light for the FC to be able to use it during the night.
-  \item Speaker, microphone and camera for the FC to do different forms of communication to the EC's or ER's.
-  \item The AreaAware Dismounted needs to be ergonomic and weight no more than 0.5 kg, for FC to use it for many hours.
-  \item It have be a bright and easy to see color, both for the FC to be able to finding the AreaAware Dismounted, and for easy identification of the FC when he holds it.
-  \item The screen have to be usable in wet conditions and with glows.
-  \item The AreaAware Dismounted unit will be used in many physicality changeling situations, so et needs to be shock resistant, drop resistant, water prof and dust prof.
-  \item A battery life for at least 10 hours for use during long operations, and a small easy to change battery for situations where the CF will carry a spare battery.
+	\item A monitor for displaying the User Interface (ie. the Web App)
+	\item The monitor needs to be connected to a computer with a browser.
+	\item The computer will have to be connected to the Communication Modem, so an ethernet port is needed.
+	\item A speaker and microphone is necessary for voice communication. \\
+\end{itemize}
+
+\noindent \textbf{The AreaAware Dismounted} unit is bounded by the physical decisions listed below.
+\begin{itemize}
+  \item A size of 10 to 12 inches. Large enough to show the COP properly for the FC, but not impractically large.
+  \item The screen needs to have backlight for the FC to be able to use it during the night.
+  \item A Speaker, microphone and camera is needed for the FC to do different forms of communication to the EC's or ER's.
+  \item The AreaAware Dismounted needs to be ergonomic and weigh no more than 0.5 kg, for the FC to use it for many hours.
+  \item It has be a bright color, making it easy to spot and identify the AreaAware Dismounted and the FC holding it.
+  \item The screen have to be usable in wet conditions and with gloves.
+  \item The AreaAware Dismounted unit will be used in many physically challenging situations, so it needs to be shock resistant, drop resistant, water proof and dust proof.
+  \item A battery life for at least 10 hours for use during long operations, and an easy-to-change battery for situations where the CF will carry a spare battery.
 \end{itemize}
