@@ -187,20 +187,52 @@ To manage all data
 
 
 \section{Concept of execution}
+\label{sec:concept_execution}
+
+The main components of interact with each other.
+Emergency Commanders interacts with AreaAware HQ.
+This could be event registration or a command decision or getting a situation awareness.
+Data the AreaAware HQ's Web Presenter show, are stored and managed by AreaAware Server.
+The AreaAware HQ has two ways of communicating to AreaAware Server, therefore given following two scenarios:
+\begin{itemize}
+\item AreaAware HQ's Communication Modem has valid connection via commercial internet.
+\item AreaAware HQ's Communication Modem has not valid connection via commercial internet.
+\end{itemize}
+In scenarios where AreaAware HQ has connection via commercial internet, data will be transmitted using that between AreaAware Server and AreaAware HQ.
+If not, then will data transmitted through SINE.
+
+\myFigure{arch/modem.png}{The AreaAware HQ has modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
+
+\noindent Same goes with data between AreaAware Dismounted and AreaAware Server.
+In scenarios where the AreaAware Dismounted has valid connection via commercial internet, data between AreaAware Server and AreaAware Dismounted will be transmitted using that.
+However it is likely that the AreaAware Dismounted will operate in situations where no commercial internet available.
+In such scenario the data will be transmitted via SINE.\\
+
+\noindent All combinations of above scenario can seen in figure \ref{fig:ce}.
+Note that a emergency commander always communicate with AreaAware via SINE.
 
     \begin{figure}[ht]
         \centering
-        \subbottom[{c}\label{d}]%
-            {\includegraphics[width=0.47\textwidth]{arch/ce_1.png}}\quad\quad
-        \subbottom[{c}\label{d}]%
+        \subbottom[{Scenario 1: Both AreaAware HQ and AreaArea Dismounted has connection to AreaAware Server via commercial internet.}\label{fig:ce_a}]%
+            {\includegraphics[width=0.47\textwidth]{arch/ce_4.png}}\quad\quad
+        \subbottom[{Scenario 2: AreaAware HQ has has connection to AreaAware Server via commercial internet. AreaAware Dismounted has connection to AreaAware Server via SINE.}\label{fig:ce_b}]%
             {\includegraphics[width=0.47\textwidth]{arch/ce_2.png}}
-        \subbottom[{c}\label{d}]%
+        \subbottom[{Scenario 3: AreaAware HQ has connection to AreaAware Server via SINE. AreaAware Dismounted has connection to AreaAware Server via commercial internet.}\label{fig:ce_c}]%
             {\includegraphics[width=0.47\textwidth]{arch/ce_3.png}}\quad\quad
-        \subbottom[{c}\label{d}]%
-            {\includegraphics[width=0.47\textwidth]{arch/ce_4.png}}
-        \caption{e}
-        \label{f}
+        \subbottom[{Scenario 4: Both AreaAware HQ and AreaAware Dismounted has connection to AreaAware Server via server.}\label{fig:ce_d}]%
+            {\includegraphics[width=0.47\textwidth]{arch/ce_1.png}}
+        \caption{eThe connection to AreaAware Server can be done through commericial internet or SINE. Emergency Responder contacts always via SINE.}
+        \label{fig:ce}
     \end{figure}
+
+
+
+The AreaAware Server has connection to both SINE and the commercial internet.
+The AreaAware Server will serve data to the communication the client (AreaAware HQ or AreaAware Dismounted) is using.
+If the AreaAware Server has no connection either, AreaAware unsable.
+However the AreaAware Server is not a single device, but more of function.
+This functionality can be split in setups with multiple device, to ensure downtime on the AreaAware.
+
 
 \section{Interface design}
 \label{sec:arch_interface}
