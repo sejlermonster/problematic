@@ -22,7 +22,7 @@ Primary missions:
 	\item Emergency Commanders (ECs): \\
 	These Commanders are located in the mobile Headquarters, and are able to utilize the full capabilities of the COP. They can receive events registered using employed platforms from various actors and send information to these platforms.
 	\item Field Commanders (FCs):\\
-	Emergency Commanders who are located in the field. They will have access to a condensed version of the COP on a hand-held device, called the Dismounted COP.
+	Emergency Commanders who are located in the field. They will have access to a condensed version of the COP on a hand-held device, called the AreaAware Dismounted.
 \end{itemize}
 	
 \noindent Secondary users:
@@ -36,7 +36,7 @@ Primary missions:
 	\item The State/society: \\
 	Is interested in the system as the State will likely be the ones utilizing the system, and its capabilities to handle an emergency situation. The entire system is being implemented to provide a better service in emergency situations for society.
 	\item Subcontractor:\\
-	The subcontractor is tasked with developing the Dismounted COP for the Field Commanders.
+	The subcontractor is tasked with developing the AreaAware Dismounted for the Field Commanders.
 \end{itemize}
 
 
@@ -48,9 +48,9 @@ Several policies, laws and restrictions that are in place under everyday situati
 \noindent \textbf{Assumptions}
 \begin{enumerate}
 	\itemsep0em
-	\item The subcontractor will deliver a satisfactory product, satisfying the specified requirements for the Dismounted COP.
+	\item The subcontractor will deliver a satisfactory product, satisfying the specified requirements for the AreaAware Dismounted.
 	\item It is possible for the Emergency Responders to implement features making it possible to register events to and receive orders from ECs.
-	\item The mobile HQ, hand-held devices of the FCs and the Emergency Responders’ separate systems are compatible with the SINE network.
+	\item The AreaAware HQ, hand-held devices of the FCs and the Emergency Responders’ separate systems are compatible with the SINE network.
 	\item Connection can be established to the SINE network for all relevant devices, allowing communication.
 \end{enumerate}
 
@@ -61,42 +61,37 @@ Several policies, laws and restrictions that are in place under everyday situati
 
 \section{Operation Description | Operating Concept (OpCon), Employment Modes}
 
-This section describe the environment in which the system is operating, and interfaces to the surrounding actors and subsystems.
+This section describe the environment in which the system is operating, and the interfaces to the surrounding actors and subsystems.
 
 \subsection{Operational Concept}
 The figure below show the overall principle of the AreaAware system, and how it is connected the various users and subsystems.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1\linewidth]{figure/OpCon.png}
-	\caption{Operating concept, showing the major players, systems and subsystems and their interrelationships}
-	\label{fig:OpCon}
-\end{figure}
+\myFigure{OpCon.png}{Operating concept, showing the major players, systems and subsystems and their interrelationships}{fig:OpCon}{0.8}
 
 \FloatBarrier
 
-\noindent The AreaAware system contain two parts, the Mobile HQ and the Dismounted COP. The Mobile HQ provide situational awareness for the EC's inside the EHS, and the Dismounted COP provide situational awareness for the FC's at various positions inside disaster zone. AreaAware use the SINE network for communication with the ER's. This way the EC's and FC's are able to get information and issue orders to any part of the personnel involved in resolving a disaster situation.
+\noindent The AreaAware system contain three parts, the AreaAware HQ, the AreaAware Dismounted and the AreaAware Server. The AreaAware HQ provide situational awareness for the EC's inside the EHS, and the AreaAware Dismounted provide situational awareness for the FC's at various positions inside disaster zone. AreaAware use the SINE network for communication with the ER's. This way the EC's and FC's are able to get information and issue orders to any part of the personnel involved in resolving a disaster situation. Both the AreaAware HQ and the AreaAware Dismounted units are connected to the AreaAware Server, for data exchange over the internet. The AreaAware Server also have a connection to the SINE network for communication when the AreaAware HQ or one of the AreaAware Dismounted units doesn't have access to the internet.
 
 \subsection{Employment Modes}
 \textbf{Idle:} The system is not in active use, but is ready for fast deployment is case of a large-scale civil emergency.\\
 
-\noindent \textbf{Deployment:} The Mobile HQ is deployed with the EHS in the area affected by a disaster, and communication is established with all involved ER's and FC's using SINE.\\
+\noindent \textbf{Deployment:} The AreaAware HQ is deployed with the EHS in the area affected by a disaster, and communication is established with all involved ER's and FC's using SINE.\\
  
 \noindent \textbf{Live disaster management:} Gather information from the ER's, present these data for the EC's and FC's, and send commands to the ER's for solving the disaster.\\
 
 \noindent \textbf{Emergency power mode:} A mobile power source is used, when the general power grid is offline.
 
 \subsection{Scheduling and Operations Planning}
-The mobile HQ and Dismounted COP will be a part of the Danish emergency Management Agency’s mobile equipment for disaster handling, and will have to be ready for deployment 24/7.
+The AreaAware HQ and AreaAware Dismounted will be a part of the Danish emergency Management Agency’s mobile equipment for disaster handling, and will have to be ready for deployment 24/7.
 
 \subsection{Operating Environment}
 \noindent \textbf{Geographic Area:}\\
 The AreaAware system can be deployed in any geographic area affected by a major disaster, but for simplicity it is constrained to be in Denmark. \\
 
 \noindent \textbf{Environmental Conditions:}\\
-The Mobile HQ is located with the ECs inside the EHS. The vehicle/station will shield the system against bad weather conditions and ect.
+The AreaAware HQ is located with the ECs inside the EHS. The vehicle/station will shield the system against bad weather conditions and ect.
 
-The Dismounted COP can experience a wide range of environmental scenarios. This include temperature ranges, humidity levels, weather conditions and ect. The FC's is located close to the action inside the disaster zone. It is therefore important that the FC can get a overview and make quick decisions in stressful situations.
+The AreaAware Dismounted can experience a wide range of environmental scenarios. This include temperature ranges, humidity levels, weather conditions and ect. The FC's is located close to the action inside the disaster zone. It is therefore important that the FC can get a overview and make quick decisions in stressful situations.
 
 \subsection{Threats and Hazards}
 As AreaAware is deployed in a disaster situation there are potential hazards relating to the environment. It is likely that the system will experience extreme weather situations like hurricanes and floods.
@@ -104,7 +99,7 @@ As AreaAware is deployed in a disaster situation there are potential hazards rel
 Data security is important for the communication between the actors in the system. It would e.g be a problem if a group of terrorist could track the police’ movements by hacking the AreaAware communication network.
 
 \subsection{Interoperability with Other Elements}
-The Mobile HQ have a general interface for a wide range of equipment, for supplying situational awareness for the ECs. The Mobile HQ also have an interface to the SINE network and an internet connection. The Dismounted COP will also need an interface to the SINE network for communication.
+The AreaAware HQ have a general interface for a wide range of equipment, for supplying situational awareness for the ECs. The AreaAware HQ also have an interface to the SINE network and an internet connection. The AreaAware Dismounted will also need an interface to the SINE network for communication.
 
 \newpage
 \section{Product Support Description}
@@ -133,7 +128,7 @@ The Six Facets of Readiness \cite{Six_facets} https://www.uscg.mil/acquisition/n
 As the system is not directly involved with any physically demanding task, there is no need to consider the medical care of the users of this system.
 
 \subsection{Training}
-The users of this system will have a user manual to refer to, describing all the features of the system in a user-friendly manner. If need be, the user can call our 24/7 support with questions.
+2-day training will be available for every Emergency Commander and Field Commander who uses the AreaAware system. The users will also have a user manual to refer to, describing all the features of the system in a user-friendly manner. If need be, the user can call our 24/7 support with questions.
 
 \subsection{Equipment}
 The configuration control of the system is maintained by the actors, with cooperation of the CSP. If configuration control of the system is not maintained, a user manual, as well as 24/7 support according to the Software Warranty. 
@@ -149,7 +144,7 @@ In accordance with the Software Warranty, access is available 24/7 to the servic
 
 \subsection{Infrastructure}
 The current infrastructure will support the system. In emergency situations, where the system has to be deployed, precautions will be made to ensure the required infrastructure.
-In case of an earthquake, or other disaster, making conventional infrastructure virtually inaccessible, the mobile HQ can be transported by helicopter etc. to the area where it is needed.
+In case of an earthquake, or other disaster, making conventional infrastructure virtually inaccessible, the AreaAware HQ can be transported by helicopter etc. to the area where it is needed.
 
 \subsection{Information}
 Information will be maintained by the development team, who will keep supporting and maintaining the system for an agreed-upon amount of time.
@@ -168,36 +163,38 @@ This section will describe the scenarios used	in the life of this system. These 
 \subsection{Mission operations scenarios}
 \noindent \textbf{Scenario 1: Civil emergency situation has just started} \\
 The system is on standby, waiting to be deployed. 
-A large-scale civil emergency situation has occurred and the mobile HQ is to be deployed in the area of crisis. An EHS is set up, wherein the ECs are present. The mobile HQ unit is deployed in this station, providing the ECs with a COP. The ECs each connect a computer to the mobile HQ, after which a COP displaying relevant information is available.
+A large-scale civil emergency situation has occurred and the AreaAware HQ is to be deployed in the area of crisis. An EHS is set up, wherein the ECs are present. The AreaAware HQ unit is deployed in this station, providing the ECs with a COP. The ECs each connect a computer to the AreaAware HQ, after which a COP displaying relevant information is available.\\
+Figure \ref{fig:S1_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
-	\item The mobile HQ is in a safe facility, where relevant personnel can access it 24x7 if needed.
+	\item The AreaAware HQ is in a safe facility, where relevant personnel can access it 24x7 if needed.
 \end{itemize}
 
 \noindent Functional Capabilities needed:
 \begin{itemize}
 	\itemsep0em
-	\item Mobile HQ.
+	\item AreaAware HQ.
 	\item Provide a COP.
 \end{itemize}
 
-\vspace{20pt}
-\noindent \textbf{Scenario 2: Mobile HQ is in operation} \\
-The ECs are set up in the area and have access to a COP from the mobile HQ.
+\myFigure{functional_flow_S1}{Functional flow block diagram of scenario 1}{fig:S1_flow}{1}
+
+\newpage
+\noindent \textbf{Scenario 2: AreaAware HQ is in operation} \\
+The ECs are set up in the area and have access to a COP from the AreaAware HQ.
 From the COP, static and dynamic information in the area is displayed and the ECs are provided a real-time picture of the area of crisis, including events send in by various ERs and positions of FCs.
 The commanders have the ability to focus on various sources and types of information in the COP and review the history of one or more events. 
 
-The commanders additionally have the capability to dispatch orders and messages to ERs and other commanders directly from the COP, through the SINE network. The commanders have the ability to control the distribution of messages based on geography, role, group and identity.
+The commanders additionally have the capability to dispatch orders and messages to ERs and other commanders directly from the COP, through the Internet. The commanders have the ability to control the distribution of messages based on geography, role, group and identity. Figure \ref{fig:S2_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
 	\itemsep0em
-	\item The mobile HQ unit is in deployed in an EHS, located in the vicinity of the emergency situation.
+	\item The AreaAware HQ unit is in deployed in an EHS, located in the vicinity of the emergency situation.
 	\item The SINE network is functional and accessible. Connection is established through this network.
 \end{itemize}
 
-\newpage
 \noindent Functional Capabilities needed:
 \begin{itemize}
 	\itemsep0em
@@ -209,14 +206,17 @@ The commanders additionally have the capability to dispatch orders and messages 
 
 \noindent Functional Capabilities Delivered by Alternatives:
 \begin{itemize}
-	\item Emergency Responders have to integrate a function to receive information/orders and send events to the mobile HQ via the SINE network.
+	\item Emergency Responders have to integrate a function to receive information/orders and send events to the AreaAware HQ via the SINE network.
 \end{itemize} 
 
-\vspace{20pt}
-\noindent \textbf{Scenario 3: Operation of handheld devices by Field Commanders} \\
-A mobile HQ is in operation. Communication through the SINE network has been established and the ECs are provided with a COP. 
+\myFigure{functional_flow_S2}{Functional flow block diagram of scenario 2}{fig:S2_flow}{1}
 
-The FCs each have a Dismounted COP, which provides them with a condensed version of the mobile HQ COP. This provides them with static and dynamic information along with the position of other commanders in the area of emergency. From the COP they are able to communicate with EC's and receive events from ERs.
+\newpage
+\noindent \textbf{Scenario 3: Operation of handheld devices by Field Commanders} \\
+an AreaAware HQ is in operation. Communication through the SINE network has been established and the ECs are provided with a COP. 
+
+The FCs each have an AreaAware Dismounted unit, which provides them with a condensed version of the AreaAware HQ COP. This provides them with static and dynamic information along with the position of other commanders in the area of emergency. From the COP they are able to communicate with EC's and receive events from ERs.\\
+Figure \ref{fig:S3_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
@@ -227,13 +227,16 @@ The FCs each have a Dismounted COP, which provides them with a condensed version
 
 \noindent Functional Capabilities needed:
 \begin{itemize}
-	\item Dismounted COP.
+	\item AreaAware Dismounted.
 \end{itemize}
 
+\myFigure{functional_flow_S3}{Functional flow block diagram of scenario 3}{fig:S3_flow}{1}
+
+\newpage
 \subsection{Support operations scenarios}
 \noindent \textbf{Scenario 1: Repair of critical defect}
 As described in the Software Warranty Service.
-The operating personnel calls the 24/7 defect support. The support staff decided on a course of action and initialises it as soon as possible. An action is commenced within a 2-shift hour response window using commercially reasonable efforts. This action must have an immediate fix, temporary solution to, or workaround of, the defect.
+The operating personnel calls the 24/7 defect support. The support staff decided on a course of action and initializes it as soon as possible. An action is commenced within a 2-shift hour response window using commercially reasonable efforts. This action must have an immediate fix, temporary solution to, or workaround of, the defect.
 
 \noindent Functional Capabilities Needed:
 \begin{itemize}
