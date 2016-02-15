@@ -18,7 +18,7 @@ AreaAware consists the main components:
 To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists within (least one AreaAware HQ though), but only a single AreaAware Server.
 
 
-\myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. To 1 AreaAware, can various AreaAware Dismounted and AreaAware HQ exists, but only a single AreaAware Server.}{fig:bbd_overview}{1}
+\myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. In a AreaAware system can various AreaAware Dismounted and AreaAware HQ exists, AreaAware Server}{fig:bbd_overview}{1}
 
 \noindent Each of these main components consists of subcomponents, which gives functionality for solving the requirements described in  AreaAware-SRS-20160214-01-02 \&  AreaAware-DISSRS-20160214-01-02.
 
@@ -62,14 +62,14 @@ AreaAware HQ is the service for Emergency Commander to interact with AreaAware a
 
 
 AreaAware HQ consists of two subcomponents: a Web Presenter and a Communication Modem.
-There can up to 8 Web Presenters within AreaAware HQ.
+There can up to 14 Web Presenters within AreaAware HQ.
 Only a single Communication Modem is sufficient.
 
 
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web Presenter\\
     \textbf{Block ID}       & SA-AA-HQ-WP  \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Essentially a web browser showing the \\ AreaAware Web UI.}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Essentially a web browser showing the \\ AreaAware Web Application.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-05, NF-06, NF-07, NF-08,\\ NF-09, NF-10, NF-11, NF-23} & AreaAware-SRS-20160214-01-02  \\
@@ -121,11 +121,11 @@ Only a single Communication Modem is sufficient.
 \end{tabular}\\\\
 
 
-To manage all data
+The AreaAware handles all data and logistics across all devices in AreaAware - under and after a crisis.
 
 
 
-\myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, web UI and a communication modem.}{fig:bbd_hq}{1}
+\myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, a web API and a logging system.}{fig:bbd_hq}{1}
 
 
 
@@ -141,48 +141,25 @@ To manage all data
 
 
 \begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Web UI\\
+    \textbf{Block name}     & Web API\\
     \textbf{Block ID}       & SA-AA-SE-UI  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Hosting the Website used by AreaAware HQ}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Web API used by AreaAware HQ's Web Presenter.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Communication Modem\\
-    \textbf{Block ID}       & SA-AA-SE-CM  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE or the commercial internet.\\Convert data packets if necessary.}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{NF-01, NF-02, NF-03, NF-04,\\ NF-12, NF-13, NF-14, NF-15,\\ NF-16, NF-17, NF-18, NF-19} & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
-
 
 \begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & SINE Communicator\\
-    \textbf{Block ID}       & SA-AA-SE-CM-SC  \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages communication with SINE\\\\}}  \\
+    \textbf{Block name}     & Logging System\\
+    \textbf{Block ID}       & SA-AA-SE-LS  & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{System for logging events happend AreaAware across all crisis situations.\\Can be exported for external use.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{NF-01, NF-02, NF-14, NF-15,\\ NF-17} & AreaAware-SRS-20160214-01-02  \\
+    Requirements & \makecell[l]{N/A} & AreaAware-SRS-20160214-01-02  \\
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
-
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & \multicolumn{2}{l}{Commercial Internet Communicator}\\
-    \textbf{Block ID}       & SA-AA-SE-CM-CI  \\
-    \textbf{Purpose}        & \multicolumn{2}{l}{\makecell[l]{Manages communication with the commercial internet\\ such as LTE/4G or such.}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & NF-16, NF-17 & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
-
-
-
 
 
 
@@ -213,7 +190,7 @@ Note that a emergency commander always communicate with AreaAware via SINE.
 
     \begin{figure}[ht]
         \centering
-        \subbottom[{Scenario 1: Both AreaAware HQ and AreaArea Dismounted has connection to AreaAware Server via commercial internet.}\label{fig:ce_a}]%
+        \subbottom[{Scenario 1: Both AreaAware HQ and AreaAware Dismounted has connection to AreaAware Server via commercial internet.}\label{fig:ce_a}]%
             {\includegraphics[width=0.47\textwidth]{arch/ce_4.png}}\quad\quad
         \subbottom[{Scenario 2: AreaAware HQ has has connection to AreaAware Server via commercial internet. AreaAware Dismounted has connection to AreaAware Server via SINE.}\label{fig:ce_b}]%
             {\includegraphics[width=0.47\textwidth]{arch/ce_2.png}}
@@ -227,11 +204,11 @@ Note that a emergency commander always communicate with AreaAware via SINE.
 
 
 
-The AreaAware Server has connection to both SINE and the commercial internet.
+The AreaAware Server has connection to the commercial internet and by that a connection to SINE.
 The AreaAware Server will serve data to the communication the client (AreaAware HQ or AreaAware Dismounted) is using.
-If the AreaAware Server has no connection either, AreaAware unsable.
+If the AreaAware Server has no connection either, AreaAware is unusable.
 However the AreaAware Server is not a single device, but more of function.
-This functionality can be split in setups with multiple device, to ensure downtime on the AreaAware.
+This functionality can be split in setups with multiple devices, to ensure no downtime on the AreaAware.
 
 
 \section{Interface design}
