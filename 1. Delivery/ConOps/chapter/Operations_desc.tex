@@ -163,7 +163,8 @@ This section will describe the scenarios used	in the life of this system. These 
 \subsection{Mission operations scenarios}
 \noindent \textbf{Scenario 1: Civil emergency situation has just started} \\
 The system is on standby, waiting to be deployed. 
-A large-scale civil emergency situation has occurred and the AreaAware HQ is to be deployed in the area of crisis. An EHS is set up, wherein the ECs are present. The AreaAware HQ unit is deployed in this station, providing the ECs with a COP. The ECs each connect a computer to the AreaAware HQ, after which a COP displaying relevant information is available.
+A large-scale civil emergency situation has occurred and the AreaAware HQ is to be deployed in the area of crisis. An EHS is set up, wherein the ECs are present. The AreaAware HQ unit is deployed in this station, providing the ECs with a COP. The ECs each connect a computer to the AreaAware HQ, after which a COP displaying relevant information is available.\\
+Figure \ref{fig:S1_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
@@ -177,13 +178,15 @@ A large-scale civil emergency situation has occurred and the AreaAware HQ is to 
 	\item Provide a COP.
 \end{itemize}
 
-\vspace{20pt}
+\myFigure{functional_flow_S1}{Functional flow block diagram of scenario 1}{fig:S1_flow}{1}
+
+\newpage
 \noindent \textbf{Scenario 2: AreaAware HQ is in operation} \\
 The ECs are set up in the area and have access to a COP from the AreaAware HQ.
 From the COP, static and dynamic information in the area is displayed and the ECs are provided a real-time picture of the area of crisis, including events send in by various ERs and positions of FCs.
 The commanders have the ability to focus on various sources and types of information in the COP and review the history of one or more events. 
 
-The commanders additionally have the capability to dispatch orders and messages to ERs and other commanders directly from the COP, through the SINE network. The commanders have the ability to control the distribution of messages based on geography, role, group and identity.
+The commanders additionally have the capability to dispatch orders and messages to ERs and other commanders directly from the COP, through the Internet. The commanders have the ability to control the distribution of messages based on geography, role, group and identity. Figure \ref{fig:S2_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
@@ -192,7 +195,6 @@ The commanders additionally have the capability to dispatch orders and messages 
 	\item The SINE network is functional and accessible. Connection is established through this network.
 \end{itemize}
 
-\newpage
 \noindent Functional Capabilities needed:
 \begin{itemize}
 	\itemsep0em
@@ -207,11 +209,14 @@ The commanders additionally have the capability to dispatch orders and messages 
 	\item Emergency Responders have to integrate a function to receive information/orders and send events to the AreaAware HQ via the SINE network.
 \end{itemize} 
 
-\vspace{20pt}
+\myFigure{functional_flow_S2}{Functional flow block diagram of scenario 2}{fig:S2_flow}{1}
+
+\newpage
 \noindent \textbf{Scenario 3: Operation of handheld devices by Field Commanders} \\
 an AreaAware HQ is in operation. Communication through the SINE network has been established and the ECs are provided with a COP. 
 
-The FCs each have an AreaAware Dismounted unit, which provides them with a condensed version of the AreaAware HQ COP. This provides them with static and dynamic information along with the position of other commanders in the area of emergency. From the COP they are able to communicate with EC's and receive events from ERs.
+The FCs each have an AreaAware Dismounted unit, which provides them with a condensed version of the AreaAware HQ COP. This provides them with static and dynamic information along with the position of other commanders in the area of emergency. From the COP they are able to communicate with EC's and receive events from ERs.\\
+Figure \ref{fig:S3_flow} show the functional flow of this scenario. \\
 
 \noindent Prerequisites:
 \begin{itemize}
@@ -225,10 +230,13 @@ The FCs each have an AreaAware Dismounted unit, which provides them with a conde
 	\item AreaAware Dismounted.
 \end{itemize}
 
+\myFigure{functional_flow_S3}{Functional flow block diagram of scenario 3}{fig:S3_flow}{1}
+
+\newpage
 \subsection{Support operations scenarios}
 \noindent \textbf{Scenario 1: Repair of critical defect}
 As described in the Software Warranty Service.
-The operating personnel calls the 24/7 defect support. The support staff decided on a course of action and initialises it as soon as possible. An action is commenced within a 2-shift hour response window using commercially reasonable efforts. This action must have an immediate fix, temporary solution to, or workaround of, the defect.
+The operating personnel calls the 24/7 defect support. The support staff decided on a course of action and initializes it as soon as possible. An action is commenced within a 2-shift hour response window using commercially reasonable efforts. This action must have an immediate fix, temporary solution to, or workaround of, the defect.
 
 \noindent Functional Capabilities Needed:
 \begin{itemize}
