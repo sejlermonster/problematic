@@ -1,8 +1,8 @@
 \label{chp_requirements}
 \chapter{Requirements}
-This chapter on system requirements is organised into a number of sections. Both functional and non-functional requirements will be explained throughout this chapter.
+The AreaAware HQ system creates situational awareness for Emergency Commanders. This is secured by giving the Emergency Commander a demografic overview of the situation. The overview show registered events from Emergency Responders and other Emergency Commanders. The system also facilities fast and secure communication with Emergency Responders.
 
-Every requirement has a project-unique identifier to support testing and traceability.
+The AreaAware system realizes that a civil crisis is of great importance and that securing fast and safe communication throughout the crisis is of the highest priority. The AreaAware system secures the best network coverage throughout the world by supporting both SINE/TELTRA Network and commercial internet. A crisis situation can result in the commercial internet not being operational. By using both SINE and commercial internet AreaAware makes sure that communication between Emergency Commanders and Emergency Responders can always get through. The SINE network also allows for prioritizing communication and will secure communication between Emergency Commanders and Emergency Responders.
 
 \section{Scope}
 The goal of the system is to handle civilian crisis's in a more effective way. This should be done by giving the Emergency Commander a Common Operational Picture to give situational awareness and support the Emergency Commander in the better communication with Emergency Responders in the field
@@ -366,8 +366,16 @@ service.
 %\end{itemize}
 
 
-%\section{Logistics-related requirements}
-%This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
+\section{Logistics-related requirements}
+This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-24 & Every event registration, start and end of information distribution and coordinates of Emergency Responders and must be logged in a database. All logged information will be related to specific personnel identifier and with a time stamp  \\
+	\hline
+\end{longtable}
 
 \newpage
 \label{sec_nonFunc7}
