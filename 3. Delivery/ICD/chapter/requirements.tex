@@ -1,0 +1,289 @@
+\label{chp_requirements}
+\chapter{Requirements}
+This chapter on system requirements is organised into a number of sections. Both functional and non-functional requirements will be explained throughout this chapter.
+
+Every requirement has a project-unique identifier to support testing and traceability.
+
+\section{Scope}
+The goal of the system is to handle civilian crisis's in a more effective way. 
+
+\subsection{Identification}
+To support the goal defined in the scope AreaAware Hq will be developed. Based on the goal a system that gives the commander a common operational picture (COP) will be described throughout this document. The COP should make it easier to plan and evaluate a civilian crisis. It should also allow for better communication will multiple actors during a crisis.
+
+This section includes a full identification of the system-of-interest to which this document applies.
+\myFigure{actorContextDiagram.png}{Actor context diagram}{asdfq}{0.7} 
+
+AreaAware Hq will only include a development of the Common operation picture which will communicate with devices already used in civil crisis scenarios. AreaAware Hq will communicate over the defined standard network used in these scenarios. This network is called SINE(Sikkerhednetværket) and it follows an international standard for communication called TETRA which is used during crisis situations world wide. 
+
+\subsection{System overview}
+The system of interest will communicate with the already employed system used by emergency management actors. The Emergency Mangement actors use the SINE network during crisis situations.
+
+The system will facilitate the commander in:
+\begin{itemize}
+	\item Give a demographic overview of the crisis area
+	\item Let the commander locate events, things of interest and actors in the area.
+	\item Let the commander send commands to actors in the area.
+\end{itemize}
+
+The system will let commanders plug their own laptop(not provided) to the AreaAware Hq. By plugging their laptop to the AreaAware Hq they will be allowed access to the common operation picture through a web application. The web application will be accessed through a browser installed on the customers own latops.
+
+\subsection{Document overview}
+\label{sec_documentOverview}
+This document will describe the functional and non-functional requirement of the system of interest. 
+
+The functional requirement is described using Task descriptions. These requirements describes what the system should be able to do. Task descriptions includes a Task name, the purpose of the Task and might include a precondition for the Task. The purpose should reflect the goals stated. The Tasks are furthermore described with sub-tasks that elaborates on the behaviour of the system and user.  Variants are described to explain alternatives to the main sub-tasks. \citep{taskDescription}
+
+The non-functional requirements are divided up in sub-sections and categorized. The sub-sections used follows the template given from the SECaseBook part 2. \citep{casebook}
+
+
+%\section{Required states and modes}
+%If the system is required to operate in multiple states or modes, these states and modes shall be defined.
+
+\newpage
+\section{System capability requirement}
+This section specifies requirements on the behaviour of the system. The behaviour is described with Task descriptions explained in document overview \ref{sec_documentOverview}.
+
+\subsection{TA-01}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Distribute text message \\
+	Purpose & Send text information to the platforms employed by the emergency management actors \\
+	Trigger/ &  \\ Precondition &  \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Write text message\\
+	2. & Choose criteria \\
+	3. & Distributes message to various actors \\
+	\hline
+	Variants: & \\
+	2a. & Geography criteria chosen \\
+	2b. & Role criteria chosen\\
+	2c. & Group criteria chosen\\
+	2d. & Identity criteria chosen\\
+	\hline
+\end{longtable}
+
+
+
+\subsection{TA-02}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & AreaAware Hq must receive registered events from currently employed platforms used by the emergency management actors  \\
+	Purpose & Present registered event on the COP \\
+	Trigger/ &  \\Precondition & An emergency management actor registers event using currently employed platform \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Receive registered observation event \\
+	2. & Present registered event for Commander \\
+	\hline
+	Variants: & \\
+	1a. & Receive registered location event \\
+	\hline
+\end{longtable}
+
+\FloatBarrier
+\newpage
+
+\subsection{TA-03}
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & The Commander must be able to focus on various sources and types of information  \\
+	Purpose & Let the Commander focus on different types of information to better command the situation \\
+	Trigger/ &  \\ Precondition & Events or information must registered \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Choose the demographic focus option \\
+	2. & Present the information relevant to the focus option \\
+	\hline
+	Variants: & \\
+	1a. & Fresh water supplies focus option chosen \\
+	1b. & Demographic focus option chosen \\
+	1c. & Hazardous focus option chosen \\
+	1d. & Construction work focus option chosen \\
+	1e. & Location of actors focus option chosen \\
+	1f. & Observations made of actors focus option chosen \\
+	1g. & Weather information focus option chosen \\
+	\hline
+\end{longtable}
+
+\subsection{TA-04}
+
+\begin{longtable}{| p{2.5cm}  | p{10cm} |  }
+	\hline
+	Task & Review the history of events \\
+	Purpose & Present the event history for the Commander \\
+	Trigger/ &  \\ Precondition & A emergency management actor has already registered an event \\
+	\hline
+	Sub-Tasks: & \\
+	1. & Open the event history \\
+	2. & Present list of all registered events including timestamp  \\
+	\hline
+\end{longtable}
+
+\FloatBarrier
+\newpage
+
+\section{System external interface requirements}
+This section will describe the system’s external interfaces. Interfaces will be assigned a project-unique identifier. 
+
+The system will communicate with the system used by the Emergency Mangement Actors during a civil crisis. This network is called SINE. The interface will be provided by SINE and AreaAware Hq will follow the given interface to allow for SINE certification. The diagram shown on figure \ref{fig:externalInterface} explains the external interfaces of AreaAware Hq.
+
+\myFigure{InterfaceDiagram.png}{External interfaces}{fig:externalInterface}{1} 
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-01 & The system will follow the interface defined by the SINE network.  \\
+	\hline
+\end{longtable}
+
+%\section{System internal interface requirements}
+%This paragraph shall be divided into subparagraphs to specify the requirements, if any, for the system’s internal interfaces. It shall state if there are internal interfaces left to the design or to system requirement specifications for components. Furthermore, the description in item 3.3 also applies to internal interfaces
+
+%\subsection{Subcontracter to optional thingy...}
+
+%\section{System internal data requirements}
+%Requirements on data internal to the system such as databases, data files etc. shall be stated. If there are internal interfaces left to the design or to system requirement specifications for components these shall be identified.
+
+%\section{Adaption requirements}
+%Requirements on installation-dependent data and operational parameters that the system requires.
+
+%\section{Safety requirements}
+%System requirements concerning minimizing unintended hazards to personnel, property and the physical environment
+
+\section{Secuirity and privacy requirements}
+This section specifies the system requirement concerned with the maintaining security and privacy.
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-02 &All external communication from AreaAware Hq is encrypted.  \\
+	\hline
+\end{longtable}
+
+\section{System environment requirements}
+This paragraph shall specify the system requirements, if any, regarding the environment in which the system must operate.
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-03 & The COP system will be operational in temperatures from -10 degree celcius to 50 degree celsius.  \\
+	\hline
+\end{longtable}
+
+\section{Computer resource requirements}
+This section specifies resource utilization requirements. It will be further divided into hardware and communications etc.
+
+The following hardware is used for the AreaAware Hq:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-04 & i7 ivy Bridge, 2.3 Ghz, 4 cores.  \\
+	\hline
+	NF-05 & Intel HD 4000 Graphics.  \\
+	\hline
+	NF-06 & 16 GB DDR ram.  \\
+	\hline
+	NF-07 &512 Gb SSD. \\
+	\hline
+	NF-08 & LAN with 16-p switch.  \\
+	\hline
+	NF-09 & Powered by 230 volt. \\
+	\hline
+\end{longtable}
+
+Communication used by AreaAware Hq:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-10 & AreaAware Hq is SINE certified.  \\
+	\hline
+	NF-11 & AreaAware Hq Communicates through the SINE network. \\
+	\hline
+\end{longtable}
+
+
+%\section{System quality factors}
+%This paragraph specifies quantitative requirements concerning system functionality, reliability, maintainability, availability, flexibility, portability (software), reusability, testability, usability an other attributes.
+
+
+
+\section{Design and construction constraints}
+This section specifies the requirements, that constrain the construction of the system
+
+AreaAware Weight and dimension requirements:
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-12 & AreaAware Hq will weigh up to 22 kilograms inclusive box and cables.  \\
+	\hline
+	NF-13 & AreaAware Hq will have the following dimensions: 40cmx40cmx60cm. \\
+	\hline
+\end{longtable}
+
+
+\section{Personnel-related requirements}
+This paragraphs specifies the requirements, included to accommodate the number, skill levels, duty cycles, training needs, or other information about the personnel who will use or support the system.
+
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-14 &The customer will have 24x7 access to a Service Centre as stated in \emph{Software Warranty Service}.  \\
+	\hline
+	NF-15 & A user manual will be available for the Commander who uses the AreaAware Hq. \\
+	\hline
+	NF-16 & 2-day training will be available for every commander who uses the AreaAware Hq. \\
+	\hline
+\end{longtable}
+
+
+
+\subsection{Software Warranty Service consists of:}
+Defect Reporting. For Critical Defects, the Customer will have 24x7 access to the Service Centre by e-mail or phone to request defect repair, as described below. “Critical Defect means that the
+application is down or is at high risk, business functions cannot be conducted, or the Customer is experiencing continual failures or data corruption as a result of the defect. To report non-critical
+defects, the Customer will have e-mail or phone access to the Service Centre during the Principal Period of Maintenance (”PPM”), which is 8:00 a.m. to 5:00 p.m., local time, Monday through Friday,
+excluding local holidays. Defect Repair. Defect repair includes verification of the existence of a defect, determination of the
+severity or impact of the defect, and determination of the conditions under which the defect may recur. 
+The Company will, at its option: 
+\begin{itemize}
+\item For a Critical Defect, commence action within a 2-shift hour response window using commercially reasonable efforts to provide an immediate fix or temporary solution of, or workaround
+to, the defect.
+\item For a non-critical defect, commence action within an 8-shift hour response window to provide either the action described for a Critical Defect or a statement that the defect will be corrected
+in a software product revision or a future software release.
+\item Provide a statement that the Software operates as described in then-current user documentation or that the defect arises when such Software is used other than in a manner for which it
+was designed. For Software added to an installed System, warranty service must be upgraded to the same software support plan, if any, as that of the Software already installed on that
+System. Customer will pay the difference between standard warranty and upgraded warranty
+service.
+\end{itemize}
+
+
+%\section{Training-related requirements}
+%System requirements pertaining to training.
+
+%\begin{itemize}
+%	\item
+%\end{itemize}
+
+
+%\section{Logistics-related requirements}
+%This paragraphs specifies the requirements, if  any, concerned with logistics considerations.
+
+\newpage
+\section{Packaging requirements}
+This paragraphs specifies the requirements, if any, for packaging, labling and handling the systems and its components for delivery.
+
+\begin{longtable}{| p{3.2cm} |  p{10cm} | }
+	\hline
+	\textbf{Requirement id} &  \textbf{Requirement } \\
+	\hline
+	NF-17 & The COP is available as a web application in a browser supporting ECMAScript 5 and HTML5. \\
+	\hline
+\end{longtable}

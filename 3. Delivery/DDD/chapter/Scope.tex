@@ -1,0 +1,44 @@
+%!TEX root = ../PDD.tex
+
+\chapter{Scope}
+\label{chp:scope}
+
+\section{Identification}
+This document is applies to AreaAware.
+A system which goal is to provide a tool for a better and more effective handling of a civilian crisis.
+
+The system will provide the commanders with an overview of the crisis in hand through a common operational picture(COP), where every task to be resolved can be identified and the emergency responders locations can be tracked.
+This should make it easier to handle and evaluate a civilian crisis. 
+The system will also provide a better communication between the multiple actors during a crisis.
+
+AreaAware will communicate over the defined standard network used in these scenarios.
+In Denmark this network is called SINE which follows the international standard TETRA used for communication during crisis situations world wide.
+
+AreaAware can be adapted to any specific network instead of SINE easily only by changing the interface of AreaAware.
+
+
+\section{System overview}
+The system of interest will communicate with the already employed system used by emergency management actors. The Emergency Mangement actors use the SINE network during crisis situations.
+
+The system will facilitate the commander in:
+\begin{itemize}
+    \item Give a demographic overview of the crisis area.
+    \item Let the commander locate events, things of interest and actors in the area.
+    \item Let the commander send commands to actors in the area.
+\end{itemize}
+
+The system will let commanders plug their own laptop(not provided) to the AreaAware HQ.
+By plugging their laptop to the AreaAware HQ they will be allowed access to the common operation picture through a web application. 
+The web application will be accessed through a browser installed on the customers own laptop.
+
+\section{Document overview}
+This document describes how AreaAware and the subsystems within will be structured to satisfy the requirements defined in the following documents:
+\begin{itemize}
+    \item System Requirement Specification for AreaAware HQ, Document ID: AreaAware-SRS-20160214-01-02
+    \item System Requirement Specification for AreaAware Dismounted, Document ID: AreaWare-DISSRS-20160214-01-02
+\end{itemize}
+
+Chapter \ref{chp:system-wide} describes system wide decisions regarding behavioral design and design of system components.
+After this chapter \ref{chp:architectural} gives an architectural design of the AreaAware system, which identifies system components, describes how the system components interact.
+Section \ref{sec:arch_interface} refers to another document, Interface design, which defines the interface design between the system components describe within this document. \\
+Finally the document provides an overview of requirements traceability mapping the system components to the requirements specified in the documents mentioned above.
