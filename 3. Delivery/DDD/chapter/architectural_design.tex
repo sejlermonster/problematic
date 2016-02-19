@@ -1,4 +1,4 @@
-%!TEX root = ../PDD.tex
+%!TEX root = ../DDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
@@ -31,7 +31,7 @@ To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists withi
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document ID} \\
     Requirements & All & AreaAware-DISSRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Field Commander will interact with AreaAware through mobile device called AreaAware Dismounted.
@@ -51,21 +51,21 @@ The design architecture of AreaAware Dismounted will therefore not be specified 
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & All & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & \makecell[l]{D-HQ1, D-HQ2, D-HQ3,\\ D-HQ4} & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & \makecell[l]{D-HQ1, D-HQ2, D-HQ3,\\ D-HQ4} & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Emergency Commander will manage the situation right at a (mobile or not mobile) headquarter.
 AreaAware HQ is the service for Emergency Commander to interact with AreaAware at the headquarter.
 
 
-\myFigure{arch/aa_bdd_hq}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
+\myFigure{arch/aa_bdd_hq}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{0.5}
 
 
 AreaAware HQ consists of two subcomponents: a Web Presenter and a Communication Modem.
 There can up to 14 Web Presenters within AreaAware HQ.
 Only a single Communication Modem is sufficient.
 
-
+\subsubsection{Web presenter}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web Presenter\\
     \textbf{Block ID}       & SA-AA-HQ-WP  \\
@@ -73,9 +73,10 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-05, NF-06, NF-07, NF-08,\\ NF-09, NF-10, NF-11, NF-23} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & D-HQ1, D-HQ2, D-HQ4 & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & D-HQ1, D-HQ2, D-HQ4 & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
+\subsubsection{Comunication Modem}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Communication Modem\\
     \textbf{Block ID}       & SA-AA-HQ-CM  \\
@@ -83,10 +84,25 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{NF-01, NF-02, NF-03, NF-04,\\ NF-12, NF-13, NF-14, NF-15,\\ NF-16, NF-17, NF-18, NF-19} & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & D-HQ3 & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & D-HQ3 & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
+\myFigure{arch/aa_bdd_com_modem}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
+
+\subsubsection{Web Presenter Communicator}
+\begin{tabular}{l|*{2}{l}}
+	\textbf{Block name}     & Web Presenter Communicator\\
+	\textbf{Block ID}       & SA-AA-HQ-CM-WPC  \\
+	\textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manage 14 ports to web presenter}}  \\
+	\hline
+	\textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+	Requirements & \makecell[l]{NF-03, NF-04, NF-12} & AreaAware-SRS-20160214-01-02 \\
+	Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+
+\subsubsection{SINE Communicator}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & SINE Communicator\\
     \textbf{Block ID}       & SA-AA-HQ-CM-SC  \\
@@ -94,9 +110,10 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{NF-01, NF-02, NF-14, NF-15,\\ NF-17} & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
+\subsubsection{Commercial Internet Communicator}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & \multicolumn{2}{l}{Commercial Internet Communicator} \\
     \textbf{Block ID}       & SA-AA-HQ-CM-CI  \\
@@ -104,8 +121,20 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & NF-16, NF-17 & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
+
+\subsubsection{Communicator Controller}
+\begin{tabular}{l|*{2}{l}}
+	\textbf{Block name}     & \multicolumn{2}{l}{Communicator Controller} \\
+	\textbf{Block ID}       & SA-AA-HQ-CM-CC  \\
+	\textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Manages the web presenter connection either through SINE or \\ Commercial Internet.\\}}  \\
+	\hline
+	\textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+	Requirements & NF-04, NF-17 & AreaAware-SRS-20160214-01-02  \\
+	Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+\end{tabular}\\\\
+
 
 
 
@@ -117,9 +146,10 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-01, NF-02, NF-03, NF-12,\\ NF-13, NF-14, NF-15, NF-16,\\ NF-18, NF-19} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
+\newpage
 
 The AreaAware handles all data and logistics across all devices in AreaAware - under and after a crisis.
 
@@ -136,7 +166,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -147,7 +177,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -158,7 +188,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{N/A} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
