@@ -58,12 +58,19 @@
 % Geometry for frontpage
 \usepackage{geometry}
 
+% For traceability matrix
+\usepackage{longtable}
+\usepackage{rotating}
+
 \begin{document}
 
 	\begin{titlingpage}
-		%frontpage
-		\include{chapter/intro}
+		% Frontpage goes here
+		\include{chapter/Frontpage}
 	\end{titlingpage}
+        
+    %version history goes here
+   	\include{chapter/versionHistory}    
         
     % Table of contents
     \begingroup
@@ -73,10 +80,10 @@
 
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
     
-    \input{chapter/Introduction}
-    \input{chapter/Needs}
-    \input{chapter/Operations_desc}
-    \input{chapter/Capabilities}
+    \include{chapter/Introduction}
+    \include{chapter/Needs}
+    \include{chapter/Operations_desc}
+    \include{chapter/Capabilities}
     
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
