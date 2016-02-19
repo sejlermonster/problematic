@@ -15,8 +15,9 @@ AreaAware consists the main components:
 \item AreaAware HQ
 \item AreaAware Server
 \end{itemize}
-To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists within (least one AreaAware HQ though), but only a single AreaAware Server.
-
+Figure \ref{fig:bbd_overview} shows the composition of one AreaAware system.
+To one AreaAware system, consists at least of one AreaAware Server and AreaAware HQ, but not necessary a AreaAware Dismounted.
+However in AreaAware system there can exists multiple of the three main components.
 
 \myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. In a AreaAware system can various AreaAware Dismounted and AreaAware HQ exists, AreaAware Server}{fig:bbd_overview}{1}
 
@@ -166,8 +167,8 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
 \section{Concept of execution}
 \label{sec:concept_execution}
 
-The main components of interact with each other.
-Emergency Commanders interacts with AreaAware HQ.
+The main components interact each other. This section will describe how these interactions and how the components execute.\\\\
+\noindent Emergency Commanders interacts with AreaAware HQ.
 This could be event registration or a command decision or getting a situation awareness.
 Data the AreaAware HQ's Web Presenter show, are stored and managed by AreaAware Server.
 The AreaAware HQ has two ways of communicating to AreaAware Server, therefore given following two scenarios:
@@ -177,8 +178,9 @@ The AreaAware HQ has two ways of communicating to AreaAware Server, therefore gi
 \end{itemize}
 In scenarios where AreaAware HQ has connection via commercial internet, data will be transmitted using that between AreaAware Server and AreaAware HQ.
 If not, then will data transmitted through SINE.
+Figure \ref{fig:modem} that AreaAware HQ has a modem communicating either via. SINE or commercial internet. The modem it controlling the connections between the two connections.
 
-\myFigure{arch/modem.png}{The AreaAware HQ has modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
+\myFigure{arch/modem.png}{The AreaAware HQ has a modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
 
 \noindent Same goes with data between AreaAware Dismounted and AreaAware Server.
 In scenarios where the AreaAware Dismounted has valid connection via commercial internet, data between AreaAware Server and AreaAware Dismounted will be transmitted using that.
@@ -213,4 +215,4 @@ This functionality can be split in setups with multiple devices, to ensure no do
 
 \section{Interface design}
 \label{sec:arch_interface}
-The interface design of the system is described in a separate document named \emph{Interface design} with document ID \todo{insert document ID}. 
+The interface design of the system is described in a separate document \emph{Preliminary Interface Control Document} with the document ID \emph{AreaAware-PICD-20160216-01-01}.
