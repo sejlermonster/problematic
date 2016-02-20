@@ -49,6 +49,14 @@
 \usepackage[]{todonotes}
 
 
+% Geometry for frontpage
+\usepackage{geometry}
+
+% For traceability matrix
+\usepackage{longtable}
+\usepackage{rotating}
+
+
 % Styles
 \input{style/chapter}
 \input{style/headerFooter}
@@ -57,11 +65,16 @@
 \input{style/customCmds}
 \input{style/tables}
 
-\begin{document}
+\begin{document}    
     \begin{titlingpage}
         % Frontpage goes here
-        %\include{chapter/title_page}
+%        \include{chapter/frontpage160212}
+        \include{chapter/frontpage160219}
     \end{titlingpage}
+
+%    \include{chapter/versionHistory160212}
+    \include{chapter/versionHistory160219}
+
 
 %    \include{chapter/momTemplate}
 %    \include{chapter/mom160212}
