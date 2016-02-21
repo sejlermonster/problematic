@@ -1,4 +1,4 @@
-%!TEX root = ../DDD.tex
+%!TEX root = ../PDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
@@ -15,8 +15,9 @@ AreaAware consists the main components:
 \item AreaAware HQ
 \item AreaAware Server
 \end{itemize}
-To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists within (least one AreaAware HQ though), but only a single AreaAware Server.
-
+Figure \ref{fig:bbd_overview} shows the composition of one AreaAware system.
+To one AreaAware system, consists at least of one AreaAware Server and AreaAware HQ, but not necessary a AreaAware Dismounted.
+However in AreaAware system there can exists multiple of the three main components.
 
 \myFigure{arch/aa_bdd_overview.png}{AreaAware consists the main components: AreaAware Dismounted, AreaAware HQ and AreaAware Server. In a AreaAware system can various AreaAware Dismounted and AreaAware HQ exists, AreaAware Server}{fig:bbd_overview}{1}
 
@@ -24,6 +25,7 @@ To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists withi
 
 
 \subsection{AreaAware Dismounted}
+
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware Dismounted \\
     \textbf{Block ID}       & SA-AA-DI \\
@@ -31,7 +33,7 @@ To one AreaAware, can various AreaAware Dismounted and AreaAware HQ exists withi
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document ID} \\
     Requirements & All & AreaAware-DISSRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Field Commander will interact with AreaAware through mobile device called AreaAware Dismounted.
@@ -43,7 +45,6 @@ The main design of AreaAware Dismounted is subcontracted to a subcontractor of P
 This design is based on the requirements specified by Problematic in document  AreaAware-DISSRS-20160214-01-02.
 The design architecture of AreaAware Dismounted will therefore not be specified here any further.
 
-\subsection{AreaAware HQ}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware HQ \\
     \textbf{Block ID}       & SA-AA-HQ  \\
@@ -51,21 +52,20 @@ The design architecture of AreaAware Dismounted will therefore not be specified 
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & All & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & \makecell[l]{D-HQ1, D-HQ2, D-HQ3,\\ D-HQ4} & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & \makecell[l]{D-HQ1, D-HQ2, D-HQ3,\\ D-HQ4} & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Emergency Commander will manage the situation right at a (mobile or not mobile) headquarter.
 AreaAware HQ is the service for Emergency Commander to interact with AreaAware at the headquarter.
 
+\subsection{AreaAware HQ}
 
 \myFigure{arch/aa_bdd_hq}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{0.5}
-
 
 AreaAware HQ consists of two subcomponents: a Web Presenter and a Communication Modem.
 There can up to 14 Web Presenters within AreaAware HQ.
 Only a single Communication Modem is sufficient.
 
-\subsubsection{Web presenter}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web Presenter\\
     \textbf{Block ID}       & SA-AA-HQ-WP  \\
@@ -73,10 +73,9 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-05, NF-06, NF-07, NF-08,\\ NF-09, NF-10, NF-11, NF-23} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & D-HQ1, D-HQ2, D-HQ4 & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & D-HQ1, D-HQ2, D-HQ4 & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\subsubsection{Comunication Modem}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Communication Modem\\
     \textbf{Block ID}       & SA-AA-HQ-CM  \\
@@ -84,13 +83,17 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{NF-01, NF-02, NF-03, NF-04,\\ NF-12, NF-13, NF-14, NF-15,\\ NF-16, NF-17, NF-18, NF-19} & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & D-HQ3 & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & D-HQ3 & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
+\pagebreak
+
+\subsubsection{Communication modem}
 
 \myFigure{arch/aa_bdd_com_modem}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
 
-\subsubsection{Web Presenter Communicator}
+\FloatBarrier
+
 \begin{tabular}{l|*{2}{l}}
 	\textbf{Block name}     & Web Presenter Communicator\\
 	\textbf{Block ID}       & SA-AA-HQ-CM-WPC  \\
@@ -101,8 +104,6 @@ Only a single Communication Modem is sufficient.
 	Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-
-\subsubsection{SINE Communicator}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & SINE Communicator\\
     \textbf{Block ID}       & SA-AA-HQ-CM-SC  \\
@@ -110,10 +111,9 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{NF-01, NF-02, NF-14, NF-15,\\ NF-17} & AreaAware-SRS-20160214-01-02 \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\subsubsection{Commercial Internet Communicator}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & \multicolumn{2}{l}{Commercial Internet Communicator} \\
     \textbf{Block ID}       & SA-AA-HQ-CM-CI  \\
@@ -121,10 +121,9 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & NF-16, NF-17 & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\subsubsection{Communicator Controller}
 \begin{tabular}{l|*{2}{l}}
 	\textbf{Block name}     & \multicolumn{2}{l}{Communicator Controller} \\
 	\textbf{Block ID}       & SA-AA-HQ-CM-CC  \\
@@ -135,9 +134,6 @@ Only a single Communication Modem is sufficient.
 	Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-
-
-
 \subsection{AreaAware Server}
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware Server \\
@@ -146,10 +142,9 @@ Only a single Communication Modem is sufficient.
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-01, NF-02, NF-03, NF-12,\\ NF-13, NF-14, NF-15, NF-16,\\ NF-18, NF-19} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-\newpage
 
 The AreaAware handles all data and logistics across all devices in AreaAware - under and after a crisis.
 
@@ -166,7 +161,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -177,7 +172,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -188,7 +183,7 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{N/A} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-DDD-20160214-01-01 \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
 
@@ -196,8 +191,8 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
 \section{Concept of execution}
 \label{sec:concept_execution}
 
-The main components of interact with each other.
-Emergency Commanders interacts with AreaAware HQ.
+The main components interact each other. This section will describe how these interactions and how the components execute.\\\\
+\noindent Emergency Commanders interacts with AreaAware HQ.
 This could be event registration or a command decision or getting a situation awareness.
 Data the AreaAware HQ's Web Presenter show, are stored and managed by AreaAware Server.
 The AreaAware HQ has two ways of communicating to AreaAware Server, therefore given following two scenarios:
@@ -207,8 +202,9 @@ The AreaAware HQ has two ways of communicating to AreaAware Server, therefore gi
 \end{itemize}
 In scenarios where AreaAware HQ has connection via commercial internet, data will be transmitted using that between AreaAware Server and AreaAware HQ.
 If not, then will data transmitted through SINE.
+Figure \ref{fig:modem} that AreaAware HQ has a modem communicating either via. SINE or commercial internet. The modem it controlling the connections between the two connections.
 
-\myFigure{arch/modem.png}{The AreaAware HQ has modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
+\myFigure{arch/modem.png}{The AreaAware HQ has a modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
 
 \noindent Same goes with data between AreaAware Dismounted and AreaAware Server.
 In scenarios where the AreaAware Dismounted has valid connection via commercial internet, data between AreaAware Server and AreaAware Dismounted will be transmitted using that.
@@ -243,4 +239,4 @@ This functionality can be split in setups with multiple devices, to ensure no do
 
 \section{Interface design}
 \label{sec:arch_interface}
-The interface design of the system is described in a separate document named \emph{Interface design} with document ID \todo{insert document ID}. 
+The interface design of the system is described in a separate document \emph{Preliminary Interface Control Document} with the document ID \emph{AreaAware-PICD-20160216-01-01}.
