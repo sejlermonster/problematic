@@ -141,7 +141,7 @@ Only a single Communication Modem is sufficient.
     \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Provide AreaAware HQ, AreaAware Dismounted\\and Emergency Responder with data.\\Keeper of all system logistics.}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-01, NF-02, NF-03, NF-12,\\ NF-13, NF-14, NF-15, NF-16,\\ NF-18, NF-19} & AreaAware-SRS-20160214-01-02  \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08,\\ NF-01, NF-02, NF-03,\\ NF-13, NF-14, NF-15, NF-16} & AreaAware-SRS-20160214-01-02  \\
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
@@ -154,7 +154,17 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Database\\
     \textbf{Block ID}       & SA-AA-SE-DB  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain and manage all relevant of AreaAware.}}  \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain and manage all data of AreaAware.}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Web Application\\
+    \textbf{Block ID}       & SA-AA-SE-WA  & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain the UI displayed on the AreaAware HQ and AreaAware Dismounted}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
@@ -181,13 +191,52 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
+\pagebreak
+
+\subsubsection{Web Application}
+
+\myFigure{arch/aa_bdd_webApplication.png}{Web Application consists of three subcomponents: An interactive map, an Event history and buttons for communication.}{fig:bbd_hq}{1}
+
+\FloatBarrier
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Interactive map \\
+    \textbf{Block ID}       & SA-AA-SE-WA-IM  & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain static and dynamic information about the crisis area for supplying \\ situational awareness}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-01, TA-05, TA-07} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Event history \\
+    \textbf{Block ID}       & SA-AA-SE-WA-EH  & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Display all events revived from the Commanders and Emergency Responders}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-08} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Communication buttons \\
+    \textbf{Block ID}       & SA-AA-SE-WA-CB  & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Buttons used for creating events and initiate communication in form of text, \\ voice or video}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-02, TA-03, TA-04, TA-06} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
 \section{Concept of execution}
 \label{sec:concept_execution}
 
-The main components interact each other. This section will describe how these interactions and how the components execute.\\\\
+This section will describe how the main components interact with each other and how they execute.\\\\
 \noindent Emergency Commanders interacts with AreaAware HQ.
-This could be event registration or a command decision or getting a situation awareness.
-Data the AreaAware HQ's Web Presenter show, are stored and managed by AreaAware Server.
+This could be event registration, a command decision or getting situational awareness.
+The Web Application are shown on the Web Presenter on the AreaAware HQ or AreaAware Dismounted.
+The Web Application are stored and managed by the AreaAware Server.
 The AreaAware HQ has two ways of communicating to AreaAware Server, therefore given following two scenarios:
 \begin{itemize}
 \item AreaAware HQ's Communication Modem has valid connection via commercial internet.
