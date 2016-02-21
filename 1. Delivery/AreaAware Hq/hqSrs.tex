@@ -2,23 +2,15 @@
 \RequirePackage{fix-cm} % For custom font shaping
 
 % Document class
-\documentclass[pdftex, 11pt, a4paper, oneside, danish]{memoir}
+\documentclass[pdftex, 11pt, a4paper, oneside, english]{memoir}
 
 % Page styling
 \let\footruleskip\undefined
-\usepackage{fancyhdr} 
+\usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage{geometry}
 
-% Danish language package
-\usepackage[danish]{babel}
-
-% Adding appendix caption to danish language package
-\addto\captionsdanish{%
-    \renewcommand{\appendixname}%
-    {Appendiks }%
-}
-\renewcommand*\cftappendixname{\appendixname}
+% English language package
+\usepackage[english]{babel}
 
 % UTF-8 characters
 \usepackage[utf8]{inputenc}
@@ -35,12 +27,11 @@
 % Merge cells i tables
 \usepackage{multirow}
 \usepackage{makecell}
-
-
+\usepackage{tabularx}
 
 % PDF propeties (fx. hyperlinks, pdftitle)
 \usepackage[hyphens]{url}
-\usepackage[bookmarks=true,bookmarksnumbered=true,citecolor=blue,colorlinks=true,hyperfigures=true,hyperfootnotes=true,hyperindex=true,linkcolor=red]{hyperref}
+\usepackage[bookmarks=true,bookmarksnumbered=true,citecolor=black,colorlinks=true,hyperfigures=true,hyperfootnotes=true,hyperindex=true,linkcolor=red,urlcolor=blue]{hyperref}
 
 % BibTeX = bibliography
 % ALWAYS USE \citep{} or something like:
@@ -55,25 +46,19 @@
 \usepackage{amsmath}
     \usepackage{xfrac} % for \sfrac command
 
-% Package for nomenclature
-% To add things to the nomenclature see:
-% http://tex.stackexchange.com/questions/161304/makeindex-no-nls-file
-% option "intoc" insert nomenclature to table of contents
-% option "danish" makes reference texts and the nomenclature title danish
-\usepackage[intoc, danish]{nomencl}
-\makenomenclature
-% If you  dont like the name of the nomenclature
-%\renewcommand{\nomname}{myNomeclatureTitle}
-
-
 % Styles
-\input{style/chapter}
-\input{style/headerFooter}
-\input{style/figure}
-\input{style/todos}
-\input{style/code}
-\input{style/customCmds}
-\input{style/tables}
+\input{../../commonDocuments/style/chapter}
+\input{../../commonDocuments/style/headerFooter}
+\input{../../commonDocuments/style/figure}
+\input{../../commonDocuments/style/todos}
+\input{../../commonDocuments/style/code}
+\input{../../commonDocuments/style/customCmds}
+\input{../../commonDocuments/style/tables}
+
+% Geometry for frontpage
+\usepackage{geometry}
+
+% For traceability matrix
 \usepackage{longtable}
 \usepackage{rotating}
 
@@ -89,14 +74,14 @@
 
     % BibTeX: Not affected by \appendix command
    % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-      \input{chapter/revisionHistory}
-    \input{chapter/glosaryAndTerms}
+    \input{chapter/revisionHistory}
     \input{chapter/requirements}
     \input{chapter/qualityProvision}
     \input{chapter/requirementsTraceabiility}
-   	\bibliography{bibliografi}
     % Appendix
-    \include{style/appendix} % Changes chapter and section style and toc adding
-    
+    \input{../../commonDocuments/style/appendix} % Changes chapter and section style and toc adding
+    \input{"../../commonDocuments/"Glossary_and_Terms.tex}
+
+    \bibliography{../../commonDocuments/bibliography.bib}% Selects .bib file AND prints bibliography
 
 \end{document}
