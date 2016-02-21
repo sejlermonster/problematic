@@ -44,16 +44,16 @@
 
 % Package for more elegant math
 \usepackage{amsmath}
-    \usepackage{xfrac} % for \sfrac command
+\usepackage{xfrac} % for \sfrac command
 
 % Styles
-\input{style/chapter}
-\input{style/headerFooter}
-\input{style/figure}
-\input{style/todos}
-\input{style/code}
-\input{style/customCmds}
-\input{style/tables}
+\input{../commonDocuments/style/chapter}
+\input{../commonDocuments/style/headerFooter}
+\input{../commonDocuments/style/figure}
+\input{../commonDocuments/style/todos}
+\input{../commonDocuments/style/code}
+\input{../commonDocuments/style/customCmds}
+\input{../commonDocuments/style/tables}
 
 % Geometry for frontpage
 \usepackage{geometry}
@@ -81,8 +81,8 @@
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 
 	\include{chapter/requirementsTraceabiility}
-    \include{style/appendix} % Changes chapter and section style and toc adding
+	\input{../commonDocuments/style/appendix} %
 
-	\bibliography{bibliografi}% Selects .bib file AND prints bibliography
+	%\bibliography{bibliografi}% Selects .bib file AND prints bibliography
 
 \end{document}
