@@ -3,12 +3,12 @@
 
 This chapter will describe the system-wide design decisions for the AreaAware system. The system will be regarded as a connection of black boxes, where non of the internal components are described.
 
-\newpage
-
 \section{Input and output decisions}
 Figure \ref{fig:in_out} describes the inputs and outputs of the AreaAware system as a whole. All of the system's actors have the ability to provide an input and to receive an output.\\
 
 \myFigure{Inputs_outputs}{Figure describing the inputs and outputs of the system and the actors involved for each input or output}{fig:in_out}{1}
+
+\pagebreak
 
 \subsection{Inputs}
 The inputs of the system are as follows:
@@ -28,12 +28,16 @@ The outputs of the system are as follows:
 	\item \textbf{Commands:} The actual command, send by an EC or FC to a ER or FC. A Command could be specifying a specific unit where to move or how to handle a situation.
 \end{itemize}
 
+\pagebreak
+
 \section{Data appearance}
 Appearance of data for the user will happen on a User Interface on a screen. For the FC, the screen is on the AreaAware Dismounted, which provides a condensed COP in a native app. For the EC, the screen is a monitor, which is connected to a computer, running the AreaAware Web Interface. Figure \ref{fig:UI} shows an example of how the User Interface for the AreaAware Web Interface could be designed. 
 
 \myFigure{UI_sketch}{Example of user interface for the AreaAware Web Interface. In the map on the right side, several icons describe the positions of several events and actors. The red fire and hazard icons describe the locations of a local fire and biohazard, respectively. The black firetrucks, ambulances and police car represents the locations of local emergency response vehicles, from which a dotted line represents where they a dispatched. The black plus-sign and HQ-sign represent the respective location of a hospital (or emergency clinic) and Emergency Headquarter Station.
 \newline On the left side, an Event History is visible, describing important ongoing events. The ECs and FCs can set the minimum Level of Importance required to be displayed on the Event History. Each event can be accessed to view the history of that Event.
 \newline In the button of the left side four buttons can be used by the commanders to create an Event, send a Command, send a message or start a direct voice/video connection to personal in the field. These functionalities can also be accessed intuitively by clicking on the COP.}{fig:UI}{1}
+
+\pagebreak
 
 \section{Safety, security and privacy}
 The security of the data connection is very important for the system to work. Therefore, a design decision has been made to utilize the SINE-network for data security, when no connection can be established to the commercial Internet \citep{SINE_artikel}. 
