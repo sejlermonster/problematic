@@ -1,4 +1,4 @@
-%!TEX root = ../PDD.tex
+%!TEX root = ../DDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
@@ -145,14 +145,11 @@ Only a single Communication Modem is sufficient.
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-
 The AreaAware handles all data and logistics across all devices in AreaAware - under and after a crisis.
-
-
 
 \myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, a web API and a logging system.}{fig:bbd_hq}{1}
 
-
+\FloatBarrier
 
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Database\\
@@ -164,7 +161,6 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web API\\
     \textbf{Block ID}       & SA-AA-SE-UI  & \\
@@ -175,7 +171,6 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Logging System\\
     \textbf{Block ID}       & SA-AA-SE-LS  & \\
@@ -185,8 +180,6 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
     Requirements & \makecell[l]{N/A} & AreaAware-SRS-20160214-01-02  \\
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
-
-
 
 \section{Concept of execution}
 \label{sec:concept_execution}
