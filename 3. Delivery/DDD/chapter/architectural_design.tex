@@ -45,6 +45,8 @@ The main design of AreaAware Dismounted is subcontracted to a subcontractor of P
 This design is based on the requirements specified by Problematic in document  AreaAware-DISSRS-20160214-01-02.
 The design architecture of AreaAware Dismounted will therefore not be specified here any further.
 
+\subsection{AreaAware HQ}
+
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & AreaAware HQ \\
     \textbf{Block ID}       & SA-AA-HQ  \\
@@ -56,15 +58,13 @@ The design architecture of AreaAware Dismounted will therefore not be specified 
 \end{tabular}\\\\
 
 \noindent In a crisis situation, the Emergency Commander will manage the situation right at a (mobile or not mobile) headquarter.
-AreaAware HQ is the service for Emergency Commander to interact with AreaAware at the headquarter.
-
-\subsection{AreaAware HQ}
+AreaAware HQ is the service for Emergency Commanders to interact with AreaAware at the headquarter.
 
 \myFigure{arch/aa_bdd_hq}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{0.5}
 
 AreaAware HQ consists of two subcomponents: a Web Presenter and a Communication Modem.
-There can up to 14 Web Presenters within AreaAware HQ.
-Only a single Communication Modem is sufficient.
+There can be up to 14 Web Presenters within AreaAware HQ.
+Only a single Communication Modem is sufficient for a headquarter.
 
 \begin{tabular}{l|*{2}{l}}
     \textbf{Block name}     & Web Presenter\\
@@ -242,19 +242,19 @@ The AreaAware HQ has two ways of communicating to AreaAware Server, therefore gi
 \item AreaAware HQ's Communication Modem has valid connection via commercial internet.
 \item AreaAware HQ's Communication Modem has not valid connection via commercial internet.
 \end{itemize}
-In scenarios where AreaAware HQ has connection via commercial internet, data will be transmitted using that between AreaAware Server and AreaAware HQ.
-If not, then will data transmitted through SINE.
-Figure \ref{fig:modem} that AreaAware HQ has a modem communicating either via. SINE or commercial internet. The modem it controlling the connections between the two connections.
+In scenarios where AreaAware HQ has connection via commercial internet, data will be transmitted using commercial internet between AreaAware Server and AreaAware HQ.
+If not, then data will be transmitted through the SINE network.
+Figure \ref{fig:modem} show that AreaAware HQ has a modem communicating either via. SINE or commercial internet. The modem is controlling the connections between the the Emergency  Commanders' computers and the  two connections SINE or commercial internet.
 
 \myFigure{arch/modem.png}{The AreaAware HQ has a modem for controlling the connections to the commercial internet or SINE.}{fig:modem}{0.5}
 
 \noindent Same goes with data between AreaAware Dismounted and AreaAware Server.
-In scenarios where the AreaAware Dismounted has valid connection via commercial internet, data between AreaAware Server and AreaAware Dismounted will be transmitted using that.
+In scenarios where the AreaAware Dismounted has valid connection via commercial internet, data between AreaAware Server and AreaAware Dismounted will be transmitted using commercial internet.
 However it is likely that the AreaAware Dismounted will operate in situations where no commercial internet available.
 In such scenario the data will be transmitted via SINE.\\
 
 \noindent All combinations of above scenario can seen in figure \ref{fig:ce}.
-Note that a emergency commander always communicate with AreaAware via SINE.
+Note that an Emergency Responder always communicate with AreaAware via SINE.
 
     \begin{figure}[ht]
         \centering
@@ -270,15 +270,13 @@ Note that a emergency commander always communicate with AreaAware via SINE.
         \label{fig:ce}
     \end{figure}
 
-
-
-The AreaAware Server has connection to the commercial internet and by that a connection to SINE.
-The AreaAware Server will serve data to the communication the client (AreaAware HQ or AreaAware Dismounted) is using.
-If the AreaAware Server has no connection either, AreaAware is unusable.
-However the AreaAware Server is not a single device, but more of function.
-This functionality can be split in setups with multiple devices, to ensure no downtime on the AreaAware.
+The SINE network will always have access to the commercial internet, and there is thereby always a connection between the AreaAware Server and the SINE network.
+A connection between the AreaAware Server and the AreaAware HQ or AreaAware Dismounted can be guaranteed using either SINE or commercial internet.
+If the AreaAware Server has no connection the internet, the AreaAware is unusable.
+However the AreaAware Server is not a single device, but more a collection of multiple devices placed at physically different positions.
+This ensure no downtime on the AreaAware.
 
 
 \section{Interface design}
 \label{sec:arch_interface}
-The interface design of the system is described in a separate document \emph{Preliminary Interface Control Document} with the document ID \emph{AreaAware-PICD-20160216-01-01}.
+The interface design of the system is described in a separate document \emph{Interface Control Document} with the document ID \icd.
