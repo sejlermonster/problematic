@@ -6,18 +6,11 @@
 
 % Page styling
 \let\footruleskip\undefined
-\usepackage{fancyhdr} 
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 % English language package
 \usepackage[english]{babel}
-
-% Adding appendix caption to danish language package
-\addto\captionsdanish{%
-    \renewcommand{\appendixname}%
-    {Appendiks }%
-}
-\renewcommand*\cftappendixname{\appendixname}
 
 % UTF-8 characters
 \usepackage[utf8]{inputenc}
@@ -29,54 +22,46 @@
 \usepackage[table,xcdraw]{xcolor}
 \definecolor{ThemeColor}{RGB}{0, 154, 242} % Blue
 \definecolor{BlackColor}{RGB}{0, 0, 0} % Black
-\definecolor{deadlinecolor}{HTML}{FD6864}
-\definecolor{reviewcolor}{HTML}{9698ED}
 
 % Table packages
 % Merge cells i tables
 \usepackage{multirow}
 \usepackage{makecell}
+\usepackage{tabularx}
 
 % PDF propeties (fx. hyperlinks, pdftitle)
 \usepackage[hyphens]{url}
-\usepackage[bookmarks=true,bookmarksnumbered=true,citecolor=green,colorlinks=true,hyperfigures=true,hyperfootnotes=true,hyperindex=true,linkcolor=red]{hyperref}
+\usepackage[bookmarks=true,bookmarksnumbered=true,citecolor=black,colorlinks=true,hyperfigures=true,hyperfootnotes=true,hyperindex=true,linkcolor=red,urlcolor=blue]{hyperref}
 
 % BibTeX = bibliography
 % ALWAYS USE \citep{} or something like:
 % \citep[see this baws article]{fooArticle}
-\usepackage[]{natbib}
+\usepackage[semicolon,authoryear,round]{natbib}
 \bibliographystyle{plainnat}
-
 
 % Package for editing captions. Fx for figures and code listings
 \usepackage[textfont={footnotesize,sl}]{caption}
 
 % Package for more elegant math
 \usepackage{amsmath}
-    \usepackage{xfrac} % for \sfrac command
+\usepackage{xfrac} % for \sfrac command
 
-% Package for nomenclature
-% To add things to the nomenclature see:
-% http://tex.stackexchange.com/questions/161304/makeindex-no-nls-file
-% option "intoc" insert nomenclature to table of contents
-% option "danish" makes reference texts and the nomenclature title danish
-\usepackage[intoc, danish]{nomencl}
-\makenomenclature
-% If you  dont like the name of the nomenclature
-%\renewcommand{\nomname}{myNomeclatureTitle}
+% Styles
+\input{../../commonDocuments/style/chapter}
+\input{../../commonDocuments/style/headerFooter}
+\input{../../commonDocuments/style/figure}
+\input{../../commonDocuments/style/todos}
+\input{../../commonDocuments/style/code}
+\input{../../commonDocuments/style/customCmds}
+\input{../../commonDocuments/style/tables}
 
 % Geometry for frontpage
 \usepackage{geometry}
 
+% For traceability matrix
+\usepackage{longtable}
+\usepackage{rotating}
 
-% Styles
-\input{style/chapter}
-\input{style/headerFooter}
-\input{style/figure}
-\input{style/todos}
-\input{style/code}
-\input{style/customCmds}
-\input{style/tables}
 
 \begin{document}
     \begin{titlingpage}
