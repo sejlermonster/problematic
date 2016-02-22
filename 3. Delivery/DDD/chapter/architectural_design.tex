@@ -90,6 +90,8 @@ Only a single Communication Modem is sufficient for a headquarter.
 
 \subsubsection{Communication modem}
 
+The communication modem is connecting the Emergency Commanders to either the commercial internet or the SINE network depending on what of the two systems are acceptable, and handle the communication interface to both networks.
+
 \myFigure{arch/aa_bdd_com_modem}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
 
 \FloatBarrier
@@ -145,7 +147,7 @@ Only a single Communication Modem is sufficient for a headquarter.
     Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
 \end{tabular}\\\\
 
-The AreaAware handles all data and logistics across all devices in AreaAware - under and after a crisis.
+The AreaAware server handles all data and logistics across all devices in AreaAware - under and after a crisis.
 
 \myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, a web API and a logging system.}{fig:bbd_hq}{1}
 
@@ -194,6 +196,9 @@ The AreaAware handles all data and logistics across all devices in AreaAware - u
 \pagebreak
 
 \subsubsection{Web Application}
+
+The Web Application will supply a COP for the commanders by displaying information in an interactive map, an event history and buttons for different kind of communication.
+This Web Application will run on the server and are send via the commercial internet or SINE network to the AreaAware Dismounted or AreaAware HQ.
 
 \myFigure{arch/aa_bdd_webApplication.png}{Web Application consists of three subcomponents: An interactive map, an Event history and buttons for communication.}{fig:bbd_hq}{1}
 
