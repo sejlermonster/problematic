@@ -54,7 +54,7 @@
 \input{../../commonDocuments/style/code}
 \input{../../commonDocuments/style/customCmds}
 \input{../../commonDocuments/style/tables}
-\input{../documentID}
+\input{../../documentID}
 
 % Geometry for frontpage
 \usepackage{geometry}
@@ -78,8 +78,6 @@
         \tableofcontents*	% The star keeps TOC from indexing itself
     \endgroup
 
-    % BibTeX: Not affected by \appendix command
-   % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
     \include{chapter/intro}
     \include{chapter/system_engineering_process}
     \include{chapter/transitioning_critical_technologies}
@@ -89,5 +87,6 @@
 
     % Appendix
     \include{style/appendix} % Changes chapter and section style and toc adding
+    %\bibliography{../../commonDocuments/bibliography}
 
 \end{document}
