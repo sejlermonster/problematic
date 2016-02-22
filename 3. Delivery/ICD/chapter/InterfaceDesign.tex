@@ -3,7 +3,10 @@
 
 \section{AreaAware HQ}
 \label{sec:areaAwarehq}
+\subsection{AreaAware Server internal Component interfaces}
+Here interfaces related to the communication modem should be added
 
+\subsection{Internal interfaces to other AreaAware Systems}
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
 	\textbf{II-01} &  \textbf{AreaAware Server interface } \\
@@ -21,6 +24,7 @@
 	\hline
 \end{longtable}
 
+\subsection{External interfaces}
 \begin{longtable}{| p{3.5cm} | p{10cm} | }
 	\hline
 	\textbf{EI-01} &  \textbf{Power Supply} \\
@@ -113,6 +117,26 @@ Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interf
 
 \section{AreaAware Server}
 \label{sec:areaAwareserver}
+
+\subsection{AreaAware Server internal Component interfaces}
+
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{II-02} &  \textbf{AreaAware Server Database interface } \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware database must allow for both AreaAware Server logging and AreaAware Server Web Api to save relevant information.\\
+	\hline
+	Needed interfaces & AreaAware Server logging must be able to save and query logging information.\\
+	& AreaAware Server Web Api must be able to save and query  information about a civilian crisis \\
+	\hline
+\end{longtable}
+
+\subsection{Internal interfaces to other AreaAware Systems}
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
 	\textbf{II-02} &  \textbf{AreaAware HQ interface } \\
@@ -128,6 +152,7 @@ Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interf
 	\hline
 \end{longtable}
 
+\subsection{External interfaces}
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
 	\textbf{II-03} &  \textbf{AreaAware Dismounted interface } \\
@@ -140,9 +165,9 @@ Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interf
 	\\
 	\hline
 	Needed interfaces & AreaAware Server sends messages To AreaAware Dismounted.  \\
-		 & AreaAware Server receives messages from AreaAware Dismounted. \\
-		 & AreaAware Server sends events to AreaAware Dismounted  \\
-		 & AreaAware Server receives events from AreaAware Dismounted  \\
+	& AreaAware Server receives messages from AreaAware Dismounted. \\
+	& AreaAware Server sends events to AreaAware Dismounted  \\
+	& AreaAware Server receives events from AreaAware Dismounted  \\
 	\hline
 \end{longtable}
 
