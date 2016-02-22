@@ -54,7 +54,7 @@
 \input{../../commonDocuments/style/code}
 \input{../../commonDocuments/style/customCmds}
 \input{../../commonDocuments/style/tables}
-\input{../documentID}
+\input{../../documentID}
 
 % Geometry for frontpage
 \usepackage{geometry}
@@ -64,8 +64,12 @@
 \usepackage{rotating}
 
 \begin{document}
- \input{chapter/frontPage}
-    
+	\begin{titlingpage}
+		% Frontpage goes here
+		\include{chapter/frontpage}
+	\end{titlingpage}
+	
+ \include{chapter/revisionHistory}
     % Table of contents
     \begingroup
         \hypersetup{linkcolor=black}
@@ -73,11 +77,11 @@
     \endgroup
 
     % BibTeX: Not affected by \appendix command
-   % \bibliography{bibliografi}% Selects .bib file AND prints bibliography
-    \input{chapter/revisionHistory}
+	
+    \input{chapter/referenced_documents}
     \input{chapter/requirements}
     \input{chapter/qualityProvision}
-    \input{chapter/requirementsTraceabiility}
+    %\input{chapter/requirementsTraceabiility}
 
     % Appendix
     \input{../../commonDocuments/style/appendix} % Changes chapter and section style and toc adding
