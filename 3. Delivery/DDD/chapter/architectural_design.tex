@@ -88,11 +88,51 @@ Only a single Communication Modem is sufficient for a headquarter.
 
 \pagebreak
 
+\subsubsection{Web Presenter}
+
+The Web Presenter is showing the Web Application supplying a COP for the Commanders.
+This is done by displaying information in an interactive map, back track events in the event history and have different communication possibility's with other Commanders and Emergency Responders.
+This Web Application will run on the Emergency Commanders computer and communicate with the server WEB API using commercial internet or the SINE network.
+
+\myFigure{arch/aa_bdd_webApplication.png}{Web Application consists of three subcomponents: An interactive map, an Event history and buttons for communication.}{fig:bbd_WP}{1}
+
+\FloatBarrier
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Interactive map \\
+    \textbf{Block ID}       & SA-AA-HQ-WP-IM & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain static and dynamic information about the crisis area for supplying \\ situational awareness}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-01, TA-05, TA-07} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Event history \\
+    \textbf{Block ID}       & SA-AA-HQ-WP-EH & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Display all events revived from the Commanders and Emergency Responders}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-08} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
+\begin{tabular}{l|*{2}{l}}
+    \textbf{Block name}     & Communication \\
+    \textbf{Block ID}       & SA-AA-HQ-WP-C & \\
+    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Buttons used for creating events and initiate communication in form of text, \\ voice or video.}}  \\
+    \hline
+    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
+    Requirements & \makecell[l]{TA-02, TA-03, TA-04, TA-06} & AreaAware-SRS-20160214-01-02  \\
+    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
+\end{tabular}\\\\
+
 \subsubsection{Communication modem}
 
 The communication modem is connecting the Emergency Commanders to either the commercial internet or the SINE network depending on what of the two systems are acceptable, and handle the communication interface to both networks.
 
-\myFigure{arch/aa_bdd_com_modem}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_hq}{1}
+\myFigure{arch/aa_bdd_com_modem}{AreaAware HQ consists of two subcomponents. A web site presented and a communication modem.}{fig:bbd_CM}{1}
 
 \FloatBarrier
 
@@ -149,7 +189,7 @@ The communication modem is connecting the Emergency Commanders to either the com
 
 The AreaAware server handles all data and logistics across all devices in AreaAware - under and after a crisis.
 
-\myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, a web API and a logging system.}{fig:bbd_hq}{1}
+\myFigure{arch/aa_bdd_server.png}{AreaAware Server consists of three subcomponents: a database, a web API and a logging system.}{fig:bbd_Server}{1}
 
 \FloatBarrier
 
@@ -157,16 +197,6 @@ The AreaAware server handles all data and logistics across all devices in AreaAw
     \textbf{Block name}     & Database\\
     \textbf{Block ID}       & SA-AA-SE-DB  & \\
     \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain and manage all data of AreaAware.}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
-
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Web Application\\
-    \textbf{Block ID}       & SA-AA-SE-WA  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain the UI displayed on the AreaAware HQ and AreaAware Dismounted}}  \\
     \hline
     \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
     Requirements & \makecell[l]{TA-01, TA-02, TA-03, TA-04,\\ TA-05, TA-06, TA-07, TA-08} & AreaAware-SRS-20160214-01-02  \\
@@ -194,45 +224,6 @@ The AreaAware server handles all data and logistics across all devices in AreaAw
 \end{tabular}\\\\
 
 \pagebreak
-
-\subsubsection{Web Application}
-
-The Web Application will supply a COP for the commanders by displaying information in an interactive map, an event history and buttons for different kind of communication.
-This Web Application will run on the server and are send via the commercial internet or SINE network to the AreaAware Dismounted or AreaAware HQ.
-
-\myFigure{arch/aa_bdd_webApplication.png}{Web Application consists of three subcomponents: An interactive map, an Event history and buttons for communication.}{fig:bbd_hq}{1}
-
-\FloatBarrier
-
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Interactive map \\
-    \textbf{Block ID}       & SA-AA-SE-WA-IM  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Contain static and dynamic information about the crisis area for supplying \\ situational awareness}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{TA-01, TA-05, TA-07} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
-
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Event history \\
-    \textbf{Block ID}       & SA-AA-SE-WA-EH  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Display all events revived from the Commanders and Emergency Responders}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{TA-08} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
-
-\begin{tabular}{l|*{2}{l}}
-    \textbf{Block name}     & Communication buttons \\
-    \textbf{Block ID}       & SA-AA-SE-WA-CB  & \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Buttons used for creating events and initiate communication in form of text, \\ voice or video}}  \\
-    \hline
-    \textbf{Related}    & \textbf{ID} & \textbf{Document} \\
-    Requirements & \makecell[l]{TA-02, TA-03, TA-04, TA-06} & AreaAware-SRS-20160214-01-02  \\
-    Design decisions & N/A & AreaAware-PDD-20160214-01-01 \\
-\end{tabular}\\\\
 
 \section{Concept of execution}
 \label{sec:concept_execution}
