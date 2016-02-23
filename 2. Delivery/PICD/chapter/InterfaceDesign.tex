@@ -4,6 +4,10 @@
 \section{AreaAware HQ}
 \label{sec:areaAwarehq}
 
+\myFigure{AreaAware_HQ_interface_diagram.png}{AreaAware HQ interface diagram}{hq_int}{1} 
+
+Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interfaces is represented. AreaAware HQ is required to have power whereas a power supply is provided. AreaAware HQ is required to communicate over the internet where SINE/ICCS or commercial internet is provided. Over the provided internet AreaAware HQ will communicate with the relevant parties for example the AreaAware Server. It is possible to connect with an external computer system for interacting with the web application. Therfor the possiblity of connecting with a category 5 with RJ45 is provided. 
+
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
 	\textbf{II-01} &  \textbf{AreaAware Server interface } \\
@@ -103,16 +107,16 @@
 	& External computer systems display device \\ 
 	\hline
 \end{longtable}
-\clearpage
-\myFigure{AreaAware_HQ_interface_diagram.png}{AreaAware HQ interface diagram}{hq_int}{1} 
-
-Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interfaces is represented. AreaAware HQ is required to have power whereas a power supply is provided. AreaAware HQ is required to communicate over the internet where SINE/ICCS or commercial internet is provided. Over the provided internet AreaAware HQ will communicate with the relevant parties for example the AreaAware Server. It is possible to connect with an external computer system for interacting with the web application. Therfor the possiblity of connecting with a category 5 with RJ45 is provided. 
-
 
 \newpage
 
 \section{AreaAware Server}
 \label{sec:areaAwareserver}
+
+\myFigure{AreaAware_Server_interface_diagram.png}{AreaAware Server interface diagram}{server_int}{1}
+
+Figur \ref{server_int} represents an interface diagram of the interfaces for the AreaAware Server. The AreaAware Server requires to communicate via SINE/ICCS or commercial internet. By these internet medias the AreaAware Server can communicate to the relevant parties for example the AreaAware HQ and AreaAware Dismounted.
+
 \begin{longtable}{| p{3.5cm} |  p{10cm} | }
 	\hline
 	\textbf{II-02} &  \textbf{AreaAware HQ interface } \\
@@ -183,7 +187,61 @@ Figur \ref{hq_int} represent an interface diagram of how the AreaAware HQ interf
 	& AreaAware Server receives different types of events from AreaAware HQ and AreaAware Dismounted via \emph{commercial internet} \\
 	\hline
 \end{longtable}
+\newpage
+\section{AreaAware Dismounted}
+\label{sec:areaAwaredismounted}
 
-\myFigure{AreaAware_Server_interface_diagram.png}{AreaAware Server interface diagram}{server_int}{1}
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{II-04} &  \textbf{AreaAware Server interface } \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Dismounted Will communicate with the AreaAware Server. AreaAware Dismounted should be able to receive messages from AreaAware Server and distributes these to relevant parties. AreaAware Dismounted should be able to send and recieve events from AreaAware Server. The communication will be over the internet media provided like SINE or Commercial internet. \\
+	\hline
+	Needed interfaces & AreaAware Dismounted sends messages To AreaAware Server.  \\
+	& AreaAware Dismounted receives messages from AreaAware Server. \\
+	& AreaAware Dismounted sends events to AreaAware Server  \\
+	& AreaAware Dismounted receives events from AreaAware Server  \\
+	\hline
+\end{longtable}
 
-Figur \ref{server_int} represents an interface diagram of the interfaces for the AreaAware Server. The AreaAware Server requires to communicate via SINE/ICCS or commercial internet. By these internet medias the AreaAware Server can communicate to the relevant parties for example the AreaAware HQ and AreaAware Dismounted.
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-08} &  \textbf{SINE interface} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Dismounted Will communicate over the SINE network via \emph{ICCS}\citep{iccs}. AreaAware Dismounted should be able to receive messages from \emph{ICCS} and distributes these to relevant parties through the \emph{ICCS}.  AreaAware Dismounted should be able to send events to \emph{ICCS}.
+	\\
+	\hline
+	Needed interfaces 
+	& AreaAware Dismounted receives messages from \emph{ICCS} \\
+	& AreaAware Dismounted distributes messages to \emph{ICCS} \\
+	& AreaAware Dismounted sends different types of events to \emph{ICCS} \\
+	& AreaAware Dismounted receives different types of events from \emph{ICCS} \\
+	\hline
+\end{longtable}
+
+\begin{longtable}{| p{3.5cm} |  p{10cm} | }
+	\hline
+	\textbf{EI-09} &  \textbf{Commercial internet interface} \\
+	\hline
+	Version & v0.1 \\
+	\hline
+	Status & Under development \\
+	\hline
+	Description & The AreaAware Dismounted Will communicate over the \emph{commercial internet}.
+	\\
+	\hline
+	Needed interfaces 
+	& AreaAware Dismounted receives messages from AreaAware HQ and AreaAware Server via \emph{commercial internet} \\
+	& AreaAware Dismounted distributes messages to AreaAware HQ and AreaAware Server via \emph{commercial internet} \\ 
+	& AreaAware Dismounted sends different types of events to AreaAware HQ and AreaAware Server via \emph{commercial internet} \\
+	& AreaAware Dismounted receives different types of events from AreaAware HQ and AreaAware Server via \emph{commercial internet} \\
+	\hline
+\end{longtable}
