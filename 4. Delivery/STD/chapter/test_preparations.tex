@@ -4,14 +4,36 @@
 \chapter{Test Preparations}
 \label{chp:test_prep}
 
-\section{Test of AreaAware HQ}
-\subsection{Create Event}
-% with and without commercial internel sine
+\section{Capability requirements}
+\begin{description}
+	\item[TC-02a] Send message over SINE. Test if a message can be sent from the COP to an emergency responder through SINE. A COP and an interface to the emergency responder is needed for this test.
+	\item[TC-02b] Send message over Commercial internet. Test if a message can be sent from the COP to an emergency responder through the commercial internet. A COP and an interface to the emergency responder is needed for this test.
+	\item[TC-03] Send voice message over commercial internet. Test if a voice message can be sent from the COP to an emergency responder through the commercial internet. A COP and an interface to the emergency responder is needed for this test.
+	\item[TC-04] Send video and voice message over commercial internet. Test if a video and voice message can be sent from the COP to an emergency responder through the commercial internet. A COP and an interface to the emergency responder is needed for this test.
+	\item[TC-05] Present coordinate of Emergency Responder on COP. Test if the coordinate of the emergency responder appears on the COP. A COP and an emergency responder is needed for this test.
+	\item[TC-06a] Create Event over the Commercial internet. Test if an event can be created on the on the COP and shown on another COP, via the commercial internet. For this test two COPs are needed.
+	\item[TC-06b] Create Event over SINE. Test if an event can be created on the on the COP and shown on another COP, via SINE. For this test two COPs are needed.
+	\item[TC-07] Focus on one type of information on the COP. Test if you are able to focus on every type of information on the COP separately. A COP is needed for this test.
+	\item[TC-08] Show the history of events. Test if the history of all events can be shown on the COP. A COP is needed for this test.
+\end{description}
 
-\subsection{Send Command}
-% with and without commercial internel sine
+\section{Computer resource requirements}
+\begin{description}
+	\item[TC-24] AreaAware SINE certification. Test if AreaAware is SINE certified by an inspection of it.
+\end{description}
 
-\subsection{Send Message}
-% With Sine
+\section{Design and Construction constraints}
+\begin{description}
+	\item[TC-28] Modem weight limited to 3 kilogram. Test if the Modem weighs no more than 3 kilograms incl. box and cables.
+	\item[TC-29] Modem dimensions limited to 10cmX40cmX20cm. Test if the dimensions doesn't exceed 10cmX40cmX20cm.
+\end{description}
 
+\section{Logistics-related requirements}
+\begin{description}
+	\item[TC-34] Logging. Test if all events, start and end of information distribution is being logged.
+\end{description}
 
+\section{Packaging requirements}
+\begin{description}
+	\item[TC-33] COP is available in browser. Test if the web application is available in the browser.
+\end{description}
