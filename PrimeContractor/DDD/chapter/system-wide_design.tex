@@ -1,14 +1,51 @@
 \chapter{System-wide Design Decisions}
 \label{chp:system-wide}
+This chapter will describe the system-wide design decisions for the CCU and pod.
+The system will in this chapter be regarded as black boxes, where none of the internal components will be described.
 
 \section{Input and output decisions}
+Figure \ref{fig:in_out} describes the inputs and outputs of the CCU and the pod.
+
+\myFigure{systemDesign/pc_ddd_io}{}{fig:in_out}{1}
 
 \subsection{Inputs}
+The inputs of the system are as follows:
+\begin{itemize}
+    \item \textbf{Hot Air:} Hot air used to generate the apropriate temperate air for adjusting the temperature within the pod.
+    \item \textbf{Cold Air:} Cold air used to generate the appropriate temperate air for adjusting the temperature within the pod.
+    \item \textbf{Power:} Power for the CCU to be operational.
+\end{itemize}
 
 \subsection{Outputs}
+The outputs of the system are as follows:
+\begin{itemize}
+    \item \textbf{Disposal Air:} Air outtake of the pod, this is done to avoid overpressure within the pod when the temperate air in sent in.
+\end{itemize}
 
-\section{Data appearance}
+\newpage
+\subsection{Internal signals}
+The internal signals of the system are as follows:
+\begin{itemize}
+    \item \textbf{Temperature:} Temperature measurement within the pod.
+    \item \textbf{Temperate Air:} The temperate air sent to the pod to control the temperature within the pod.
+\end{itemize}
 
-\section{Safety, security and privacy}
 
 \section{Design and construction choices}
+% pod'en skal være formet som en stor fed pikkemand pikkemand pikkemand
+This sections will cover some design and construction choices regarding the pod and the CCU.
+Some of these choices are given by Company E through the documents \pcsow \space and \momPrimeOne.
+
+\subsection{Pod}
+The pod is bounded by the follow physical design decisions:
+\begin{itemize}
+    \item \textbf{D-POD-01:} The pod will be mounted to the aircraft, underneath the left wing, with 4 standard T-hooks spaced by 33,02 cm in a square formation.
+    \item \textbf{D-POD-02:} The external pod interfaces (i.e. interface; 01-SYS-FDR, 03-COM-MWS, 04-SEN-ERAN \& 05-CU-MWS) will be accessible in the center of the T-hook square.
+    \item \textbf{D-POD-03:} The pod will have 4 dispense openings (25 cm long and 10 cm wide). One on each side, both facing downwards in a 20 degree angle of the bottom of the aircraft wing. One opening in the front, and one at the bottom of the pod.
+\end{itemize}
+
+\subsection{CCU}
+The CCU is bounded by the follow physical design decisions:
+\begin{itemize}
+    \item \textbf{D-CCU-01:} The temperature regulation will be performed by temperate air flowing through the pod.
+\end{itemize}
