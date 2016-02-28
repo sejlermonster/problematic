@@ -7,13 +7,53 @@
 This chapter will describe the system architecture design of the CCU and the pod.
 The system architecture design is described by its components, concept of execution and interfaces.
 
-\section{System Components}
+\section{Climate Control Unit(CCU)}
 
 The CCU is separated into components according to figure \ref{fig:cc_bbd}.
 
 \myFigure{arch/pc_ddd_cc_bdd.png}{BDD of the CCU, for controlling the temperature in the pod}{fig:cc_bbd}{1}
 
-Each of these components is described below.\\
+Each of the components are described below.\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Aircraft Combat System \\
+    \hline
+    \textbf{Block ID}       & CAS \\
+    \hline
+    \textbf{Purpose}        & The entire system for detecting missiles and dispense flares \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Pod \\
+    \hline
+    \textbf{Block ID}       & CAS-POD \\
+    \hline
+    \textbf{Purpose}        & Containing flare magazines and the missile warning system\\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Temperature Sensor \\
+    \hline
+    \textbf{Block ID}       & CAS-POD-TS \\
+    \hline
+    \textbf{Purpose}        & Temperature sensor inside the pod, used for controlling the pod temperature\\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Air-Disposal \\
+    \hline
+    \textbf{Block ID}       & CAS-POD-AD \\
+    \hline
+    \textbf{Purpose}        & Flow of tempered air out of the pod.  \\
+    \hline
+\end{tabular}\\\\
 
 \begin{tabular}{|l|p{10cm}|}
     \hline
@@ -51,7 +91,17 @@ Each of these components is described below.\\
     \hline
     \textbf{Block ID}       & CAS-CCU-ASC \\
     \hline
-    \textbf{Purpose}        & Based on the temperature of the pod, either hot or cold air is channelled into the pod.  \\
+    \textbf{Purpose}        & Based on the temperature of the pod, either hot or cold air is channelled into the pod. \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & PCU-5V \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-PCU5V \\
+    \hline
+    \textbf{Purpose}        & Supply 5V DC for the Air switch control electronics. \\
     \hline
 \end{tabular}\\\\
 
@@ -61,22 +111,18 @@ Each of these components is described below.\\
     \hline
     \textbf{Block ID}       & CAS-CCU-AF \\
     \hline
-    \textbf{Purpose}        & Generating air pressure into the pod.  \\
+    \textbf{Purpose}        & Generating air pressure into the pod. \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{|l|p{10cm}|}
-    \hline
-    \textbf{Block name}     & Air-outflow \\
-    \hline
-    \textbf{Block ID}       & CAS-CCU-AOF \\
-    \hline
-    \textbf{Purpose}        & Air channel connected to the pod for temperature regulation  \\
-    \hline
-\end{tabular}\\\\
+\pagebreak
 
 \section{Concept of execution}
 \label{sec:concept_execution}
+
+Figure \ref{fig:cc_bbd} show the the overall concept of the CCU. A temperature sensor inside the pod is measuring the pod core temperature, and the Air switch control is opening/closing the hot- and cold air-intake according to the temperature of the pod. The Air switch control is also controlling the air fan speed to set the correct air flow into the pod.
+
+\myFigure{Concept_of_execution.png}{The CCU is controlling the flow of hot or cold air into the pod.}{fig:cc_bbd}{1}
 
 \section{Interface design}
 \label{sec:arch_interface}
