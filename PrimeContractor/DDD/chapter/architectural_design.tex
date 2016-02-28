@@ -1,4 +1,4 @@
-%!TEX root = ../DDD.tex
+%!TEX root = ../PC_DDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
@@ -15,45 +15,63 @@ The CCU is separated into components according to figure \ref{fig:cc_bbd}.
 
 Each of these components is described below.\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Climate Control Unit(CCU) \\
+    \hline
     \textbf{Block ID}       & CAS-CCU \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{The CCU is controlling the temperature of the pod, by sending hot or cold air \\ into the pod.}}  \\
+    \hline
+    \textbf{Purpose}        & The CCU is controlling the temperature of the pod, by sending hot or cold air into the pod. \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Hot air-intake \\
+    \hline
     \textbf{Block ID}       & CAS-CCU-HAI \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Air channel connected to the engine for hot air source.}}  \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the engine for hot air source.  \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Cold air-intake \\
+    \hline
     \textbf{Block ID}       & CAS-CCU-CAI \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Air channel connected to the out side of the plane for cold air source.}}  \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the out side of the plane for cold air source. \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Air switch control \\
+    \hline
     \textbf{Block ID}       & CAS-CCU-ASC \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Based on the temperature of the pod, either hot or cold air is channelled into \\ the pod.}}  \\
+    \hline
+    \textbf{Purpose}        & Based on the temperature of the pod, either hot or cold air is channelled into the pod.  \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Air fan \\
+    \hline
     \textbf{Block ID}       & CAS-CCU-AF \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Generating air pressure into the pod.}}  \\
+    \hline
+    \textbf{Purpose}        & Generating air pressure into the pod.  \\
     \hline
 \end{tabular}\\\\
 
-\begin{tabular}{l|*{2}{l}}
+\begin{tabular}{|l|p{10cm}|}
+    \hline
     \textbf{Block name}     & Air-outflow \\
+    \hline
     \textbf{Block ID}       & CAS-CCU-AOF \\
-    \textbf{Purpose}        &\multicolumn{2}{l}{\makecell[l]{Air channel connected to the pod for temperature regulation}}  \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the pod for temperature regulation  \\
     \hline
 \end{tabular}\\\\
 
