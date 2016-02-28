@@ -1,18 +1,32 @@
-%!TEX root = ../DDD.tex
+%!TEX root = ../PC_DDD.tex
 
 \chapter{Scope}
 \label{chp:scope}
 
-\section{Identification}
+\section{Identification \& System overview}
+This document applies to a subsystem of F-16 combat aircraft System developed by Company E.
+More specific to a pod structure and a Climate Control Unit (CCU) for this pod structure.
 
-\section{System overview}
+The pod structure will be the casing of a self protection system designed for F-16 aircrafts.
+The self protection system will be able to detect incoming missiles, fire flares as counter measurement and warn the pilot through an advanced threat display and 3-D Audio Warning.
+The 3-D Audio Warning should provide the pilot with better situational awareness and hereby reduce reaction time.
+
+The CCU will be measure the temperature in the pod through a temperature sensor in the pod and adjust it if necessary to keep a safe operating temperature for the electronic equipment in the pod.
+
 
 \section{Document overview}
+This document describes how the pod and the CCU will be structured to satisfy the requirements specified in the following documents:
+\begin{itemize}
+    \item \pcsow
+    \item \momPrimeOne
+\end{itemize} 
+Chapter \ref{chp:system-wide} describes system wide decisions regarding design of system components. 
+After this chapter \ref{chp:architectural} gives an architectural design of the pod and the CCU, which identifies system components, describes how the system components interact. 
+Section \ref{sec:arch_interface} defines the interface design between the system and the system components describe within this document.
 
 \section{Referenced documents}
-In this table all the referenced documents will be listed.
-
-\begin{tabular}{b{6cm} b{7cm}}
-	\textbf{ID} & \textbf{Document name} \\
-	\hline
-\end{tabular}
+All the referenced documents are listed below.
+\begin{itemize}
+    \item \pcsow
+    \item \momPrimeOne
+\end{itemize}
