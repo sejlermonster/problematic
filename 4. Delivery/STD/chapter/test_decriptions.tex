@@ -3,3 +3,189 @@
 \thispagestyle{fancy}
 \chapter{Test Descriptions}
 \label{chp:test_descriptions}
+
+\section{Capability requirements}
+\label{sec:cap_req}
+
+\subsection{TCTA-02a}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if a text message can be sent from the COP to an emergency responder over SINE\\ \hline
+	\textbf{Affected req. ID}	& TA-02 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander writes a text message to send \item click send \item emergency responder receives message
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and an emergency responder is deployed. The communication Controller is set to use SINE.\\ \hline
+	\textbf{Postcondition}		& The emergency responder receives the message from the COP\\
+\end{tabular}
+
+\subsection{TCTA-02b}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if a text message can be sent from the COP to an emergency responder over commercial internet\\ \hline
+	\textbf{Affected req. ID}	& TA-02 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander writes a text message to send \item click send \item emergency responder receives message
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and an emergency responder is deployed. The communication Controller is set to use commercial internet.\\ \hline
+	\textbf{Postcondition}		& The emergency responder receives the message from the COP\\
+\end{tabular}
+
+\subsection{TCTA-03}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if a voice message can be sent from the COP to an emergency responder over commercial internet\\ \hline
+	\textbf{Affected req. ID}	& TA-03 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander records audio to send \item click send \item emergency responder receives audio
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and an emergency responder is deployed. The communication Controller is set to use commercial internet.\\ \hline
+	\textbf{Postcondition}		& The emergency responder receives the voice message from the COP\\
+\end{tabular}
+
+\subsection{TCTA-04}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if a video message with voice can be sent from the COP to an emergency responder over commercial internet\\ \hline
+	\textbf{Affected req. ID}	& TA-04 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander records video with audio to send \item click send \item emergency responder receives the video and voice message
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and an emergency responder is deployed. The communication Controller is set to use commercial internet.\\ \hline
+	\textbf{Postcondition}		& The emergency responder receives the video and voice from the COP\\
+\end{tabular}
+
+\subsection{TCTA-04}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if a video message with voice can be sent from the COP to an emergency responder over commercial internet\\ \hline
+	\textbf{Affected req. ID}	& TA-04 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander records video with audio to send \item click send \item emergency responder receives the video and voice message
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and an emergency responder is deployed. The communication Controller is set to use commercial internet.\\ \hline
+	\textbf{Postcondition}		& The emergency responder receives the video and voice from the COP\\
+\end{tabular}
+
+\subsection{TCTA-05}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if the coordinate of an emergency responder is shown on the COP\\ \hline
+	\textbf{Affected req. ID}	& TA-05 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander has shown the map on the COP \item Emergency responder is in the field, and his coordinate is updated and sent to the COP \item Emergency responders coordinate is shown on the COP
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up, and the map is shown. An emergency responder is deployed.\\ \hline
+	\textbf{Postcondition}		& The commander can see the coordinate of the emergency responder on the COP\\
+\end{tabular}
+
+\subsection{TCTA-06a}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if an event can be created on a COP and broad casted to other COPs through commercial internet.  \\ \hline
+	\textbf{Affected req. ID}	& TA-06 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander creates an event on the COP \item Event is shown on another COP
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& Two COPs is set up. The communication Controller is set to use commercial internet.\\ \hline
+	\textbf{Postcondition}		& Event is shown on both COPs\\
+\end{tabular}
+
+\subsection{TCTA-06b}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if an event can be created on a COP and broad casted to other COPs through SINE  \\ \hline
+	\textbf{Affected req. ID}	& TA-06 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander creates an event on the COP \item Event is shown on another COP
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& Two COPs is set up. The communication Controller is set to use SINE.\\ \hline
+	\textbf{Postcondition}		& Event is shown on both COPs\\
+\end{tabular}
+
+\subsection{TCTA-07}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To see if the Commander is able to focus on different types of information.  \\ \hline
+	\textbf{Affected req. ID}	& TA-07 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander chooses a custom event type \item Commander gets access to the chosen information
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up with different types of information or events registered on it.\\ \hline
+	\textbf{Postcondition}		& A specific information focus is displayed.\\
+\end{tabular}
+
+\subsection{TCTA-08}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To see if the Emergency Commander is able to review the history of events.  \\ \hline
+	\textbf{Affected req. ID}	& TA-08 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Commander clicks on registered events/history. \item The list of events is shown for review.
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP is set up with registered events.\\ \hline
+	\textbf{Postcondition}		& History of events is shown.\\
+\end{tabular}
+
+
+\section{Computer resource requirements}
+\subsection{TCNF-14}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if AreaAware is SINE certified  \\ \hline
+	\textbf{Affected req. ID}	& NF-14 \\ \hline
+	\textbf{Description}		& Have an operator from SINE to inspect the system \\
+	\hline
+	\textbf{Precondition}		& -\\ \hline
+	\textbf{Postcondition}		& SINE Certification of AreaAware\\
+\end{tabular}
+
+\section{Design and construction requirements}
+\subsection{TCNF-18}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if modem is not too heavy  \\ \hline
+	\textbf{Affected req. ID}	& NF-18 \\ \hline
+	\textbf{Description}		& Weigh modem and cables together \\
+	\hline
+	\textbf{Precondition}		& -\\ \hline
+	\textbf{Postcondition}		& Modem and cables weighs less than 3 kilograms.\\
+\end{tabular}
+
+\subsection{TCNF-19}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if dimensions of modem exceeds limits   \\ \hline
+	\textbf{Affected req. ID}	& NF-19 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Measure the dimensions of the modem \item See if they exceeds 10cmX40cmX20cm
+	\end{enumerate} \\
+	\hline
+	\textbf{Precondition}		& -\\ \hline
+	\textbf{Postcondition}		& The dimensions of the Modem is no more than 10cmX40cmX20cm.\\
+\end{tabular}
+
+\section{Logistic-related requirements}
+\subsection{TCNF-24}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if information is being logged  \\ \hline
+	\textbf{Affected req. ID}	& NF-24 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item COP has been started, received events and shut down \item Open log \item inspect if startup, events and shut down has been logged
+		\end{enumerate}\\
+		\hline
+	\textbf{Precondition}		& \begin{itemize}
+			\item COP has been started \item Events has been received \item COP has been shut down
+		\end{itemize}\\ \hline
+	\textbf{Postcondition}		& The log has logged the actions from the COP\\
+\end{tabular}
+
+\section{Packaging requirements}
+\subsection{TCNF-23}
+\begin{tabular}{ l | m{11cm}}
+	\textbf{Purpose}			& To se if information is being logged  \\ \hline
+	\textbf{Affected req. ID}	& NF-23 \\ \hline
+	\textbf{Description}		& \begin{enumerate}
+		\item Open browser \item Load web application \item The COP is shown in browser
+	\end{enumerate}\\
+	\hline
+	\textbf{Precondition}		& A COP web application is implemented for browser use. \\ \hline
+	\textbf{Postcondition}		& Commander can access the COP and all of its functionalities as a web application through a browser\\
+\end{tabular}
