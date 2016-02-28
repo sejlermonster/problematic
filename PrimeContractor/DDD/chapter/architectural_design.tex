@@ -1,13 +1,79 @@
-%!TEX root = ../DDD.tex
+%!TEX root = ../PC_DDD.tex
 
 \thispagestyle{fancy}
 \chapter{Architectural Design}
 \label{chp:architectural}
 
-This chapter will describe the system architecture design.
+This chapter will describe the system architecture design of the CCU and the pod.
 The system architecture design is described by its components, concept of execution and interfaces.
 
 \section{System Components}
+
+The CCU is separated into components according to figure \ref{fig:cc_bbd}.
+
+\myFigure{arch/pc_ddd_cc_bdd.png}{BDD of the CCU, for controlling the temperature in the pod}{fig:cc_bbd}{1}
+
+Each of these components is described below.\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Climate Control Unit(CCU) \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU \\
+    \hline
+    \textbf{Purpose}        & The CCU is controlling the temperature of the pod, by sending hot or cold air into the pod. \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Hot air-intake \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-HAI \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the engine for hot air source.  \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Cold air-intake \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-CAI \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the out side of the plane for cold air source. \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Air switch control \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-ASC \\
+    \hline
+    \textbf{Purpose}        & Based on the temperature of the pod, either hot or cold air is channelled into the pod.  \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Air fan \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-AF \\
+    \hline
+    \textbf{Purpose}        & Generating air pressure into the pod.  \\
+    \hline
+\end{tabular}\\\\
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{Block name}     & Air-outflow \\
+    \hline
+    \textbf{Block ID}       & CAS-CCU-AOF \\
+    \hline
+    \textbf{Purpose}        & Air channel connected to the pod for temperature regulation  \\
+    \hline
+\end{tabular}\\\\
 
 \section{Concept of execution}
 \label{sec:concept_execution}
