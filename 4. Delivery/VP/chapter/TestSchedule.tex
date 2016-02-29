@@ -1,0 +1,35 @@
+\chapter{Test Schedule}
+\label{chp:TestSchedule}
+
+The table below describe a time plan for testing the individual components listed in \ddd.
+When all individual components are successfully tested, the integration tests can begin by combining components for testing.
+The integration test will increase in block size until the total system is tested.
+The test specification can be found in \std.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline 
+        \textbf{Component ID} & \textbf{Test type} & \textbf{Test timespan} & \textbf{Test deadline} \\
+        \hline
+        SA-AA-HQ-WP & Component test    & 2 weeks & 2019-06-01 \\
+        \hline
+        SA-AA-HQ-CM & Component test    & 2 weeks & 2019-06-01 \\
+        \hline
+        SA-AA-SE-DB & Component test    & 2 weeks & 2019-06-01 \\
+        \hline
+        SA-AA-SE-UI & Component test    & 2 weeks & 2019-06-01 \\
+        \hline
+        SA-AA-SE-LS & Component test    & 2 weeks & 2019-06-01 \\
+        \hline
+        SA-AA-DI    & Integration tests & 5 weeks & 2019-09-01 \\
+        \hline
+        SA-AA-HQ    & Integration tests & 5 weeks & 2019-09-01 \\
+        \hline
+        SA-AA-SE    & Integration tests & 5 weeks & 2019-09-01 \\
+        \hline
+        SA-AA       & Integration tests & 5 weeks & 2020-01-01 \\
+        \hline
+    \end{tabular}
+    \caption{Schedule for test of the different components. The test schedule is based on the time plan in \semp table 5.3}
+\end{table}
