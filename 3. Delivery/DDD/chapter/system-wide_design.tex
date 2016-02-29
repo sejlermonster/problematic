@@ -33,9 +33,11 @@ The outputs of the system are as follows:
 \section{Data appearance}
 Appearance of data for the user will happen on a User Interface on a screen. For the FC, the screen is on the AreaAware Dismounted, which provides a condensed COP in a native app. For the EC, the screen is a monitor, which is connected to a computer, running the AreaAware Web Interface. Figure \ref{fig:UI} shows an example of how the User Interface for the AreaAware Web Interface could be designed. 
 
-\myFigure{UI_sketch}{Example of user interface for the AreaAware Web Interface. In the map on the right side, several icons describe the positions of several events and actors. The red fire and hazard icons describe the locations of a local fire and biohazard, respectively. The black firetrucks, ambulances and police car represents the locations of local emergency response vehicles, from which a dotted line represents where they a dispatched. The black plus-sign and HQ-sign represent the respective location of a hospital (or emergency clinic) and Emergency Headquarter Station.
+\myFigure{UI_sketch}{Example of user interface for the AreaAware Web presenter. In the map on the right side, several icons describe the positions of several events and actors. The red fire and hazard icons describe the locations of a local fire and biohazard, respectively. The black firetrucks, ambulances and police car represents the locations of local emergency response vehicles, from which a dotted line represents where they a dispatched. The black plus-sign and HQ-sign represent the respective location of a hospital (or emergency clinic) and Emergency Headquarter Station.
 \newline On the left side, an Event History is visible, describing important ongoing events. The ECs and FCs can set the minimum Level of Importance required to be displayed on the Event History. Each event can be accessed to view the history of that Event.
 \newline In the button of the left side four buttons can be used by the commanders to create an Event, send a Command, send a message or start a direct voice/video connection to personal in the field. These functionalities can also be accessed intuitively by clicking on the COP.}{fig:UI}{1}
+
+AreaAware Dismounted will have the same basic layout, but will be condensed in several ways. First of all, the map will be capable of showing less data at one time, because of the smaller resolution and size available. Second, the buttons and event history will not be visible all the time, but located in a panel, which can be opened or closed. This maximizes the size of the COP map. On other words, there will be a trade-off of visibility/accessibility and total amount of information displayed.
 
 \pagebreak
 
@@ -55,6 +57,7 @@ The Communication modem will direct the connection from the Web App either over 
 	\item The monitor needs to be connected to a computer with a browser.
 	\item The computer will have to be connected to the Communication Modem, so an ethernet port is needed.
 	\item A speaker and microphone is necessary for voice communication. \\
+	\item A mouse/keyboard interface is necessary for interaction with the COP. A touch interface would be nice to have, but not necessary.
 \end{enumerate}
 
 \noindent \textbf{The AreaAware Dismounted} unit is bounded by design decisions made by the subcontractor for AreaAware Dismounted.
