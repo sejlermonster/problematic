@@ -1,0 +1,92 @@
+%!TEX root ../semp.tex
+%
+\thispagestyle{fancy}
+\chapter{Budget}
+\label{chp:budget}
+
+This chapter will cover the details of the budget for the system engineering process of the pod. \\
+The budget is based on an estimation of how the man hours should be spent through out the project.\\\\
+Table \ref{tb:units} and \ref{tb:price} shows the values from which the estimated budget have been calculated.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r|r|}
+        \hline
+        \textbf{Unit} & \textbf{Hours/day} & \textbf{Days/week} \\
+        \hline
+        Working hours & 8 & N/A \\
+        Working days & N/A & 5 \\
+        \hline
+    \end{tabular}
+    \caption{Units of measurement for man hours.}
+    \label{tb:units} 
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r|}
+        \hline
+        \textbf{Personnel} & \textbf{Price(DKK)/day} \\
+        \hline
+        Software Developer & 4,000  \\
+        Mechanical Engineer & 4,000 \\
+        Electrical Engineer & 4,000 \\
+        Test Engineer & 4,000 \\
+        \hline
+    \end{tabular}
+    \caption{Price of personnel.}
+    \label{tb:price} 
+\end{table}
+
+Table \ref{tb:phaseBudgetPOD} presents the estimated budget of the pod and table \ref{tb:phaseBudgetCCU} presents the estimated budget of the CCU.\\
+The total price for both are listed in \ref{tb:phaseBudgetTOT}.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r r r r r|}
+        \hline
+        \textbf{Phase} & \textbf{Weeks} & \textbf{Days} & \textbf{Personnel} & \textbf{Unit Price(DKK)} & \textbf{Phase Price(DKK) }\\
+        \hline
+        Concept     &   4 &  20 &  5 & 4,000 &   400,000 \\
+        Design      &  10 &  50 &  5 & 4,000 & 1,000,000 \\
+        Development &  30 & 150 &  5 & 4,000 & 3,000,000 \\ 
+        Test        &  20 & 100 &  2 & 4,000 &   800,000 \\
+        \hline
+        Total       &  64 & 320 &    &       & 5,200,000 \\
+        \hline
+    \end{tabular}
+    \caption{Budget for each project phase of the pod.}
+    \label{tb:phaseBudgetPOD} 
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r r r r r|}
+        \hline
+        \textbf{Phase} & \textbf{Weeks} & \textbf{Days} & \textbf{Personnel} & \textbf{Unit Price(DKK)} & \textbf{Phase Price(DKK) }\\
+        \hline
+        Concept     &   4 &  20 &  5 & 4,000 &    400,000 \\
+        Design      &  20 & 100 &  5 & 4,000 &  2,000,000 \\
+        Development &  40 & 200 & 10 & 4,000 &  8,000,000 \\ 
+        Test        &  20 & 100 &  5 & 4,000 &  2,000,000 \\
+        \hline
+        Total       &  84 & 420 &    &       & 12,400,000 \\
+        \hline
+    \end{tabular}
+    \caption{Budget for each project phase of the CCU.}
+    \label{tb:phaseBudgetCCU} 
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r r r|}
+        \hline
+        \textbf{Product} & \textbf{Weeks} & \textbf{Days} &  \textbf{Price(DKK) }\\
+        \hline
+        Pod & 64 &  320 &  5,200,000 \\
+        CCU & 84 &  420 & 12,400,000 \\
+        \hline
+        Total &  &      &   17,600,000 \\
+        \hline
+    \end{tabular}
+    \caption{Budget for each project phase of the CCU.}
+    \label{tb:phaseBudgetTOT} 
+\end{table}
